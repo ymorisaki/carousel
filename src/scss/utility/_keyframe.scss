@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@mixin kadomaru($value: 3px) {
+  border-radius: $value;
+}
+
+@mixin boxBase($margin: 10px, $padding: 20px) {
+  margin: $margin;
+  padding: $padding;
+}

@@ -1,0 +1,50 @@
+@charset "UTF-8";
+body {
+    font-size: 16px;
+    font-family: Verdana;
+}
+
+table {
+    width: 540px;
+    margin: 20px auto;
+    border-collapse: collapse;
+
+    th, td {
+        width: 180px;
+        box-sizing: border-box;
+        border: 1px solid #555;
+        padding: 20px;
+    }
+
+    th {
+        cursor: pointer;
+    }
+
+    tbody tr:nth-child(odd) {
+        background: #f8f8f8;
+    }
+}
+
+.score {
+    text-align: right;
+}
+
+th:after {
+    content: '\f0dc';
+    font-family: FontAwesome;
+    font-size: 12px;
+    color: #ccc;
+    float: right;
+    padding-top: 4px;
+    font-weight: nomal;
+}
+th.asc:after {
+    content: '\f0de';
+    font-family: FontAwesome;
+    color: #000;
+}
+th.desc:after {
+    content: '\f0dd';
+    font-family: FontAwesome;
+    color: #000;
+}

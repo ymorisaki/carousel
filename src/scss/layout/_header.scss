@@ -1,2 +1,12 @@
 @charset "UTF-8";
 
+.header {
+  color: #fff;
+  background-color: rgb(197, 76, 76);
+
+  &__inner {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+  }
+}

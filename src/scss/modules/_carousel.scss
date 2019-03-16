@@ -1,0 +1,174 @@
+@charset 'UTF-8';
+
+// JS無効時のスタイル
+[data-script-enabled="false"] {
+    .carousel {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 48%;
+
+            &:nth-child(odd) {
+                margin-right: 4%;
+            }
+        }
+    }
+}
+
+.carousel {
+    position: relative;
+    margin-bottom: 50px;
+
+    &__slide-wrap {
+        overflow: hidden;
+    }
+
+    &__slide-inner {
+        position: relative;
+        top: 0;
+        left: 0;
+        transition-property: left;
+    }
+
+    &__wrap {
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    &__item {
+        transition-duration: 0s;
+    }
+
+    &__next,
+    &__prev {
+        position: absolute;
+        top: 50%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #000;
+        cursor: pointer;
+        transform: translateY(-50%);
+        z-index: 1;
+
+        > span {
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+        }
+    }
+
+    &__prev {
+        left: 0;
+
+        > span {
+            left: 55%;
+            transform: translate(-50%, -50%) rotate(-135deg);
+        }
+    }
+
+    &__next {
+        right: 0;
+
+        > span {
+            left: 45%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+    &__player-wrap {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__indicator-wrap {
+        display: flex;
+
+        > li {
+            list-style: none;
+            display: flex;
+            align-items: center;
+
+            &:not( :last-child) {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__indicator {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        background-color: #777;
+        border-radius: 50%;
+
+        &.-is-active {
+            background-color: #000; 
+        }
+    }
+    .indicator-index {
+        font-size: 0;
+        color: transparent;
+    }
+
+    &__play {
+        position: relative;
+        display: block;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 11px;
+            height: 11px;
+            margin-left: 20px;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid #333;
+            border-left: 8px solid transparent; 
+            transform-origin: center;
+            transform: translate(-50%, -50%) rotate(90deg);
+            content: '';
+        }
+
+        > span {
+            font-size: 0;
+            color: transparent;
+        }
+    }
+
+    &__pause {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 11px;
+            height: 14px;
+            margin-left: 18px;
+            border-left: 3px solid #333;
+            border-right: 3px solid #333;
+            transform: translate(-50%, -50%);
+            content: '';
+        }
+
+        > span {
+            font-size: 0;
+            color: transparent;
+        }
+    }
+}

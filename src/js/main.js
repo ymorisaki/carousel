@@ -1,7 +1,7 @@
 import '@babel/polyfill';
 import '../scss/main.scss';
-import {
-  hello
-} from './sub';
+import {initFunction} from './init';
+import {setCarousel} from './carousel';
 
-hello();
+initFunction();
+setCarousel();

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.container {
+  &__inner {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+  }
+}
+
+
+.carousel {
+    &__item {
+        width: 100%;
+    }
+
+}

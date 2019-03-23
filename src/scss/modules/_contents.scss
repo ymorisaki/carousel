@@ -8,10 +8,13 @@
   }
 }
 
-
 .carousel {
     &__item {
         width: 100%;
     }
+}
 
+.character {
+  display: flex;
+  flex-direction: column-reverse;
 }

@@ -16,18 +16,18 @@ export function setCarousel() {
       slideWrap: 'carousel__slide-wrap',
       slideInner: 'carousel__slide-inner',
       item: 'carousel__item',
-      next: 'carousel__next',
-      prev: 'carousel__prev',
-      playerWrap: 'carousel__player-wrap',
-      indicatorWrap: 'carousel__indicator-wrap',
-      indicator: 'carousel__indicator',
-      play: 'carousel__play',
-      pause: 'carousel__pause',
-      autoPlayHook: 'carousel__play-hook',
+      nextClass: 'carousel__next',
+      prevClass: 'carousel__prev',
+      playerWrapClass: 'carousel__player-wrap',
+      indicatorWrapClass: 'carousel__indicator-wrap',
+      indicatorClass: 'carousel__indicator',
+      playClass: 'carousel__play',
+      pauseClass: 'carousel__pause',
+      autoPlayHookClass: 'carousel__play-hook',
       animationType: 'slide',
       easing: 'ease',
       autoPlay: false,
-      onStopPla: false,
+      onStopPlay: false,
       swipe: true,
       dots: true,
       spColumn: null,
@@ -53,6 +53,7 @@ export function setCarousel() {
        * @constructor
        */
       const Carousel = function () {
+        // DOMオブジェクト
         this.root = root;
         this.slideWrap = root.querySelector('.' + o.slideWrap);
         this.slideInner = root.querySelector('.' + o.slideInner);
@@ -62,21 +63,27 @@ export function setCarousel() {
         this.itemFocus = this.item.forEach(function (el) {
           el.querySelectorAll(FOCUSABLE);
         });
+
+        // DOMの生成
         this.nextButton = document.createElement('button');
         this.prevButton = document.createElement('button');
         this.playerWrap = document.createElement('div');
         this.indicatorWrap = document.createElement('ul');
         this.playButton = document.createElement('button');
         this.pauseButton = document.createElement('button');
-        this.next = o.next;
-        this.prev = o.prev;
-        this.play = o.play;
-        this.pause = o.pause;
-        this.autoPlayHook = o.autoPlayHook;
-        this.indicatorWrapClass = o.indicatorWrap;
-        this.playerWrapClass = o.playerWrap;
+
+        // class名
+        this.nextClass = o.nextClass;
+        this.prevClass = o.prevClass;
+        this.playClass = o.playClass;
+        this.pauseClass = o.pauseClass;
+        this.autoPlayHookClass = o.autoPlayHookClass;
+        this.indicatorWrapClass = o.indicatorWrapClass;
+        this.playerWrapClass = o.playerWrapClass;
         this.itemClass = o.item;
-        this.indicator = o.indicator;
+        this.indicatorClass = o.indicatorClass;
+
+        // オプションの設定
         this.dots = o.dots;
         this.column = o.column;
         this.colMargin = o.colMargin;
@@ -92,6 +99,9 @@ export function setCarousel() {
         this.animationType = o.animationType;
         this.resizeThreshold = o.resizeThreshold;
         this.duration = o.duration;
+
+        // 動的に代入されるの設定
+        this.indicator = null;
         this.cloneBeforeWrap = null;
         this.cloneAfterWrap = null;
         this.cloneBeforeItem = null;
@@ -103,6 +113,8 @@ export function setCarousel() {
         this.isSliding = false;
         this.isOnStop = null;
         this.itemWidth = null;
+
+        // カルーセルの初期配置設定
         this.nowPosition = 0;
         this.isCurrentNum = 1;
       };
@@ -136,14 +148,14 @@ export function setCarousel() {
             span.textContent = txt;
           };
 
-          addSpan(this.nextButton, [this.next], '次のスライドを表示');
-          addSpan(this.prevButton, [this.prev], '前のスライドを表示');
+          addSpan(this.nextButton, [this.nextClass], '次のスライドを表示');
+          addSpan(this.prevButton, [this.prevClass], '前のスライドを表示');
           this.playerWrap.classList.add(this.playerWrapClass);
           this.indicatorWrap.classList.add(this.indicatorWrapClass);
 
           if (this.autoPlay) {
-            addSpan(this.playButton, [this.play, this.autoPlayHook], '自動再生を開始');
-            addSpan(this.pauseButton, [this.pause, this.autoPlayHook], '自動再生を停止');
+            addSpan(this.playButton, [this.playClass, this.autoPlayHookClass], '自動再生を開始');
+            addSpan(this.pauseButton, [this.pauseClass, this.autoPlayHookClass], '自動再生を停止');
           }
         },
 
@@ -217,21 +229,19 @@ export function setCarousel() {
           this.cloneBeforeItem.forEach(function (el) {
             const focusable = el.querySelectorAll(FOCUSABLE);
 
+            el.setAttribute('aria-hidden', true);
             focusable.forEach(function (el) {
               el.setAttribute('tabindex', -1);
             });
-
-            el.setAttribute('aria-hidden', true);
           });
 
           this.cloneAfterItem.forEach(function (el) {
             const focusable = el.querySelectorAll(FOCUSABLE);
 
+            el.setAttribute('aria-hidden', true);
             focusable.forEach(function (el) {
               el.setAttribute('tabindex', -1);
             });
-
-            el.setAttribute('aria-hidden', true);
           });
         },
 
@@ -243,12 +253,13 @@ export function setCarousel() {
           let flagment = document.createDocumentFragment();
           let i = 0;
 
+          // インジケーターの生成
           for (; i < this.itemLength; i++) {
             const li = document.createElement('li');
             const button = document.createElement('button');
             const span = document.createElement('span');
 
-            button.classList.add(this.indicator);
+            button.classList.add(this.indicatorClass);
             button.setAttribute('type', 'button');
             span.classList.add('indicator-index');
             span.setAttribute('data-current', i + 1);
@@ -258,7 +269,21 @@ export function setCarousel() {
             flagment.appendChild(li);
           }
 
+          // 各種要素の配置
+          this.root.appendChild(this.nextButton);
+          this.root.insertBefore(this.prevButton, this.root.firstChild);
+          this.root.appendChild(this.playerWrap);
           this.indicatorWrap.appendChild(flagment);
+          this.playerWrap.appendChild(this.indicatorWrap);
+
+          // class名の付与
+          this.indicator = this.indicatorWrap.querySelectorAll('.' + this.indicatorClass);
+          this.indicator[0].classList.add('-is-active');
+
+          if (this.autoPlay) {
+            this.playerWrap.appendChild(this.pauseButton);
+            this.isAutoPlay = true;
+          }
         },
 
         /**
@@ -269,6 +294,7 @@ export function setCarousel() {
         setColItems: function () {
           const self = this;
           let i = 0;
+          let colMargin;
 
           if (this.isSliding) {
             return;

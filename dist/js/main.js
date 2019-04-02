@@ -10199,7 +10199,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/cor
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    z-index: 1; }\n    .carousel__next > span, .carousel__prev > span {\n      position: absolute;\n      top: 50%;\n      width: 20px;\n      height: 20px;\n      border-top: 2px solid #fff;\n      border-right: 2px solid #fff; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev > span {\n      left: 55%;\n      transform: translate(-50%, -50%) rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next > span {\n      left: 45%;\n      transform: translate(-50%, -50%) rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%; }\n    .carousel__indicator.-is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    font-size: 0;\n    color: transparent; }\n  .carousel__play {\n    position: relative;\n    display: block; }\n    .carousel__play::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 11px;\n      margin-left: 20px;\n      border-right: 8px solid transparent;\n      border-bottom: 8px solid #333;\n      border-left: 8px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      font-size: 0;\n      color: transparent; }\n  .carousel__pause {\n    position: relative; }\n    .carousel__pause::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 14px;\n      margin-left: 18px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      font-size: 0;\n      color: transparent; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n", "",{"version":3,"sources":["/Users/yuji/Desktop/work/carousel/src/scss/main.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_ress.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_base.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_carousel.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_contents.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB;;;;EDKE;ACCF;EACE,sBAAsB;EACtB,kBAAkB;EAClB,+CAAA;EACA,8BAA8B;EAC9B,WAAA,EAAY;;AAGd;;;EAGE,4BAA4B;EAC5B,mBAAmB,EAAA;;AAGrB;;EAEE,wBAAwB;EACxB,uBAAuB,EAAA;;AAGzB;EACE,UAAU;EACV,SAAS,EAAA;;AAGX;EACE,aAAa;EACb,SAAS,EAAA;;AAGX;EACE,iBAAiB,EAAA;;AAGnB;;;;;;;;;;;;EAYE,cAAc,EAAA;;AAGhB;EACE,kBAAkB,EAAA;;AAGpB;EACE,cAAc,EAAA;;ADNhB;;ECWE,aAAa,EAAA;;AAGf;EACE,yBAAyB;EACzB,qBAAqB,EAAA;;AAGvB;EACE,6BAA6B;EAC7B,qCAAqC,EAAA;;AAGvC;;EAEE,gBAAgB,EAAA;;AAGlB;;;;EAIE,iCAAiC,EAAA;;AAGnC;;EAEE,mBAAmB,EAAA;;AAGrB;EACE,kBAAkB,EAAA;;AAGpB;EACE,sBAAsB;EACtB,WAAW,EAAA;;AAGb;;EAEE,cAAc;EACd,cAAc;EACd,kBAAkB;EAClB,wBAAwB,EAAA;;AAG1B;EACE,eAAe,EAAA;;AAGjB;EACE,WAAW,EAAA;;AAIb;EACE,gBAAgB,EAAA;;AAGlB;;;;;EAKE,eAAe,EAAA;;ADpBjB;ECwBE,eAAe,EAAA;;ADrBjB;ECyBE,WAAW,EAAA;;ADtBb;EC0BE,6BAA6B,EAAA;;ADvB/B;;EC4BE,wBAAwB,EAAA;;AAG1B;EACE,cAAc;EACd,gBAAgB,EAAA;;AAGlB;;;;;EAKE,aAAa,EAAA;;AAGf;EACE,iBAAiB,EAAA;;AAGnB;EACE,iBAAiB,EAAA;;AAGnB;;;;EAIE,eAAe;EACf,UAAU,EAAA;;AAGZ;;;;EAIE,8BAA8B,EAAA;;AAGhC;;;;EAIE,0BAA0B,EAAA;;AAG5B;;EAEE,oBAAoB,EAAA;;AAGtB;;;;EAIE,6BAA6B;EAC7B,kBAAkB;EAClB,cAAc,EAAA;;AAGhB;EACE,qBAAqB;EACrB,wBAAwB,EAAA;;AAG1B;EACE,aAAa,EAAA;;AAGf;EACE,mBAAmB,EAAA;;AAGrB;EACE,SAAS;EACT,cAAc;EACd,cAAc;EACd,eAAe;EACf,mBAAmB,EAAA;;AAGrB;EACE,0BAA0B;EAC1B,aAAa,EAAA;;ADtCf;EC0CE,6BAA6B;EAC7B,oBAAoB,EAAA;;AAItB;EACE,kBAAkB,EAAA;;AAGpB;EACE,wBAAwB,EAAA;;AAG1B;EACE,gBAAgB,EAAA;;AAGlB;;;;EAIE,qBAAqB,EAAA;;AAIvB;ED/CE;ICiDE,gBAAgB,EAAA;ED/ClB;ICmDE,6BAA6B;IAC7B,8BAA8B,EAAA,EAC/B;;ADjDH;ECqDE,gBAAgB,EAAA;;ADlDlB;ECsDE,eAAe,EAAA;;ADnDjB;ECuDE,eAAe,EAAA;;AAKjB;EACE,yBAAyB;EACzB,WAAW;EACX,iBAAiB,EAAA;;AAGnB;EACE,yBAAyB;EACzB,WAAW;EACX,iBAAiB,EAAA;;ACrSnB;EACI,eAAe;EACf,oBAAoB,EAAA;;AAGxB;EACI,YAAY;EACZ,iBAAiB;EACjB,yBAAyB,EAAA;EAH7B;IAMQ,YAAY;IACZ,sBAAsB;IACtB,sBAAsB;IACtB,aAAa,EAAA;EATrB;IAaQ,eAAe,EAAA;EAbvB;IAiBQ,mBAAmB,EAAA;;AAI3B;EACI,iBAAiB,EAAA;;AAGrB;EACI,gBAAgB;EAChB,wBAAwB;EACxB,eAAe;EACf,WAAW;EACX,YAAY;EACZ,gBAAgB;EAChB,kBAAkB,EAAA;;AAEtB;EACI,gBAAgB;EAChB,wBAAwB;EACxB,WAAW,EAAA;;AAEf;EACI,gBAAgB;EAChB,wBAAwB;EACxB,WAAW,EAAA;;AFsOf;EGjRQ,aAAa;EACb,eAAe,EAAA;EHmRrB;IGhRU,aAAa;IACb,eAAe,EAAA;EHkRzB;IG9QU,UAAU,EAAA;IHgRlB;MG7QY,gBAAgB,EAAA;;AAMhC;EACI,kBAAkB;EAClB,mBAAmB,EAAA;EAEnB;IACI,gBAAgB,EAAA;EAGpB;IACI,kBAAkB;IAClB,MAAM;IACN,OAAO;IACP,yBAAyB,EAAA;EAG7B;IACI,WAAW;IACX,MAAM;IACN,OAAO,EAAA;EAGX;IACI,uBAAuB,EAAA;EAG3B;IAEI,kBAAkB;IAClB,QAAQ;IACR,WAAW;IACX,YAAY;IACZ,kBAAkB;IAClB,sBAAsB;IACtB,eAAe;IACf,2BAA2B;IAC3B,UAAU,EAAA;IAVb;MAaO,kBAAkB;MAClB,QAAQ;MACR,WAAW;MACX,YAAY;MACZ,0BAA0B;MAC1B,4BAA4B,EAAA;EAIpC;IACI,OAAO,EAAA;IADV;MAIO,SAAS;MACT,gDAAgD,EAAA;EAIxD;IACI,QAAQ,EAAA;IADX;MAIO,SAAS;MACT,8CAA8C,EAAA;EAItD;IACI,kBAAkB;IAClB,OAAO;IACP,QAAQ;IACR,aAAa;IACb,aAAa;IACb,uBAAuB,EAAA;EAG3B;IACI,aAAa,EAAA;IADhB;MAIO,gBAAgB;MAChB,aAAa;MACb,mBAAmB,EAAA;MAN1B;QASW,kBAAkB,EAAA;EAK9B;IACI,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,sBAAsB;IACtB,kBAAkB,EAAA;IALrB;MAQO,sBAAsB,EAAA;EAhGlC;IAoGQ,YAAY;IACZ,kBAAkB,EAAA;EAGtB;IACI,kBAAkB;IAClB,cAAc,EAAA;IAFjB;MAKO,kBAAkB;MAClB,QAAQ;MACR,SAAS;MACT,WAAW;MACX,YAAY;MACZ,iBAAiB;MACjB,mCAAmC;MACnC,6BAA6B;MAC7B,kCAAkC;MAClC,wBAAwB;MACxB,8CAA8C;MAC9C,WAAW,EAAA;IAhBlB;MAoBO,YAAY;MACZ,kBAAkB,EAAA;EAI1B;IACI,kBAAkB,EAAA;IADrB;MAIO,kBAAkB;MAClB,QAAQ;MACR,SAAS;MACT,WAAW;MACX,YAAY;MACZ,iBAAiB;MACjB,2BAA2B;MAC3B,4BAA4B;MAC5B,gCAAgC;MAChC,WAAW,EAAA;IAblB;MAiBO,YAAY;MACZ,kBAAkB,EAAA;;ACvK5B;EACE,iBAAiB;EACjB,YAAY;EACZ,aAAa,EAAA","file":"main.scss","sourcesContent":["@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    z-index: 1; }\n    .carousel__next > span, .carousel__prev > span {\n      position: absolute;\n      top: 50%;\n      width: 20px;\n      height: 20px;\n      border-top: 2px solid #fff;\n      border-right: 2px solid #fff; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev > span {\n      left: 55%;\n      transform: translate(-50%, -50%) rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next > span {\n      left: 45%;\n      transform: translate(-50%, -50%) rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%; }\n    .carousel__indicator.-is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    font-size: 0;\n    color: transparent; }\n  .carousel__play {\n    position: relative;\n    display: block; }\n    .carousel__play::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 11px;\n      margin-left: 20px;\n      border-right: 8px solid transparent;\n      border-bottom: 8px solid #333;\n      border-left: 8px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      font-size: 0;\n      color: transparent; }\n  .carousel__pause {\n    position: relative; }\n    .carousel__pause::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 14px;\n      margin-left: 18px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      font-size: 0;\n      color: transparent; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n","/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\n\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */\n}\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit;\n}\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n}\n\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\nhr {\n  overflow: visible;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\n\nsummary {\n  display: list-item;\n}\n\nsmall {\n  font-size: 80%;\n}\n\n[hidden],\ntemplate {\n  display: none;\n}\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none;\n}\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\n\na:active,\na:hover {\n  outline-width: 0;\n}\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n}\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\ndfn {\n  font-style: italic;\n}\n\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n\ninput {\n  border-radius: 0;\n}\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n[disabled] {\n  cursor: default;\n}\n\n[type=\"number\"] {\n  width: auto;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n}\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n}\n\noptgroup {\n  font-weight: bold;\n}\n\nbutton {\n  overflow: visible;\n}\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0;\n}\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText;\n}\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\n\nbutton,\nselect {\n  text-transform: none;\n}\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit;\n}\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none;\n}\n\nselect::-ms-expand {\n  display: none;\n}\n\nselect::-ms-value {\n  color: currentColor;\n}\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal;\n}\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px;\n}\n\n\nimg {\n  border-style: none;\n}\n\nprogress {\n  vertical-align: baseline;\n}\n\nsvg:not(:root) {\n  overflow: hidden;\n}\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit;\n  }\n\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important;\n  }\n}\n\n[aria-busy=\"true\"] {\n  cursor: progress;\n}\n\n[aria-controls] {\n  cursor: pointer;\n}\n\n[aria-disabled] {\n  cursor: default;\n}\n\n\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}","@charset \"UTF-8\";\nbody {\n    font-size: 16px;\n    font-family: Verdana;\n}\n\ntable {\n    width: 540px;\n    margin: 20px auto;\n    border-collapse: collapse;\n\n    th, td {\n        width: 180px;\n        box-sizing: border-box;\n        border: 1px solid #555;\n        padding: 20px;\n    }\n\n    th {\n        cursor: pointer;\n    }\n\n    tbody tr:nth-child(odd) {\n        background: #f8f8f8;\n    }\n}\n\n.score {\n    text-align: right;\n}\n\nth:after {\n    content: '\\f0dc';\n    font-family: FontAwesome;\n    font-size: 12px;\n    color: #ccc;\n    float: right;\n    padding-top: 4px;\n    font-weight: nomal;\n}\nth.asc:after {\n    content: '\\f0de';\n    font-family: FontAwesome;\n    color: #000;\n}\nth.desc:after {\n    content: '\\f0dd';\n    font-family: FontAwesome;\n    color: #000;\n}\n","@charset 'UTF-8';\n\n// JS無効時のスタイル\n[data-script-enabled=\"false\"] {\n    .carousel {\n        display: flex;\n        flex-wrap: wrap;\n\n        &__inner {\n            display: flex;\n            flex-wrap: wrap;\n        }\n\n        &__item {\n            width: 48%;\n\n            &:nth-child(odd) {\n                margin-right: 4%;\n            }\n        }\n    }\n}\n\n.carousel {\n    position: relative;\n    margin-bottom: 50px;\n\n    &__slide-wrap {\n        overflow: hidden;\n    }\n\n    &__slide-inner {\n        position: relative;\n        top: 0;\n        left: 0;\n        transition-property: left;\n    }\n\n    &__wrap {\n        width: 100%;\n        top: 0;\n        left: 0;\n    }\n\n    &__item {\n        transition-duration: 0s;\n    }\n\n    &__next,\n    &__prev {\n        position: absolute;\n        top: 50%;\n        width: 50px;\n        height: 50px;\n        border-radius: 50%;\n        background-color: #000;\n        cursor: pointer;\n        transform: translateY(-50%);\n        z-index: 1;\n\n        > span {\n            position: absolute;\n            top: 50%;\n            width: 20px;\n            height: 20px;\n            border-top: 2px solid #fff;\n            border-right: 2px solid #fff;\n        }\n    }\n\n    &__prev {\n        left: 0;\n\n        > span {\n            left: 55%;\n            transform: translate(-50%, -50%) rotate(-135deg);\n        }\n    }\n\n    &__next {\n        right: 0;\n\n        > span {\n            left: 45%;\n            transform: translate(-50%, -50%) rotate(45deg);\n        }\n    }\n\n    &__player-wrap {\n        position: absolute;\n        left: 0;\n        right: 0;\n        bottom: -30px;\n        display: flex;\n        justify-content: center;\n    }\n\n    &__indicator-wrap {\n        display: flex;\n\n        > li {\n            list-style: none;\n            display: flex;\n            align-items: center;\n\n            &:not( :last-child) {\n                margin-right: 10px;\n            }\n        }\n    }\n\n    &__indicator {\n        position: relative;\n        width: 15px;\n        height: 15px;\n        background-color: #777;\n        border-radius: 50%;\n\n        &.-is-active {\n            background-color: #000; \n        }\n    }\n    .indicator-index {\n        font-size: 0;\n        color: transparent;\n    }\n\n    &__play {\n        position: relative;\n        display: block;\n\n        &::before {\n            position: absolute;\n            top: 50%;\n            left: 50%;\n            width: 11px;\n            height: 11px;\n            margin-left: 20px;\n            border-right: 8px solid transparent;\n            border-bottom: 8px solid #333;\n            border-left: 8px solid transparent; \n            transform-origin: center;\n            transform: translate(-50%, -50%) rotate(90deg);\n            content: '';\n        }\n\n        > span {\n            font-size: 0;\n            color: transparent;\n        }\n    }\n\n    &__pause {\n        position: relative;\n\n        &::before {\n            position: absolute;\n            top: 50%;\n            left: 50%;\n            width: 11px;\n            height: 14px;\n            margin-left: 18px;\n            border-left: 3px solid #333;\n            border-right: 3px solid #333;\n            transform: translate(-50%, -50%);\n            content: '';\n        }\n\n        > span {\n            font-size: 0;\n            color: transparent;\n        }\n    }\n}","@charset \"UTF-8\";\n\n.container {\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 10px;\n  }\n}"],"sourceRoot":""}]);
+exports.push([module.i, "@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    z-index: 1; }\n    .carousel__next > span, .carousel__prev > span {\n      position: absolute;\n      top: 50%;\n      width: 20px;\n      height: 20px;\n      border-top: 2px solid #fff;\n      border-right: 2px solid #fff; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev > span {\n      left: 55%;\n      transform: translate(-50%, -50%) rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next > span {\n      left: 45%;\n      transform: translate(-50%, -50%) rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%; }\n    .carousel__indicator.-is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    font-size: 0;\n    color: transparent; }\n  .carousel__play {\n    position: relative;\n    display: block; }\n    .carousel__play::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 11px;\n      margin-left: 20px;\n      border-right: 8px solid transparent;\n      border-bottom: 8px solid #333;\n      border-left: 8px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      font-size: 0;\n      color: transparent; }\n  .carousel__pause {\n    position: relative; }\n    .carousel__pause::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 14px;\n      margin-left: 18px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      font-size: 0;\n      color: transparent; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse; }\n", "",{"version":3,"sources":["/Users/yuji/Desktop/work/carousel/src/scss/main.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_ress.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_base.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/layout/_header.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_carousel.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_contents.scss"],"names":[],"mappings":"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","file":"main.scss","sourcesContent":["@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    z-index: 1; }\n    .carousel__next > span, .carousel__prev > span {\n      position: absolute;\n      top: 50%;\n      width: 20px;\n      height: 20px;\n      border-top: 2px solid #fff;\n      border-right: 2px solid #fff; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev > span {\n      left: 55%;\n      transform: translate(-50%, -50%) rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next > span {\n      left: 45%;\n      transform: translate(-50%, -50%) rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%; }\n    .carousel__indicator.-is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    font-size: 0;\n    color: transparent; }\n  .carousel__play {\n    position: relative;\n    display: block; }\n    .carousel__play::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 11px;\n      margin-left: 20px;\n      border-right: 8px solid transparent;\n      border-bottom: 8px solid #333;\n      border-left: 8px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      font-size: 0;\n      color: transparent; }\n  .carousel__pause {\n    position: relative; }\n    .carousel__pause::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 14px;\n      margin-left: 18px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      font-size: 0;\n      color: transparent; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse; }\n","/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\n\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */\n}\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit;\n}\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n}\n\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\nhr {\n  overflow: visible;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\n\nsummary {\n  display: list-item;\n}\n\nsmall {\n  font-size: 80%;\n}\n\n[hidden],\ntemplate {\n  display: none;\n}\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none;\n}\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\n\na:active,\na:hover {\n  outline-width: 0;\n}\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n}\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\ndfn {\n  font-style: italic;\n}\n\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n\ninput {\n  border-radius: 0;\n}\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n[disabled] {\n  cursor: default;\n}\n\n[type=\"number\"] {\n  width: auto;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n}\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n}\n\noptgroup {\n  font-weight: bold;\n}\n\nbutton {\n  overflow: visible;\n}\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0;\n}\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText;\n}\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\n\nbutton,\nselect {\n  text-transform: none;\n}\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit;\n}\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none;\n}\n\nselect::-ms-expand {\n  display: none;\n}\n\nselect::-ms-value {\n  color: currentColor;\n}\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal;\n}\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px;\n}\n\n\nimg {\n  border-style: none;\n}\n\nprogress {\n  vertical-align: baseline;\n}\n\nsvg:not(:root) {\n  overflow: hidden;\n}\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit;\n  }\n\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important;\n  }\n}\n\n[aria-busy=\"true\"] {\n  cursor: progress;\n}\n\n[aria-controls] {\n  cursor: pointer;\n}\n\n[aria-disabled] {\n  cursor: default;\n}\n\n\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}","@charset \"UTF-8\";\nbody {\n    font-size: 16px;\n    font-family: Verdana;\n}\n\ntable {\n    width: 540px;\n    margin: 20px auto;\n    border-collapse: collapse;\n\n    th, td {\n        width: 180px;\n        box-sizing: border-box;\n        border: 1px solid #555;\n        padding: 20px;\n    }\n\n    th {\n        cursor: pointer;\n    }\n\n    tbody tr:nth-child(odd) {\n        background: #f8f8f8;\n    }\n}\n\n.score {\n    text-align: right;\n}\n\nth:after {\n    content: '\\f0dc';\n    font-family: FontAwesome;\n    font-size: 12px;\n    color: #ccc;\n    float: right;\n    padding-top: 4px;\n    font-weight: nomal;\n}\nth.asc:after {\n    content: '\\f0de';\n    font-family: FontAwesome;\n    color: #000;\n}\nth.desc:after {\n    content: '\\f0dd';\n    font-family: FontAwesome;\n    color: #000;\n}\n","@charset \"UTF-8\";\n\n.header {\n  color: #fff;\n  background-color: rgb(143, 205, 203);\n\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px;\n  }\n}\n","@charset 'UTF-8';\n\n// JS無効時のスタイル\n[data-script-enabled=\"false\"] {\n    .carousel {\n        display: flex;\n        flex-wrap: wrap;\n\n        &__inner {\n            display: flex;\n            flex-wrap: wrap;\n        }\n\n        &__item {\n            width: 48%;\n\n            &:nth-child(odd) {\n                margin-right: 4%;\n            }\n        }\n    }\n}\n\n.carousel {\n    position: relative;\n    margin-bottom: 50px;\n\n    &__slide-wrap {\n        overflow: hidden;\n    }\n\n    &__slide-inner {\n        position: relative;\n        top: 0;\n        left: 0;\n        transition-property: left;\n    }\n\n    &__wrap {\n        width: 100%;\n        top: 0;\n        left: 0;\n    }\n\n    &__item {\n        transition-duration: 0s;\n    }\n\n    &__next,\n    &__prev {\n        position: absolute;\n        top: 50%;\n        width: 50px;\n        height: 50px;\n        border-radius: 50%;\n        background-color: #000;\n        cursor: pointer;\n        transform: translateY(-50%);\n        z-index: 1;\n\n        > span {\n            position: absolute;\n            top: 50%;\n            width: 20px;\n            height: 20px;\n            border-top: 2px solid #fff;\n            border-right: 2px solid #fff;\n        }\n    }\n\n    &__prev {\n        left: 0;\n\n        > span {\n            left: 55%;\n            transform: translate(-50%, -50%) rotate(-135deg);\n        }\n    }\n\n    &__next {\n        right: 0;\n\n        > span {\n            left: 45%;\n            transform: translate(-50%, -50%) rotate(45deg);\n        }\n    }\n\n    &__player-wrap {\n        position: absolute;\n        left: 0;\n        right: 0;\n        bottom: -30px;\n        display: flex;\n        justify-content: center;\n    }\n\n    &__indicator-wrap {\n        display: flex;\n\n        > li {\n            list-style: none;\n            display: flex;\n            align-items: center;\n\n            &:not( :last-child) {\n                margin-right: 10px;\n            }\n        }\n    }\n\n    &__indicator {\n        position: relative;\n        width: 15px;\n        height: 15px;\n        background-color: #777;\n        border-radius: 50%;\n\n        &.-is-active {\n            background-color: #000; \n        }\n    }\n    .indicator-index {\n        font-size: 0;\n        color: transparent;\n    }\n\n    &__play {\n        position: relative;\n        display: block;\n\n        &::before {\n            position: absolute;\n            top: 50%;\n            left: 50%;\n            width: 11px;\n            height: 11px;\n            margin-left: 20px;\n            border-right: 8px solid transparent;\n            border-bottom: 8px solid #333;\n            border-left: 8px solid transparent; \n            transform-origin: center;\n            transform: translate(-50%, -50%) rotate(90deg);\n            content: '';\n        }\n\n        > span {\n            font-size: 0;\n            color: transparent;\n        }\n    }\n\n    &__pause {\n        position: relative;\n\n        &::before {\n            position: absolute;\n            top: 50%;\n            left: 50%;\n            width: 11px;\n            height: 14px;\n            margin-left: 18px;\n            border-left: 3px solid #333;\n            border-right: 3px solid #333;\n            transform: translate(-50%, -50%);\n            content: '';\n        }\n\n        > span {\n            font-size: 0;\n            color: transparent;\n        }\n    }\n}","@charset \"UTF-8\";\n\n.container {\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 10px;\n  }\n}\n\n.carousel {\n    &__item {\n        width: 100%;\n    }\n}\n\n.character {\n  display: flex;\n  flex-direction: column-reverse;\n}"],"sourceRoot":""}]);
 
 
 
@@ -11584,6 +11584,321 @@ module.exports = function (module) {
 
 /***/ }),
 
+/***/ "./src/js/carousel.js":
+/*!****************************!*\
+  !*** ./src/js/carousel.js ***!
+  \****************************/
+/*! exports provided: setCarousel */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCarousel", function() { return setCarousel; });
+function setCarousel() {
+  'use strict';
+
+  var FOCUSABLE = 'a, area, input, button, select, option, textarea, output, summary, video, audio, object, embed, iframe';
+  var TRANSITIONEND = 'transitionend';
+  initCarousel('.js-carousel', {
+    autoPlay: true // animationType: 'fade',
+
+  });
+
+  function initCarousel(rootEl, options) {
+    var rootElement = document.querySelectorAll(rootEl);
+    var o = {
+      wrap: 'carousel__wrap',
+      slideWrap: 'carousel__slide-wrap',
+      slideInner: 'carousel__slide-inner',
+      item: 'carousel__item',
+      next: 'carousel__next',
+      prev: 'carousel__prev',
+      playerWrap: 'carousel__player-wrap',
+      indicatorWrap: 'carousel__indicator-wrap',
+      indicator: 'carousel__indicator',
+      play: 'carousel__play',
+      pause: 'carousel__pause',
+      autoPlayHook: 'carousel__play-hook',
+      animationType: 'slide',
+      easing: 'ease',
+      autoPlay: false,
+      onStopPla: false,
+      swipe: true,
+      dots: true,
+      spColumn: null,
+      colMargin: null,
+      column: 1,
+      breakPoint: 767,
+      playInterval: 5000,
+      resizeThreshold: 200,
+      duration: 500
+    };
+
+    if (options) {
+      for (var key in options) {
+        o[key] = options[key];
+      }
+    }
+
+    return rootElement.forEach(function (el) {
+      var root = el;
+      /**
+       * カルーセルコンストラクタ
+       * @constructor
+       */
+
+      var Carousel = function Carousel() {
+        this.root = root;
+        this.slideWrap = root.querySelector('.' + o.slideWrap);
+        this.slideInner = root.querySelector('.' + o.slideInner);
+        this.wrap = root.querySelector('.' + o.wrap);
+        this.item = root.querySelectorAll('.' + o.item);
+        this.itemLength = this.item.length;
+        this.itemFocus = this.item.forEach(function (el) {
+          el.querySelectorAll(FOCUSABLE);
+        });
+        this.nextButton = document.createElement('button');
+        this.prevButton = document.createElement('button');
+        this.playerWrap = document.createElement('div');
+        this.indicatorWrap = document.createElement('ul');
+        this.playButton = document.createElement('button');
+        this.pauseButton = document.createElement('button');
+        this.next = o.next;
+        this.prev = o.prev;
+        this.play = o.play;
+        this.pause = o.pause;
+        this.autoPlayHook = o.autoPlayHook;
+        this.indicatorWrapClass = o.indicatorWrap;
+        this.playerWrapClass = o.playerWrap;
+        this.itemClass = o.item;
+        this.indicator = o.indicator;
+        this.dots = o.dots;
+        this.column = o.column;
+        this.colMargin = o.colMargin;
+        this.defalutMargin = o.colMargin;
+        this.defalutColumn = o.column;
+        this.spColumn = o.spColumn;
+        this.playInterval = o.playInterval;
+        this.autoPlay = o.autoPlay;
+        this.onStopPlay = o.onStopPlay;
+        this.eaing = o.eaing;
+        this.swipe = o.swipe;
+        this.breakPoint = o.breakPoint;
+        this.animationType = o.animationType;
+        this.resizeThreshold = o.resizeThreshold;
+        this.duration = o.duration;
+        this.cloneBeforeWrap = null;
+        this.cloneAfterWrap = null;
+        this.cloneBeforeItem = null;
+        this.cloneAfterItem = null;
+        this.autoPlayId = null;
+        this.resizeBeforeWidth = null;
+        this.resizeAfterWidth = null;
+        this.isAutoPlay = false;
+        this.isSliding = false;
+        this.isOnStop = null;
+        this.itemWidth = null;
+        this.nowPosition = 0;
+        this.isCurrentNum = 1;
+      };
+
+      Carousel.prototype = {
+        /**
+         * 定義したカルーセル機能の呼び出し管理用関数
+         * @returns {void}
+         */
+        init: function init() {
+          this.addElementClasses();
+          this.setInitItems();
+          this.cloneSlider();
+          this.setController();
+        },
+
+        /**
+         * DOM要素の追加生成と属性の付与
+         * @returns {void}
+         */
+        addElementClasses: function addElementClasses() {
+          var addSpan = function addSpan(el, cl, txt) {
+            var span = document.createElement('span');
+            var i = 0;
+
+            for (; i < cl.length; i++) {
+              el.classList.add(cl[i]);
+            }
+
+            el.setAttribute('type', 'button');
+            el.appendChild(span);
+            span.textContent = txt;
+          };
+
+          addSpan(this.nextButton, [this.next], '次のスライドを表示');
+          addSpan(this.prevButton, [this.prev], '前のスライドを表示');
+          this.playerWrap.classList.add(this.playerWrapClass);
+          this.indicatorWrap.classList.add(this.indicatorWrapClass);
+
+          if (this.autoPlay) {
+            addSpan(this.playButton, [this.play, this.autoPlayHook], '自動再生を開始');
+            addSpan(this.pauseButton, [this.pause, this.autoPlayHook], '自動再生を停止');
+          }
+        },
+
+        /**
+         * カルーセルアイテムの初期配置
+         * @returns {void}
+         */
+        setInitItems: function setInitItems() {
+          var self = this;
+          this.wrap.style.position = 'absolute';
+          this.wrap.style.top = 0;
+          this.item.forEach(function (el) {
+            el.style.position = 'absolute';
+          });
+
+          if (this.itemLength === 1) {
+            this.column = 1;
+          }
+
+          if (this.animationType === 'slide') {
+            this.slideInner.style.transitionDuration = this.duration / 1000 + 's';
+            this.slideInner.style.transitionTimingFunction = this.eaing;
+          }
+
+          if (this.colMargin && this.column > 1) {
+            this.item.style.marginRight = this.colMargin + 'px';
+          }
+
+          if (this.animationType === 'fade') {
+            this.item.forEach(function (el, num) {
+              var styles = el.style;
+              styles.top = 0;
+              styles.left = 0;
+              styles.opacity = 0;
+              styles.transitionDuration = '0s';
+              styles.transitionTimingFunction = self.eaing;
+
+              if (num === 0) {
+                el.style.opacity = 1;
+              }
+            });
+            setTimeout(function () {
+              self.item.forEach(function (el) {
+                el.style.transitionDuration = self.duration / 1000 + 's';
+              });
+            }, 20);
+          }
+        },
+
+        /**
+         * 無限ループ用のカルーセルの複製
+         * @returns {void}
+         */
+        cloneSlider: function cloneSlider() {
+          var cloneElement1 = this.wrap.cloneNode(true);
+          var cloneElement2 = this.wrap.cloneNode(true);
+          cloneElement1.classList.add('is-clone', 'is-clone-after');
+          cloneElement2.classList.add('is-clone', 'is-clone-before');
+          this.slideInner.appendChild(cloneElement1);
+          this.slideInner.insertBefore(cloneElement2, this.slideInner.firstChild);
+          this.cloneBeforeWrap = this.slideInner.querySelector('.is-clone-before');
+          this.cloneAfterWrap = this.slideInner.querySelector('.is-clone-after');
+          this.cloneBeforeItem = this.cloneBeforeWrap.querySelectorAll('.' + this.itemClass);
+          this.cloneAfterItem = this.cloneAfterWrap.querySelectorAll('.' + this.itemClass);
+          this.cloneBeforeItem.forEach(function (el) {
+            var focusable = el.querySelectorAll(FOCUSABLE);
+            focusable.forEach(function (el) {
+              el.setAttribute('tabindex', -1);
+            });
+            el.setAttribute('aria-hidden', true);
+          });
+          this.cloneAfterItem.forEach(function (el) {
+            var focusable = el.querySelectorAll(FOCUSABLE);
+            focusable.forEach(function (el) {
+              el.setAttribute('tabindex', -1);
+            });
+            el.setAttribute('aria-hidden', true);
+          });
+        },
+
+        /**
+         * スライド操作に必要な要素の配置
+         * @returns {void}
+         */
+        setController: function setController() {
+          var flagment = document.createDocumentFragment();
+          var i = 0;
+
+          for (; i < this.itemLength; i++) {
+            var li = document.createElement('li');
+            var button = document.createElement('button');
+            var span = document.createElement('span');
+            button.classList.add(this.indicator);
+            button.setAttribute('type', 'button');
+            span.classList.add('indicator-index');
+            span.setAttribute('data-current', i + 1);
+            span.textContent = i + 1 + '番目のスライドを表示';
+            button.appendChild(span);
+            li.appendChild(button);
+            flagment.appendChild(li);
+          }
+
+          this.indicatorWrap.appendChild(flagment);
+        },
+
+        /**
+         * カルーセルアイテムのカラム割と横軸配置
+         * 画面リサイズの度に処理を行う
+         * @returns {void}
+         */
+        setColItems: function setColItems() {
+          var self = this;
+          var i = 0;
+
+          if (this.isSliding) {
+            return;
+          }
+
+          if (this.animationType === 'slide') {
+            if (this.column === 1) {
+              this.item.forEach(function (el) {
+                el.style.width = '100%';
+              });
+            }
+          }
+        }
+      };
+      var carousel = new Carousel();
+      carousel.init();
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./src/js/init.js":
+/*!************************!*\
+  !*** ./src/js/init.js ***!
+  \************************/
+/*! exports provided: initFunction */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initFunction", function() { return initFunction; });
+function initFunction() {
+  'use strict';
+
+  var docElement = document.documentElement;
+
+  if (docElement && 1 === docElement.nodeType) {
+    docElement.setAttribute('data-script-enabled', 'true');
+  }
+
+  docElement = null;
+}
+
+/***/ }),
+
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
@@ -11597,27 +11912,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_polyfill__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scss/main.scss */ "./src/scss/main.scss");
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _sub__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sub */ "./src/js/sub.js");
+/* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./init */ "./src/js/init.js");
+/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousel */ "./src/js/carousel.js");
 
 
 
-Object(_sub__WEBPACK_IMPORTED_MODULE_2__["hello"])();
 
-/***/ }),
-
-/***/ "./src/js/sub.js":
-/*!***********************!*\
-  !*** ./src/js/sub.js ***!
-  \***********************/
-/*! exports provided: hello */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hello", function() { return hello; });
-function hello() {
-  console.log('hello world');
-}
+Object(_init__WEBPACK_IMPORTED_MODULE_2__["initFunction"])();
+Object(_carousel__WEBPACK_IMPORTED_MODULE_3__["setCarousel"])();
 
 /***/ }),
 

@@ -7,7 +7,13 @@ export function setCarousel() {
 
   initCarousel('.js-carousel', {
     autoPlay: true,
-    animationType: 'fade',
+    column: 2,
+    // spColumn: 1,
+    colMargin: 20,
+    // easing: 'ease-in-out',
+    playInterval: 5000,
+    // duration: 1000,
+    // animationType: 'fade',
   });
 
   function initCarousel (rootEl, options) {
@@ -102,7 +108,7 @@ export function setCarousel() {
         this.playInterval = o.playInterval;
         this.autoPlay = o.autoPlay;
         this.onStopPlay = o.onStopPlay;
-        this.eaing = o.eaing;
+        this.easing = o.easing;
         this.swipe = o.swipe;
         this.breakPoint = o.breakPoint;
         this.animationType = o.animationType;
@@ -134,7 +140,9 @@ export function setCarousel() {
          * @returns {void}
          */
         init: function () {
+          this.addElementClasses();
           this.setInitItems();
+          this.cloneSlider();
           this.setController();
           this.changeTabIndex();
           this.clickHandler();
@@ -153,6 +161,8 @@ export function setCarousel() {
           if (this.animationType === 'fade') {
               this.column = 1;
           }
+
+          this.trigger(window, 'resize');
         },
 
         /**
@@ -203,35 +213,41 @@ export function setCarousel() {
 
           if (this.animationType === 'slide') {
             this.slideInner.style.transitionDuration = (this.duration / 1000) + 's';
-            this.slideInner.style.transitionTimingFunction = this.eaing;
+            this.slideInner.style.transitionTimingFunction = this.easing;
           }
 
           if (this.colMargin && this.column > 1) {
             this.item.forEach(function (el) {
-              el.style.marginRight = this.colMargin + 'px';
+              el.style.marginRight = self.colMargin + 'px';
             });
           }
 
           if (this.animationType === 'fade') {
-            this.item.forEach(function (el, num) {
-              let styles = el.style;
+            let self = this;
+            let promiseFunc = function () {
+              return new Promise(function (resolve) {
+                self.item.forEach(function (el, num) {
+                  let styles = el.style;
 
-              styles.top = 0;
-              styles.left = 0;
-              styles.opacity = 0;
-              styles.transitionDuration = '0s';
-              styles.transitionTimingFunction = self.eaing;
+                  styles.top = 0;
+                  styles.left = 0;
+                  styles.opacity = 0;
+                  styles.transitionDuration = '0s';
+                  styles.transitionTimingFunction = self.easing;
 
-              if (num === 0) {
-                el.style.opacity = 1;
-              }
-            });
+                  if (num === 0) {
+                    el.style.opacity = 1;
+                  }
+                });
+                resolve();
+              });
+            };
 
-            setTimeout(function () {
+            promiseFunc().then(function () {
               self.item.forEach(function (el) {
                 el.style.transitionDuration = self.duration / 1000 + 's';
               });
-            }, 20);
+            });
           }
         },
 
@@ -240,6 +256,10 @@ export function setCarousel() {
          * @returns {void}
          */
         cloneSlider: function () {
+          if (this.animationType === 'fade') {
+            return;
+          }
+
           const cloneElement1 = this.wrap.cloneNode(true);
           const cloneElement2 = this.wrap.cloneNode(true);
 
@@ -323,7 +343,6 @@ export function setCarousel() {
           let i = 0;
           let maxLength = this.itemLength;
           let styles = null;
-          let elWidth = null;
 
           if (this.isSliding) {
             return;
@@ -345,7 +364,7 @@ export function setCarousel() {
               });
 
               styles = window.getComputedStyle(this.item[0]);
-              elWidth = this.item[0].getBoundingClientRect().width;
+              this.itemWidth = this.item[0].getBoundingClientRect().width;
               this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
             } else {
               this.item.forEach(function (el) {
@@ -361,34 +380,41 @@ export function setCarousel() {
               });
 
               styles = window.getComputedStyle(this.item[0]);
-              elWidth = this.item[0].getBoundingClientRect().width;
+              this.itemWidth = this.item[0].getBoundingClientRect().width;
               this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
-              this.itemWidth = elWidth + this.colMargin;
+              this.itemWidth = this.itemWidth + this.colMargin;
             }
           }
 
           // クローンしたパネルの配置
           for (; i < maxLength; i++) {
             this.item[i].style.left = (this.itemWidth * i) + 'px';
-            this.cloneBeforeItem[i].style.left = (this.itemWidth * i) + 'px';
-            this.cloneAfterItem[i].style.left = (this.itemWidth * i) + 'px';
+
+            if (this.animationType === 'slide') {
+              this.cloneBeforeItem[i].style.left = (this.itemWidth * i) + 'px';
+              this.cloneAfterItem[i].style.left = (this.itemWidth * i) + 'px';
+            }
           }
 
-          // クローンしたパネルのラッパーを左右に配置
-          this.cloneBeforeWrap.style.left = '-' + (this.itemWidth * this.itemLength) + 'px';
-          this.cloneAfterWrap.style.left = (this.itemWidth * this.itemLength) + 'px';
+          if (this.animationType === 'slide') {
+            // クローンしたパネルのラッパーを左右に配置
+            this.cloneBeforeWrap.style.left = '-' + (this.itemWidth * this.itemLength) + 'px';
+            this.cloneAfterWrap.style.left = (this.itemWidth * this.itemLength) + 'px';
+          }
 
           // スライド全体の再配置（動作未確認注意）
           if (this.isCurrentNum !== 1) {
+            let self = this;
             let promiseFunc = function () {
               return new Promise(function (resolve) {
-                this.slideInner.style.left = '-' + (this.itemWidth * (this.isCurrentNum - 1)) + 'px';
-                this.slideInner.style.transitionDuration = '0s';
-                styles = window.getComputedStyle(this.slideInner);
+                self.slideInner.style.left = '-' + (self.itemWidth * (self.isCurrentNum - 1)) + 'px';
+                self.slideInner.style.transitionDuration = '0s';
+                styles = window.getComputedStyle(self.slideInner);
                 resolve();
               });
             };
             promiseFunc().then(function () {
+              self.slideInner.style.transitionDuration = (self.duration / 1000) + 's';
               self.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
             });
           }
@@ -412,11 +438,11 @@ export function setCarousel() {
 
           if (this.animationType === 'slide') {
             styles = window.getComputedStyle(this.item[0]);
-            elWidth = el.getBoundingClientRect().width;
+            this.itemWidth = this.item[0].getBoundingClientRect().width;
             this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
-            this.itemWidth = elWidth + this.colMargin;
+            elWidth = this.itemWidth + this.colMargin;
 
-            this.slideInner.style.left = '-' + (this.itemWidth + this.nowPosition) + 'px';
+            this.slideInner.style.left = '-' + (elWidth + this.nowPosition) + 'px';
 
             // 無限ループ時にインジケーターを最初に戻す
             if (this.isCurrentNum === this.itemLength + 1) {
@@ -428,11 +454,13 @@ export function setCarousel() {
 
           if (this.animationType === 'fade') {
             this.item[this.isCurrentNum - 2].style.opacity = 0;
-            this.item[this.isCurrentNum - 1].style.opacity = 1;
 
-            // 無限ループ時
+            if (this.isCurrentNum <= this.itemLength) {
+              this.item[this.isCurrentNum - 1].style.opacity = 1;
+            }
+
             if (this.isCurrentNum === this.itemLength + 1) {
-              this.item[this.isCurrentNum - 1].style.opacity = 0;
+              this.item[this.isCurrentNum - 2].style.opacity = 0;
               this.item[0].style.opacity = 1;
               this.indicatorUpdate(0);
               this.isCurrentNum = 1;
@@ -532,18 +560,18 @@ export function setCarousel() {
           let promiseFunc = function () {
             return new Promise(function (resolve) {
 
-            this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
-            this.itemWidth = elWidth + this.colMargin;
+            self.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+            self.itemWidth = elWidth + self.colMargin;
 
-            targetPosition = this.itemWidth * (this.itemLength - (this.column - (this.column - 1)));
+            targetPosition = self.itemWidth * (self.itemLength - (self.column - (self.column - 1)));
 
-            this.slideInner.style.transitionDuration = '0s';
-            this.slideInner.style.left = '-' + targetPosition + 'px';
+            self.slideInner.style.transitionDuration = '0s';
+            self.slideInner.style.left = '-' + targetPosition + 'px';
 
             // 現在のカレントとleft位置を初期化
-            styles = window.getComputedStyle(this.slideInner);
-            this.isCurrentNum = this.itemLength;
-            this.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
+            styles = window.getComputedStyle(self.slideInner);
+            self.isCurrentNum = self.itemLength;
+            self.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
             resolve();
             });
           };
@@ -633,7 +661,7 @@ export function setCarousel() {
           case 2:
               // 最初のアイテムにカレント時
               if (this.isCurrentNum === 0) {
-                  setTabIndex(this.isCurrentNum - 1, 0);
+                  setTabIndex(this.itemLength - 1, 0);
                   setCloneTabIndex(0, 0);
 
                   return;
@@ -662,7 +690,7 @@ export function setCarousel() {
           case 3:
               // 最初のアイテムにカレント時
               if (this.isCurrentNum === 0) {
-                  setTabIndex(this.isCurrentNum - 1, 0);
+                  setTabIndex(this.itemLength - 1, 0);
                   setCloneTabIndex(0, 0);
                   setCloneTabIndex(1, 0);
 
@@ -723,8 +751,10 @@ export function setCarousel() {
 
           this.prevButton.addEventListener('click', function () {
             self.prevSlide();
-            self.focusableItem.setAttribute('tabindex', -1);
-            self.changeTabindex();
+            self.focusableItem.forEach(function (el) {
+              el.setAttribute('tabindex', -1);
+            });
+            self.changeTabIndex();
             if (self.autoPlay && self.isAutoPlay) {
                 self.resetAutoPlayTime();
             }
@@ -1068,5 +1098,4 @@ export function setCarousel() {
       carousel.init();
     });
   }
-
 }

@@ -8,10 +8,11 @@ export function setCarousel() {
   initCarousel('.js-carousel', {
     autoPlay: true,
     column: 2,
-    // spColumn: 1,
+    onStopPlay: true,
+    spColumn: 1,
     colMargin: 20,
-    // easing: 'ease-in-out',
-    playInterval: 5000,
+    easing: 'ease-in-out',
+    // playInterval: 300,
     // duration: 1000,
     // animationType: 'fade',
   });
@@ -365,7 +366,8 @@ export function setCarousel() {
 
               styles = window.getComputedStyle(this.item[0]);
               this.itemWidth = this.item[0].getBoundingClientRect().width;
-              this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+              // this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+              // this.colMargin = 0;
             } else {
               this.item.forEach(function (el) {
                 el.style.width = 'calc(' + (100 / self.column) + '% - ' + (self.colMargin / self.column * (self.column - 1)) + 'px)';
@@ -438,11 +440,16 @@ export function setCarousel() {
 
           if (this.animationType === 'slide') {
             styles = window.getComputedStyle(this.item[0]);
-            this.itemWidth = this.item[0].getBoundingClientRect().width;
-            this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
-            elWidth = this.itemWidth + this.colMargin;
+            elWidth = this.item[0].getBoundingClientRect().width;
+            if (this.column === 1) {
+              this.itemWidth = elWidth;
+              console.log(this.column);
+            } else {
+              this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+              this.itemWidth = elWidth + this.colMargin;
+            }
 
-            this.slideInner.style.left = '-' + (elWidth + this.nowPosition) + 'px';
+            this.slideInner.style.left = '-' + (this.itemWidth + this.nowPosition) + 'px';
 
             // 無限ループ時にインジケーターを最初に戻す
             if (this.isCurrentNum === this.itemLength + 1) {
@@ -842,9 +849,9 @@ export function setCarousel() {
             }, false);
 
             el.addEventListener('mouseleave', function () {
-              if (self.autoPlay && self.onStopPlay && self.inOnStop) {
+              if (self.autoPlay && self.onStopPlay && self.isOnStop) {
                 self.startAutoPlay();
-                self.inOnStop = false;
+                self.isOnStop = false;
               }
             }, false);
           });
@@ -858,7 +865,7 @@ export function setCarousel() {
           let self = this;
           let tabEventCansel = function (e) {
             if (self.isSliding && self.animationType === 'slide' && e.key === 'Tab') {
-              e.prevetDefault();
+              e.preventDefault();
             }
           };
 

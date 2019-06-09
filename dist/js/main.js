@@ -94,57 +94,15 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
-
-__webpack_require__(/*! ./noConflict */ "./node_modules/@babel/polyfill/lib/noConflict.js");
-
-function _global() {
-  var data = _interopRequireDefault(__webpack_require__(/*! core-js/library/fn/global */ "./node_modules/core-js/library/fn/global.js"));
-
-  _global = function _global() {
-    return data;
-  };
-
-  return data;
-}
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
-
-if (_global()["default"]._babelPolyfill && typeof console !== "undefined" && console.warn) {
-  console.warn("@babel/polyfill is loaded more than once on this page. This is probably not desirable/intended " + "and may have consequences if different versions of the polyfills are applied sequentially. " + "If you do need to load the polyfill more than once, use @babel/polyfill/noConflict " + "instead to bypass the warning.");
-}
-
-_global()["default"]._babelPolyfill = true;
-
-/***/ }),
-
-/***/ "./node_modules/@babel/polyfill/lib/noConflict.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@babel/polyfill/lib/noConflict.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/* WEBPACK VAR INJECTION */(function(global) {
 
 __webpack_require__(/*! core-js/es6 */ "./node_modules/core-js/es6/index.js");
 
 __webpack_require__(/*! core-js/fn/array/includes */ "./node_modules/core-js/fn/array/includes.js");
 
-__webpack_require__(/*! core-js/fn/array/flat-map */ "./node_modules/core-js/fn/array/flat-map.js");
-
 __webpack_require__(/*! core-js/fn/string/pad-start */ "./node_modules/core-js/fn/string/pad-start.js");
 
 __webpack_require__(/*! core-js/fn/string/pad-end */ "./node_modules/core-js/fn/string/pad-end.js");
-
-__webpack_require__(/*! core-js/fn/string/trim-start */ "./node_modules/core-js/fn/string/trim-start.js");
-
-__webpack_require__(/*! core-js/fn/string/trim-end */ "./node_modules/core-js/fn/string/trim-end.js");
 
 __webpack_require__(/*! core-js/fn/symbol/async-iterator */ "./node_modules/core-js/fn/symbol/async-iterator.js");
 
@@ -159,6 +117,13 @@ __webpack_require__(/*! core-js/fn/promise/finally */ "./node_modules/core-js/fn
 __webpack_require__(/*! core-js/web */ "./node_modules/core-js/web/index.js");
 
 __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
+
+if (global._babelPolyfill && typeof console !== "undefined" && console.warn) {
+  console.warn("@babel/polyfill is loaded more than once on this page. This is probably not desirable/intended " + "and may have consequences if different versions of the polyfills are applied sequentially. " + "If you do need to load the polyfill more than once, use @babel/polyfill/noConflict " + "instead to bypass the warning.");
+}
+
+global._babelPolyfill = true;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -449,19 +414,6 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/cor
 
 /***/ }),
 
-/***/ "./node_modules/core-js/fn/array/flat-map.js":
-/*!***************************************************!*\
-  !*** ./node_modules/core-js/fn/array/flat-map.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es7.array.flat-map */ "./node_modules/core-js/modules/es7.array.flat-map.js");
-
-module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/modules/_core.js").Array.flatMap;
-
-/***/ }),
-
 /***/ "./node_modules/core-js/fn/array/includes.js":
 /*!***************************************************!*\
   !*** ./node_modules/core-js/fn/array/includes.js ***!
@@ -558,32 +510,6 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 
 /***/ }),
 
-/***/ "./node_modules/core-js/fn/string/trim-end.js":
-/*!****************************************************!*\
-  !*** ./node_modules/core-js/fn/string/trim-end.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es7.string.trim-right */ "./node_modules/core-js/modules/es7.string.trim-right.js");
-
-module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/modules/_core.js").String.trimRight;
-
-/***/ }),
-
-/***/ "./node_modules/core-js/fn/string/trim-start.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/fn/string/trim-start.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../../modules/es7.string.trim-left */ "./node_modules/core-js/modules/es7.string.trim-left.js");
-
-module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/core-js/modules/_core.js").String.trimLeft;
-
-/***/ }),
-
 /***/ "./node_modules/core-js/fn/symbol/async-iterator.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/fn/symbol/async-iterator.js ***!
@@ -594,420 +520,6 @@ module.exports = __webpack_require__(/*! ../../modules/_core */ "./node_modules/
 __webpack_require__(/*! ../../modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
 
 module.exports = __webpack_require__(/*! ../../modules/_wks-ext */ "./node_modules/core-js/modules/_wks-ext.js").f('asyncIterator');
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/fn/global.js":
-/*!***************************************************!*\
-  !*** ./node_modules/core-js/library/fn/global.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! ../modules/es7.global */ "./node_modules/core-js/library/modules/es7.global.js");
-
-module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/core-js/library/modules/_core.js").global;
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_a-function.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_a-function.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function (it) {
-  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
-  return it;
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_an-object.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_an-object.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(/*! ./_is-object */ "./node_modules/core-js/library/modules/_is-object.js");
-
-module.exports = function (it) {
-  if (!isObject(it)) throw TypeError(it + ' is not an object!');
-  return it;
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_core.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_core.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var core = module.exports = {
-  version: '2.6.5'
-};
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_ctx.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_ctx.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// optional / simple context binding
-var aFunction = __webpack_require__(/*! ./_a-function */ "./node_modules/core-js/library/modules/_a-function.js");
-
-module.exports = function (fn, that, length) {
-  aFunction(fn);
-  if (that === undefined) return fn;
-
-  switch (length) {
-    case 1:
-      return function (a) {
-        return fn.call(that, a);
-      };
-
-    case 2:
-      return function (a, b) {
-        return fn.call(that, a, b);
-      };
-
-    case 3:
-      return function (a, b, c) {
-        return fn.call(that, a, b, c);
-      };
-  }
-
-  return function ()
-  /* ...args */
-  {
-    return fn.apply(that, arguments);
-  };
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_descriptors.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_descriptors.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// Thank's IE8 for his funny defineProperty
-module.exports = !__webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js")(function () {
-  return Object.defineProperty({}, 'a', {
-    get: function get() {
-      return 7;
-    }
-  }).a != 7;
-});
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_dom-create.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_dom-create.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(/*! ./_is-object */ "./node_modules/core-js/library/modules/_is-object.js");
-
-var document = __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js").document; // typeof document.createElement is 'object' in old IE
-
-
-var is = isObject(document) && isObject(document.createElement);
-
-module.exports = function (it) {
-  return is ? document.createElement(it) : {};
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_export.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_export.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js");
-
-var core = __webpack_require__(/*! ./_core */ "./node_modules/core-js/library/modules/_core.js");
-
-var ctx = __webpack_require__(/*! ./_ctx */ "./node_modules/core-js/library/modules/_ctx.js");
-
-var hide = __webpack_require__(/*! ./_hide */ "./node_modules/core-js/library/modules/_hide.js");
-
-var has = __webpack_require__(/*! ./_has */ "./node_modules/core-js/library/modules/_has.js");
-
-var PROTOTYPE = 'prototype';
-
-var $export = function $export(type, name, source) {
-  var IS_FORCED = type & $export.F;
-  var IS_GLOBAL = type & $export.G;
-  var IS_STATIC = type & $export.S;
-  var IS_PROTO = type & $export.P;
-  var IS_BIND = type & $export.B;
-  var IS_WRAP = type & $export.W;
-  var exports = IS_GLOBAL ? core : core[name] || (core[name] = {});
-  var expProto = exports[PROTOTYPE];
-  var target = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE];
-  var key, own, out;
-  if (IS_GLOBAL) source = name;
-
-  for (key in source) {
-    // contains in native
-    own = !IS_FORCED && target && target[key] !== undefined;
-    if (own && has(exports, key)) continue; // export native or passed
-
-    out = own ? target[key] : source[key]; // prevent global pollution for namespaces
-
-    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key] // bind timers to global for call from export context
-    : IS_BIND && own ? ctx(out, global) // wrap global constructors for prevent change them in library
-    : IS_WRAP && target[key] == out ? function (C) {
-      var F = function F(a, b, c) {
-        if (this instanceof C) {
-          switch (arguments.length) {
-            case 0:
-              return new C();
-
-            case 1:
-              return new C(a);
-
-            case 2:
-              return new C(a, b);
-          }
-
-          return new C(a, b, c);
-        }
-
-        return C.apply(this, arguments);
-      };
-
-      F[PROTOTYPE] = C[PROTOTYPE];
-      return F; // make static versions for prototype methods
-    }(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out; // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
-
-    if (IS_PROTO) {
-      (exports.virtual || (exports.virtual = {}))[key] = out; // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
-
-      if (type & $export.R && expProto && !expProto[key]) hide(expProto, key, out);
-    }
-  }
-}; // type bitmap
-
-
-$export.F = 1; // forced
-
-$export.G = 2; // global
-
-$export.S = 4; // static
-
-$export.P = 8; // proto
-
-$export.B = 16; // bind
-
-$export.W = 32; // wrap
-
-$export.U = 64; // safe
-
-$export.R = 128; // real proto method for `library`
-
-module.exports = $export;
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_fails.js":
-/*!********************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_fails.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function (exec) {
-  try {
-    return !!exec();
-  } catch (e) {
-    return true;
-  }
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_global.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_global.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math ? window : typeof self != 'undefined' && self.Math == Math ? self // eslint-disable-next-line no-new-func
-: Function('return this')();
-if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_has.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_has.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var hasOwnProperty = {}.hasOwnProperty;
-
-module.exports = function (it, key) {
-  return hasOwnProperty.call(it, key);
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_hide.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_hide.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var dP = __webpack_require__(/*! ./_object-dp */ "./node_modules/core-js/library/modules/_object-dp.js");
-
-var createDesc = __webpack_require__(/*! ./_property-desc */ "./node_modules/core-js/library/modules/_property-desc.js");
-
-module.exports = __webpack_require__(/*! ./_descriptors */ "./node_modules/core-js/library/modules/_descriptors.js") ? function (object, key, value) {
-  return dP.f(object, key, createDesc(1, value));
-} : function (object, key, value) {
-  object[key] = value;
-  return object;
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_ie8-dom-define.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_ie8-dom-define.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = !__webpack_require__(/*! ./_descriptors */ "./node_modules/core-js/library/modules/_descriptors.js") && !__webpack_require__(/*! ./_fails */ "./node_modules/core-js/library/modules/_fails.js")(function () {
-  return Object.defineProperty(__webpack_require__(/*! ./_dom-create */ "./node_modules/core-js/library/modules/_dom-create.js")('div'), 'a', {
-    get: function get() {
-      return 7;
-    }
-  }).a != 7;
-});
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_is-object.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_is-object.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-module.exports = function (it) {
-  return _typeof(it) === 'object' ? it !== null : typeof it === 'function';
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_object-dp.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_object-dp.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(/*! ./_an-object */ "./node_modules/core-js/library/modules/_an-object.js");
-
-var IE8_DOM_DEFINE = __webpack_require__(/*! ./_ie8-dom-define */ "./node_modules/core-js/library/modules/_ie8-dom-define.js");
-
-var toPrimitive = __webpack_require__(/*! ./_to-primitive */ "./node_modules/core-js/library/modules/_to-primitive.js");
-
-var dP = Object.defineProperty;
-exports.f = __webpack_require__(/*! ./_descriptors */ "./node_modules/core-js/library/modules/_descriptors.js") ? Object.defineProperty : function defineProperty(O, P, Attributes) {
-  anObject(O);
-  P = toPrimitive(P, true);
-  anObject(Attributes);
-  if (IE8_DOM_DEFINE) try {
-    return dP(O, P, Attributes);
-  } catch (e) {
-    /* empty */
-  }
-  if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
-  if ('value' in Attributes) O[P] = Attributes.value;
-  return O;
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_property-desc.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_property-desc.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function (bitmap, value) {
-  return {
-    enumerable: !(bitmap & 1),
-    configurable: !(bitmap & 2),
-    writable: !(bitmap & 4),
-    value: value
-  };
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/_to-primitive.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/_to-primitive.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// 7.1.1 ToPrimitive(input [, PreferredType])
-var isObject = __webpack_require__(/*! ./_is-object */ "./node_modules/core-js/library/modules/_is-object.js"); // instead of the ES6 spec version, we didn't implement @@toPrimitive case
-// and the second argument - flag - preferred type is a string
-
-
-module.exports = function (it, S) {
-  if (!isObject(it)) return it;
-  var fn, val;
-  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-  throw TypeError("Can't convert object to primitive value");
-};
-
-/***/ }),
-
-/***/ "./node_modules/core-js/library/modules/es7.global.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/library/modules/es7.global.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// https://github.com/tc39/proposal-global
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/library/modules/_export.js");
-
-$export($export.G, {
-  global: __webpack_require__(/*! ./_global */ "./node_modules/core-js/library/modules/_global.js")
-});
 
 /***/ }),
 
@@ -2427,62 +1939,6 @@ module.exports = function () {
   if (that.sticky) result += 'y';
   return result;
 };
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/_flatten-into-array.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js/modules/_flatten-into-array.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
- // https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
-
-var isArray = __webpack_require__(/*! ./_is-array */ "./node_modules/core-js/modules/_is-array.js");
-
-var isObject = __webpack_require__(/*! ./_is-object */ "./node_modules/core-js/modules/_is-object.js");
-
-var toLength = __webpack_require__(/*! ./_to-length */ "./node_modules/core-js/modules/_to-length.js");
-
-var ctx = __webpack_require__(/*! ./_ctx */ "./node_modules/core-js/modules/_ctx.js");
-
-var IS_CONCAT_SPREADABLE = __webpack_require__(/*! ./_wks */ "./node_modules/core-js/modules/_wks.js")('isConcatSpreadable');
-
-function flattenIntoArray(target, original, source, sourceLen, start, depth, mapper, thisArg) {
-  var targetIndex = start;
-  var sourceIndex = 0;
-  var mapFn = mapper ? ctx(mapper, thisArg, 3) : false;
-  var element, spreadable;
-
-  while (sourceIndex < sourceLen) {
-    if (sourceIndex in source) {
-      element = mapFn ? mapFn(source[sourceIndex], sourceIndex, original) : source[sourceIndex];
-      spreadable = false;
-
-      if (isObject(element)) {
-        spreadable = element[IS_CONCAT_SPREADABLE];
-        spreadable = spreadable !== undefined ? !!spreadable : isArray(element);
-      }
-
-      if (spreadable && depth > 0) {
-        targetIndex = flattenIntoArray(target, original, element, toLength(element.length), targetIndex, depth - 1) - 1;
-      } else {
-        if (targetIndex >= 0x1fffffffffffff) throw TypeError();
-        target[targetIndex] = element;
-      }
-
-      targetIndex++;
-    }
-
-    sourceIndex++;
-  }
-
-  return targetIndex;
-}
-
-module.exports = flattenIntoArray;
 
 /***/ }),
 
@@ -10372,46 +9828,6 @@ __webpack_require__(/*! ./_collection */ "./node_modules/core-js/modules/_collec
 
 /***/ }),
 
-/***/ "./node_modules/core-js/modules/es7.array.flat-map.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/modules/es7.array.flat-map.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
- // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
-
-var $export = __webpack_require__(/*! ./_export */ "./node_modules/core-js/modules/_export.js");
-
-var flattenIntoArray = __webpack_require__(/*! ./_flatten-into-array */ "./node_modules/core-js/modules/_flatten-into-array.js");
-
-var toObject = __webpack_require__(/*! ./_to-object */ "./node_modules/core-js/modules/_to-object.js");
-
-var toLength = __webpack_require__(/*! ./_to-length */ "./node_modules/core-js/modules/_to-length.js");
-
-var aFunction = __webpack_require__(/*! ./_a-function */ "./node_modules/core-js/modules/_a-function.js");
-
-var arraySpeciesCreate = __webpack_require__(/*! ./_array-species-create */ "./node_modules/core-js/modules/_array-species-create.js");
-
-$export($export.P, 'Array', {
-  flatMap: function flatMap(callbackfn
-  /* , thisArg */
-  ) {
-    var O = toObject(this);
-    var sourceLen, A;
-    aFunction(callbackfn);
-    sourceLen = toLength(O.length);
-    A = arraySpeciesCreate(O, 0);
-    flattenIntoArray(A, O, O, sourceLen, 0, 1, callbackfn, arguments[1]);
-    return A;
-  }
-});
-
-__webpack_require__(/*! ./_add-to-unscopables */ "./node_modules/core-js/modules/_add-to-unscopables.js")('flatMap');
-
-/***/ }),
-
 /***/ "./node_modules/core-js/modules/es7.array.includes.js":
 /*!************************************************************!*\
   !*** ./node_modules/core-js/modules/es7.array.includes.js ***!
@@ -10611,42 +10027,6 @@ $export($export.P + $export.F * WEBKIT_BUG, 'String', {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/modules/es7.string.trim-left.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/core-js/modules/es7.string.trim-left.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
- // https://github.com/sebmarkbage/ecmascript-string-left-right-trim
-
-__webpack_require__(/*! ./_string-trim */ "./node_modules/core-js/modules/_string-trim.js")('trimLeft', function ($trim) {
-  return function trimLeft() {
-    return $trim(this, 1);
-  };
-}, 'trimStart');
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es7.string.trim-right.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/modules/es7.string.trim-right.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
- // https://github.com/sebmarkbage/ecmascript-string-left-right-trim
-
-__webpack_require__(/*! ./_string-trim */ "./node_modules/core-js/modules/_string-trim.js")('trimRight', function ($trim) {
-  return function trimRight() {
-    return $trim(this, 2);
-  };
-}, 'trimEnd');
-
-/***/ }),
-
 /***/ "./node_modules/core-js/modules/es7.symbol.async-iterator.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/core-js/modules/es7.symbol.async-iterator.js ***!
@@ -10819,7 +10199,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/cor
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    z-index: 1; }\n    .carousel__next > span, .carousel__prev > span {\n      position: absolute;\n      top: 50%;\n      width: 20px;\n      height: 20px;\n      border-top: 2px solid #fff;\n      border-right: 2px solid #fff;\n      font-size: 0; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev > span {\n      left: 55%;\n      transform: translate(-50%, -50%) rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next > span {\n      left: 45%;\n      transform: translate(-50%, -50%) rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%; }\n    .carousel__indicator.is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    font-size: 0;\n    color: transparent; }\n  .carousel__play {\n    position: relative;\n    display: block; }\n    .carousel__play::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 11px;\n      margin-left: 20px;\n      border-right: 8px solid transparent;\n      border-bottom: 8px solid #333;\n      border-left: 8px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      font-size: 0;\n      color: transparent; }\n  .carousel__pause {\n    position: relative; }\n    .carousel__pause::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 14px;\n      margin-left: 18px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      font-size: 0;\n      color: transparent; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse; }\n\nimg {\n  width: 100%; }\n", "",{"version":3,"sources":["main.scss","C:/Users/yuji-m/Desktop/carouselGit/carousel/src/scss/core/_ress.scss","C:/Users/yuji-m/Desktop/carouselGit/carousel/src/scss/core/_base.scss","C:/Users/yuji-m/Desktop/carouselGit/carousel/src/scss/layout/_header.scss","C:/Users/yuji-m/Desktop/carouselGit/carousel/src/scss/modules/_carousel.scss","C:/Users/yuji-m/Desktop/carouselGit/carousel/src/scss/modules/_contents.scss"],"names":[],"mappings":"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","file":"main.scss","sourcesContent":["@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    width: 50px;\n    height: 50px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    z-index: 1; }\n    .carousel__next > span, .carousel__prev > span {\n      position: absolute;\n      top: 50%;\n      width: 20px;\n      height: 20px;\n      border-top: 2px solid #fff;\n      border-right: 2px solid #fff;\n      font-size: 0; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev > span {\n      left: 55%;\n      transform: translate(-50%, -50%) rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next > span {\n      left: 45%;\n      transform: translate(-50%, -50%) rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%; }\n    .carousel__indicator.is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    font-size: 0;\n    color: transparent; }\n  .carousel__play {\n    position: relative;\n    display: block; }\n    .carousel__play::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 11px;\n      margin-left: 20px;\n      border-right: 8px solid transparent;\n      border-bottom: 8px solid #333;\n      border-left: 8px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      font-size: 0;\n      color: transparent; }\n  .carousel__pause {\n    position: relative; }\n    .carousel__pause::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 11px;\n      height: 14px;\n      margin-left: 18px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      font-size: 0;\n      color: transparent; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse; }\n\nimg {\n  width: 100%; }\n","/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\n\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */\n}\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit;\n}\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n}\n\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\nhr {\n  overflow: visible;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\n\nsummary {\n  display: list-item;\n}\n\nsmall {\n  font-size: 80%;\n}\n\n[hidden],\ntemplate {\n  display: none;\n}\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none;\n}\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\n\na:active,\na:hover {\n  outline-width: 0;\n}\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n}\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\ndfn {\n  font-style: italic;\n}\n\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n\ninput {\n  border-radius: 0;\n}\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n[disabled] {\n  cursor: default;\n}\n\n[type=\"number\"] {\n  width: auto;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n}\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n}\n\noptgroup {\n  font-weight: bold;\n}\n\nbutton {\n  overflow: visible;\n}\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0;\n}\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText;\n}\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\n\nbutton,\nselect {\n  text-transform: none;\n}\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit;\n}\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none;\n}\n\nselect::-ms-expand {\n  display: none;\n}\n\nselect::-ms-value {\n  color: currentColor;\n}\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal;\n}\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px;\n}\n\n\nimg {\n  border-style: none;\n}\n\nprogress {\n  vertical-align: baseline;\n}\n\nsvg:not(:root) {\n  overflow: hidden;\n}\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit;\n  }\n\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important;\n  }\n}\n\n[aria-busy=\"true\"] {\n  cursor: progress;\n}\n\n[aria-controls] {\n  cursor: pointer;\n}\n\n[aria-disabled] {\n  cursor: default;\n}\n\n\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}","@charset \"UTF-8\";\nbody {\n    font-size: 16px;\n    font-family: Verdana;\n}\n\ntable {\n    width: 540px;\n    margin: 20px auto;\n    border-collapse: collapse;\n\n    th, td {\n        width: 180px;\n        box-sizing: border-box;\n        border: 1px solid #555;\n        padding: 20px;\n    }\n\n    th {\n        cursor: pointer;\n    }\n\n    tbody tr:nth-child(odd) {\n        background: #f8f8f8;\n    }\n}\n\n.score {\n    text-align: right;\n}\n\nth:after {\n    content: '\\f0dc';\n    font-family: FontAwesome;\n    font-size: 12px;\n    color: #ccc;\n    float: right;\n    padding-top: 4px;\n    font-weight: nomal;\n}\nth.asc:after {\n    content: '\\f0de';\n    font-family: FontAwesome;\n    color: #000;\n}\nth.desc:after {\n    content: '\\f0dd';\n    font-family: FontAwesome;\n    color: #000;\n}\n","@charset \"UTF-8\";\n\n.header {\n  color: #fff;\n  background-color: rgb(143, 205, 203);\n\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px;\n  }\n}\n","@charset 'UTF-8';\n\n// JS無効時のスタイル\n[data-script-enabled=\"false\"] {\n    .carousel {\n        display: flex;\n        flex-wrap: wrap;\n\n        &__inner {\n            display: flex;\n            flex-wrap: wrap;\n        }\n\n        &__item {\n            width: 48%;\n\n            &:nth-child(odd) {\n                margin-right: 4%;\n            }\n        }\n    }\n}\n\n.carousel {\n    position: relative;\n    margin-bottom: 50px;\n\n    &__slide-wrap {\n        overflow: hidden;\n    }\n\n    &__slide-inner {\n        position: relative;\n        top: 0;\n        left: 0;\n        transition-property: left;\n    }\n\n    &__wrap {\n        width: 100%;\n        top: 0;\n        left: 0;\n    }\n\n    &__item {\n        transition-duration: 0s;\n    }\n\n    &__next,\n    &__prev {\n        position: absolute;\n        top: 50%;\n        width: 50px;\n        height: 50px;\n        border-radius: 50%;\n        background-color: #000;\n        cursor: pointer;\n        transform: translateY(-50%);\n        z-index: 1;\n\n        > span {\n            position: absolute;\n            top: 50%;\n            width: 20px;\n            height: 20px;\n            border-top: 2px solid #fff;\n            border-right: 2px solid #fff;\n            font-size: 0;\n        }\n    }\n\n    &__prev {\n        left: 0;\n\n        > span {\n            left: 55%;\n            transform: translate(-50%, -50%) rotate(-135deg);\n        }\n    }\n\n    &__next {\n        right: 0;\n\n        > span {\n            left: 45%;\n            transform: translate(-50%, -50%) rotate(45deg);\n        }\n    }\n\n    &__player-wrap {\n        position: absolute;\n        left: 0;\n        right: 0;\n        bottom: -30px;\n        display: flex;\n        justify-content: center;\n    }\n\n    &__indicator-wrap {\n        display: flex;\n\n        > li {\n            list-style: none;\n            display: flex;\n            align-items: center;\n\n            &:not( :last-child) {\n                margin-right: 10px;\n            }\n        }\n    }\n\n    &__indicator {\n        position: relative;\n        width: 15px;\n        height: 15px;\n        background-color: #777;\n        border-radius: 50%;\n\n        &.is-active {\n            background-color: #000; \n        }\n    }\n    .indicator-index {\n        font-size: 0;\n        color: transparent;\n    }\n\n    &__play {\n        position: relative;\n        display: block;\n\n        &::before {\n            position: absolute;\n            top: 50%;\n            left: 50%;\n            width: 11px;\n            height: 11px;\n            margin-left: 20px;\n            border-right: 8px solid transparent;\n            border-bottom: 8px solid #333;\n            border-left: 8px solid transparent; \n            transform-origin: center;\n            transform: translate(-50%, -50%) rotate(90deg);\n            content: '';\n        }\n\n        > span {\n            font-size: 0;\n            color: transparent;\n        }\n    }\n\n    &__pause {\n        position: relative;\n\n        &::before {\n            position: absolute;\n            top: 50%;\n            left: 50%;\n            width: 11px;\n            height: 14px;\n            margin-left: 18px;\n            border-left: 3px solid #333;\n            border-right: 3px solid #333;\n            transform: translate(-50%, -50%);\n            content: '';\n        }\n\n        > span {\n            font-size: 0;\n            color: transparent;\n        }\n    }\n}","@charset \"UTF-8\";\n\n.container {\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 10px;\n  }\n}\n\n.carousel {\n    &__item {\n        width: 100%;\n    }\n}\n\n.character {\n  display: flex;\n  flex-direction: column-reverse;\n}\n\nimg {\n  width: 100%;\n}"]}]);
+exports.push([module.i, "@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    z-index: 1;\n    overflow: hidden;\n    width: 42px;\n    height: 42px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    color: #fff; }\n    .carousel__next::before, .carousel__prev::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 15px;\n      height: 15px;\n      border-top: 3px solid #fff;\n      border-right: 3px solid #fff;\n      content: ''; }\n    .carousel__next > span, .carousel__prev > span {\n      margin-left: -200px; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev::before {\n      top: 14px;\n      left: 15px;\n      transform: rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next::before {\n      top: 14px;\n      left: 11px;\n      transform: rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center;\n    overflow: hidden; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%;\n    overflow: hidden; }\n    .carousel__indicator.is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    position: absolute;\n    top: 30px;\n    left: -30px; }\n  .carousel__play {\n    position: relative;\n    display: block;\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__play::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-right: 10px solid transparent;\n      border-bottom: 10px solid #333;\n      border-left: 10px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      position: absolute;\n      top: 20px; }\n  .carousel__pause {\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__pause::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      position: absolute;\n      top: 20px; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse; }\n\nimg {\n  width: 100%; }\n", "",{"version":3,"sources":["/Users/yuji/Desktop/work/carousel/src/scss/main.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_ress.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_base.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/layout/_header.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_carousel.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_contents.scss"],"names":[],"mappings":"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","file":"main.scss","sourcesContent":["@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    z-index: 1;\n    overflow: hidden;\n    width: 42px;\n    height: 42px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    color: #fff; }\n    .carousel__next::before, .carousel__prev::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 15px;\n      height: 15px;\n      border-top: 3px solid #fff;\n      border-right: 3px solid #fff;\n      content: ''; }\n    .carousel__next > span, .carousel__prev > span {\n      margin-left: -200px; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev::before {\n      top: 14px;\n      left: 15px;\n      transform: rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next::before {\n      top: 14px;\n      left: 11px;\n      transform: rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center;\n    overflow: hidden; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%;\n    overflow: hidden; }\n    .carousel__indicator.is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    position: absolute;\n    top: 30px;\n    left: -30px; }\n  .carousel__play {\n    position: relative;\n    display: block;\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__play::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-right: 10px solid transparent;\n      border-bottom: 10px solid #333;\n      border-left: 10px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      position: absolute;\n      top: 20px; }\n  .carousel__pause {\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__pause::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      position: absolute;\n      top: 20px; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse; }\n\nimg {\n  width: 100%; }\n","/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\n\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */\n}\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit;\n}\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n}\n\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\nhr {\n  overflow: visible;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\n\nsummary {\n  display: list-item;\n}\n\nsmall {\n  font-size: 80%;\n}\n\n[hidden],\ntemplate {\n  display: none;\n}\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none;\n}\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\n\na:active,\na:hover {\n  outline-width: 0;\n}\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n}\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\ndfn {\n  font-style: italic;\n}\n\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n\ninput {\n  border-radius: 0;\n}\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n[disabled] {\n  cursor: default;\n}\n\n[type=\"number\"] {\n  width: auto;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n}\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n}\n\noptgroup {\n  font-weight: bold;\n}\n\nbutton {\n  overflow: visible;\n}\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0;\n}\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText;\n}\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\n\nbutton,\nselect {\n  text-transform: none;\n}\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit;\n}\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none;\n}\n\nselect::-ms-expand {\n  display: none;\n}\n\nselect::-ms-value {\n  color: currentColor;\n}\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal;\n}\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px;\n}\n\n\nimg {\n  border-style: none;\n}\n\nprogress {\n  vertical-align: baseline;\n}\n\nsvg:not(:root) {\n  overflow: hidden;\n}\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit;\n  }\n\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important;\n  }\n}\n\n[aria-busy=\"true\"] {\n  cursor: progress;\n}\n\n[aria-controls] {\n  cursor: pointer;\n}\n\n[aria-disabled] {\n  cursor: default;\n}\n\n\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}","@charset \"UTF-8\";\nbody {\n    font-size: 16px;\n    font-family: Verdana;\n}\n\ntable {\n    width: 540px;\n    margin: 20px auto;\n    border-collapse: collapse;\n\n    th, td {\n        width: 180px;\n        box-sizing: border-box;\n        border: 1px solid #555;\n        padding: 20px;\n    }\n\n    th {\n        cursor: pointer;\n    }\n\n    tbody tr:nth-child(odd) {\n        background: #f8f8f8;\n    }\n}\n\n.score {\n    text-align: right;\n}\n\nth:after {\n    content: '\\f0dc';\n    font-family: FontAwesome;\n    font-size: 12px;\n    color: #ccc;\n    float: right;\n    padding-top: 4px;\n    font-weight: nomal;\n}\nth.asc:after {\n    content: '\\f0de';\n    font-family: FontAwesome;\n    color: #000;\n}\nth.desc:after {\n    content: '\\f0dd';\n    font-family: FontAwesome;\n    color: #000;\n}\n","@charset \"UTF-8\";\n\n.header {\n  color: #fff;\n  background-color: rgb(143, 205, 203);\n\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px;\n  }\n}\n","@charset 'UTF-8';\n\n// JS無効時のスタイル\n[data-script-enabled=\"false\"] {\n    .carousel {\n        display: flex;\n        flex-wrap: wrap;\n\n        &__inner {\n            display: flex;\n            flex-wrap: wrap;\n        }\n\n        &__item {\n            width: 48%;\n\n            &:nth-child(odd) {\n                margin-right: 4%;\n            }\n        }\n    }\n}\n\n.carousel {\n    position: relative;\n    margin-bottom: 50px;\n\n    &__slide-wrap {\n        overflow: hidden;\n    }\n\n    &__slide-inner {\n        position: relative;\n        top: 0;\n        left: 0;\n        transition-property: left;\n    }\n\n    &__wrap {\n        width: 100%;\n        top: 0;\n        left: 0;\n    }\n\n    &__item {\n        transition-duration: 0s;\n    }\n\n    &__next,\n    &__prev {\n        position: absolute;\n        top: 50%;\n        z-index: 1;\n        overflow: hidden;\n        width: 42px;\n        height: 42px;\n        border-radius: 50%;\n        background-color: #000;\n        cursor: pointer;\n        transform: translateY(-50%);\n        color: #fff;\n\n        &::before {\n            position: absolute;\n            top: 50%;\n            left: 50%;\n            width: 15px;\n            height: 15px;\n            border-top: 3px solid #fff;\n            border-right: 3px solid #fff;\n            content: '';\n        }\n\n        > span {\n            margin-left: -200px;\n        }\n    }\n\n    &__prev {\n        left: 0;\n\n        &::before {\n            top: 14px;\n            left: 15px;\n            transform: rotate(-135deg);\n        }\n    }\n\n    &__next {\n        right: 0;\n\n        &::before {\n            top: 14px;\n            left: 11px;\n            transform: rotate(45deg);\n        }\n    }\n\n    &__player-wrap {\n        position: absolute;\n        left: 0;\n        right: 0;\n        bottom: -30px;\n        display: flex;\n        justify-content: center;\n        overflow: hidden;\n    }\n\n    &__indicator-wrap {\n        display: flex;\n\n        > li {\n            list-style: none;\n            display: flex;\n            align-items: center;\n\n            &:not( :last-child) {\n                margin-right: 10px;\n            }\n        }\n    }\n\n    &__indicator {\n        position: relative;\n        width: 15px;\n        height: 15px;\n        background-color: #777;\n        border-radius: 50%;\n        overflow: hidden;\n\n        &.is-active {\n            background-color: #000; \n        }\n    }\n    .indicator-index {\n        position: absolute;\n        top: 30px;\n        left: -30px;\n    }\n\n    &__play {\n        position: relative;\n        display: block;\n        overflow: hidden;\n        width: 11px;\n        height: 14px;\n        margin-left: 10px;\n\n        &::before {\n            position: absolute;\n            width: 11px;\n            height: 14px;\n            border-right: 10px solid transparent;\n            border-bottom: 10px solid #333;\n            border-left: 10px solid transparent; \n            transform-origin: center;\n            transform: translate(-50%, -50%) rotate(90deg);\n            content: '';\n        }\n\n        > span {\n            position: absolute;\n            top: 20px;\n        }\n    }\n\n    &__pause {\n        // position: relative;\n        // display: block;\n        overflow: hidden;\n        width: 11px;\n        height: 14px;\n        margin-left: 10px;\n\n        &::before {\n            position: absolute;\n            width: 11px;\n            height: 14px;\n            border-left: 3px solid #333;\n            border-right: 3px solid #333;\n            transform: translate(-50%, -50%);\n            content: '';\n        }\n\n        > span {\n            position: absolute;\n            top: 20px;\n        }\n    }\n}","@charset \"UTF-8\";\n\n.container {\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 10px;\n  }\n}\n\n.carousel {\n    &__item {\n        width: 100%;\n    }\n}\n\n.character {\n  display: flex;\n  flex-direction: column-reverse;\n}\n\nimg {\n  width: 100%;\n}"],"sourceRoot":""}]);
 
 
 
@@ -10936,7 +10316,7 @@ function toComment(sourceMap) {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-var runtime = function (exports) {
+!function (global) {
   "use strict";
 
   var Op = Object.prototype;
@@ -10947,6 +10327,24 @@ var runtime = function (exports) {
   var iteratorSymbol = $Symbol.iterator || "@@iterator";
   var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
   var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+  var inModule = ( false ? undefined : _typeof(module)) === "object";
+  var runtime = global.regeneratorRuntime;
+
+  if (runtime) {
+    if (inModule) {
+      // If regeneratorRuntime is defined globally and we're in a module,
+      // make the exports object identical to regeneratorRuntime.
+      module.exports = runtime;
+    } // Don't bother evaluating the rest of this file if the runtime was
+    // already defined globally.
+
+
+    return;
+  } // Define the runtime globally (as expected by generated code) as either
+  // module.exports (if we're in a module) or a new, empty object.
+
+
+  runtime = global.regeneratorRuntime = inModule ? module.exports : {};
 
   function wrap(innerFn, outerFn, self, tryLocsList) {
     // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
@@ -10959,7 +10357,7 @@ var runtime = function (exports) {
     return generator;
   }
 
-  exports.wrap = wrap; // Try/catch helper to minimize deoptimizations. Returns a completion
+  runtime.wrap = wrap; // Try/catch helper to minimize deoptimizations. Returns a completion
   // record like context.tryEntries[i].completion. This interface could
   // have been (and was previously) designed to take a closure to be
   // invoked without arguments, but in all the cases we care about we
@@ -11032,14 +10430,14 @@ var runtime = function (exports) {
     });
   }
 
-  exports.isGeneratorFunction = function (genFun) {
+  runtime.isGeneratorFunction = function (genFun) {
     var ctor = typeof genFun === "function" && genFun.constructor;
     return ctor ? ctor === GeneratorFunction || // For the native GeneratorFunction constructor, the best we can
     // do is to check its .name property.
     (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
   };
 
-  exports.mark = function (genFun) {
+  runtime.mark = function (genFun) {
     if (Object.setPrototypeOf) {
       Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
     } else {
@@ -11058,7 +10456,7 @@ var runtime = function (exports) {
   // meant to be awaited.
 
 
-  exports.awrap = function (arg) {
+  runtime.awrap = function (arg) {
     return {
       __await: arg
     };
@@ -11133,13 +10531,13 @@ var runtime = function (exports) {
     return this;
   };
 
-  exports.AsyncIterator = AsyncIterator; // Note that simple async functions are implemented on top of
+  runtime.AsyncIterator = AsyncIterator; // Note that simple async functions are implemented on top of
   // AsyncIterator objects; they just return a Promise for the value of
   // the final result produced by the iterator.
 
-  exports.async = function (innerFn, outerFn, self, tryLocsList) {
+  runtime.async = function (innerFn, outerFn, self, tryLocsList) {
     var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList));
-    return exports.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
+    return runtime.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
     : iter.next().then(function (result) {
       return result.done ? result.value : iter.next();
     });
@@ -11232,8 +10630,7 @@ var runtime = function (exports) {
       context.delegate = null;
 
       if (context.method === "throw") {
-        // Note: ["return"] must be used for ES3 parsing compatibility.
-        if (delegate.iterator["return"]) {
+        if (delegate.iterator.return) {
           // If the delegate iterator has a return method, give it a
           // chance to clean up.
           context.method = "return";
@@ -11351,7 +10748,7 @@ var runtime = function (exports) {
     this.reset(true);
   }
 
-  exports.keys = function (object) {
+  runtime.keys = function (object) {
     var keys = [];
 
     for (var key in object) {
@@ -11418,7 +10815,7 @@ var runtime = function (exports) {
     };
   }
 
-  exports.values = values;
+  runtime.values = values;
 
   function doneResult() {
     return {
@@ -11609,32 +11006,13 @@ var runtime = function (exports) {
 
       return ContinueSentinel;
     }
-  }; // Regardless of whether this script is executing as a CommonJS module
-  // or not, return the runtime object so that we can declare the variable
-  // regeneratorRuntime in the outer scope, which allows this module to be
-  // injected easily by `bin/regenerator --include-runtime script.js`.
-
-  return exports;
-}( // If this script is executing as a CommonJS module, use module.exports
-// as the regeneratorRuntime namespace. Otherwise create a new empty
-// object. Either way, the resulting object will be used to initialize
-// the regeneratorRuntime variable at the top of this file.
-( false ? undefined : _typeof(module)) === "object" ? module.exports : {});
-
-try {
-  regeneratorRuntime = runtime;
-} catch (accidentalStrictMode) {
-  // This module should not be running in strict mode, so the above
-  // assignment should always work unless something is misconfigured. Just
-  // in case runtime.js accidentally runs in strict mode, we can escape
-  // strict mode using a global Function call. This could conceivably fail
-  // if a Content Security Policy forbids using Function, but in that case
-  // the proper solution is to fix the accidental strict mode problem. If
-  // you've misconfigured your bundler to force strict mode and applied a
-  // CSP to forbid Function, and you're not willing to fix either of those
-  // problems, please detail your unique predicament in a GitHub issue.
-  Function("r", "regeneratorRuntime = r")(runtime);
-}
+  };
+}( // In sloppy mode, unbound `this` refers to the global object, fallback to
+// Function constructor if we're in global strict mode. That is sadly a form
+// of indirect eval which violates Content Security Policy.
+function () {
+  return this || (typeof self === "undefined" ? "undefined" : _typeof(self)) === "object" && self;
+}() || Function("return this")());
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
@@ -12142,6 +11520,36 @@ module.exports = function (css) {
 
 /***/ }),
 
+/***/ "./node_modules/webpack/buildin/global.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var g; // This works in non-strict mode
+
+g = function () {
+  return this;
+}();
+
+try {
+  // This works if eval is allowed (see CSP)
+  g = g || new Function("return this")();
+} catch (e) {
+  // This works if the window reference is available
+  if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
+} // g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+
+module.exports = g;
+
+/***/ }),
+
 /***/ "./node_modules/webpack/buildin/module.js":
 /*!***********************************!*\
   !*** (webpack)/buildin/module.js ***!
@@ -12193,8 +11601,10 @@ function setCarousel() {
   var TRANSITIONEND = 'transitionend';
   var UA = navigator.userAgent.toLowerCase();
   /**
-   * カルーセルコンストラクタ
+   * カルーセル機能
    * @constructor
+   * @param {object} root 
+   * @param {object} options 
    */
 
   var Carousel = function Carousel(root, options) {
@@ -12226,14 +11636,7 @@ function setCarousel() {
       resizeThreshold: 200,
       duration: 500
     };
-
-    if (options) {
-      for (var key in options) {
-        o[key] = options[key];
-      }
-    }
-
-    console.log(this.column); // DOMオブジェクト
+    Object.assign(o, options); // DOMオブジェクト
 
     this.root = root;
     this.slideWrap = root.querySelector('.' + o.slideWrap);
@@ -12282,7 +11685,7 @@ function setCarousel() {
     this.breakPoint = o.breakPoint;
     this.animationType = o.animationType;
     this.resizeThreshold = o.resizeThreshold;
-    this.duration = o.duration; // 動的に代入されるの設定
+    this.duration = o.duration; // 動的に代入される設定
 
     this.indicator = null;
     this.cloneBeforeWrap = null;
@@ -12304,39 +11707,39 @@ function setCarousel() {
   Carousel.prototype = {
     /**
      * 定義したカルーセル機能の呼び出し管理用関数
-     * @returns {void}
-     */
+      * @returns {void}
+      */
     init: function init() {
-      this.addElementClasses();
+      if (this.animationType === 'fade') {
+        this.column = 1;
+      }
+
+      this.addElementAndClasses();
       this.setInitItems();
       this.cloneSlider();
       this.setController();
       this.changeTabIndex();
-      this.clickHandler();
-      this.resizeHandler();
-      this.hoverHandler();
-      this.keyHandler();
+      this.clickEvent();
+      this.resizeEvent();
+      this.hoverEvent();
+      this.keyEvent();
 
       if (this.swipe) {
-        this.swipeHandler();
+        this.swipeEvent();
       }
 
       if (this.autoPlay) {
         this.startAutoPlay();
       }
 
-      if (this.animationType === 'fade') {
-        this.column = 1;
-      }
-
-      this.trigger(window, 'resize');
+      this.forcedResize();
     },
 
     /**
      * DOM要素の追加生成と属性の付与
-     * @returns {void}
-     */
-    addElementClasses: function addElementClasses() {
+      * @returns {void}
+      */
+    addElementAndClasses: function addElementAndClasses() {
       var addSpan = function addSpan(el, cl, txt) {
         var span = document.createElement('span');
         var i = 0;
@@ -12363,35 +11766,35 @@ function setCarousel() {
 
     /**
      * カルーセルアイテムの初期配置
-     * @returns {void}
-     */
+      * @returns {void}
+      */
     setInitItems: function setInitItems() {
       var self = this;
-      this.wrap.style.position = 'absolute';
-      this.wrap.style.top = 0;
-      this.item.forEach(function (el) {
+      self.wrap.style.position = 'absolute';
+      self.wrap.style.top = 0;
+      self.item.forEach(function (el) {
         el.style.position = 'absolute';
       });
 
-      if (this.itemLength === 1) {
-        this.column = 1;
+      if (self.itemLength === 1) {
+        self.column = 1;
       }
 
-      if (this.animationType === 'slide') {
-        this.slideInner.style.transitionDuration = this.duration / 1000 + 's';
-        this.slideInner.style.transitionTimingFunction = this.easing;
+      if (self.animationType === 'slide') {
+        self.slideInner.style.transitionDuration = self.duration / 1000 + 's';
+        self.slideInner.style.transitionTimingFunction = self.easing;
       }
 
-      if (this.colMargin && this.column > 1) {
-        this.item.forEach(function (el) {
+      if (self.colMargin && self.column > 1) {
+        self.item.forEach(function (el) {
           el.style.marginRight = self.colMargin + 'px';
         });
       }
 
-      if (this.animationType === 'fade') {
+      if (self.animationType === 'fade') {
         var _self = this;
 
-        var promiseFunc = function promiseFunc() {
+        var setStyles = function setStyles() {
           return new Promise(function (resolve) {
             _self.item.forEach(function (el, num) {
               var styles = el.style;
@@ -12410,18 +11813,20 @@ function setCarousel() {
           });
         };
 
-        promiseFunc().then(function () {
-          _self.item.forEach(function (el) {
-            el.style.transitionDuration = _self.duration / 1000 + 's';
-          });
+        setStyles().then(function () {
+          setTimeout(function () {
+            _self.item.forEach(function (el) {
+              el.style.transitionDuration = _self.duration / 1000 + 's';
+            });
+          }, 10);
         });
       }
     },
 
     /**
      * 無限ループ用のカルーセルの複製
-     * @returns {void}
-     */
+      * @returns {void}
+      */
     cloneSlider: function cloneSlider() {
       if (this.animationType === 'fade') {
         return;
@@ -12429,8 +11834,10 @@ function setCarousel() {
 
       var cloneElement1 = this.wrap.cloneNode(true);
       var cloneElement2 = this.wrap.cloneNode(true);
-      cloneElement1.classList.add('is-clone', 'is-clone-after');
-      cloneElement2.classList.add('is-clone', 'is-clone-before');
+      cloneElement1.classList.add('is-clone');
+      cloneElement1.classList.add('is-clone-after');
+      cloneElement2.classList.add('is-clone');
+      cloneElement2.classList.add('is-clone-before');
       this.slideInner.appendChild(cloneElement1);
       this.slideInner.insertBefore(cloneElement2, this.slideInner.firstChild);
       this.cloneBeforeWrap = this.slideInner.querySelector('.is-clone-before');
@@ -12441,24 +11848,24 @@ function setCarousel() {
         var focusable = el.querySelectorAll(FOCUSABLE);
         el.setAttribute('aria-hidden', true);
         focusable.forEach(function (el) {
-          el.setAttribute('tabindex', -1);
+          el.tabIndex = -1;
         });
       });
       this.cloneAfterItem.forEach(function (el) {
         var focusable = el.querySelectorAll(FOCUSABLE);
         el.setAttribute('aria-hidden', true);
         focusable.forEach(function (el) {
-          el.setAttribute('tabindex', -1);
+          el.tabIndex = -1;
         });
       });
     },
 
     /**
      * スライド操作に必要な要素の配置
-     * @returns {void}
-     */
+      * @returns {void}
+      */
     setController: function setController() {
-      var flagment = document.createDocumentFragment();
+      var fragment = document.createDocumentFragment();
       var i = 0; // インジケーターの生成
 
       for (; i < this.itemLength; i++) {
@@ -12472,14 +11879,14 @@ function setCarousel() {
         span.textContent = i + 1 + '番目のスライドを表示';
         button.appendChild(span);
         li.appendChild(button);
-        flagment.appendChild(li);
+        fragment.appendChild(li);
       } // 各種要素の配置
 
 
       this.root.appendChild(this.nextButton);
       this.root.insertBefore(this.prevButton, this.root.firstChild);
       this.root.appendChild(this.playerWrap);
-      this.indicatorWrap.appendChild(flagment);
+      this.indicatorWrap.appendChild(fragment);
       this.playerWrap.appendChild(this.indicatorWrap); // class名の付与
 
       this.indicator = this.indicatorWrap.querySelectorAll('.' + this.indicatorClass);
@@ -12493,91 +11900,90 @@ function setCarousel() {
 
     /**
      * カルーセルアイテムのカラム割と横軸配置
-     * 画面リサイズの度に処理を行う
-     * @returns {void}
-     */
+      * 画面リサイズの度に処理を行う
+      * @returns {void}
+      */
     setColItems: function setColItems() {
       var self = this;
       var i = 0;
-      var maxLength = this.itemLength;
+      var maxLength = self.itemLength;
       var styles = null;
 
-      if (this.isSliding) {
+      if (self.isSliding) {
         return;
       }
 
-      if (this.animationType === 'slide') {
+      if (self.animationType === 'slide') {
         // カラムオプション変更とリサイズによるアイテム幅の計算
-        if (this.column === 1) {
-          this.item.forEach(function (el) {
+        if (self.column === 1) {
+          self.item.forEach(function (el) {
             el.style.width = '100%';
           });
-          this.cloneBeforeItem.forEach(function (el) {
+          self.cloneBeforeItem.forEach(function (el) {
             el.style.width = '100%';
           });
-          this.cloneAfterItem.forEach(function (el) {
+          self.cloneAfterItem.forEach(function (el) {
             el.style.width = '100%';
           });
-          styles = window.getComputedStyle(this.item[0]);
-          this.itemWidth = this.item[0].getBoundingClientRect().width; // this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
-          // this.colMargin = 0;
+          styles = window.getComputedStyle(self.item[0]);
+          self.itemWidth = self.item[0].getBoundingClientRect().width;
         } else {
-          this.item.forEach(function (el) {
+          self.item.forEach(function (el) {
             el.style.width = 'calc(' + 100 / self.column + '% - ' + self.colMargin / self.column * (self.column - 1) + 'px)';
           });
-          this.cloneBeforeItem.forEach(function (el) {
+          self.cloneBeforeItem.forEach(function (el) {
             el.style.width = 'calc(' + 100 / self.column + '% - ' + self.colMargin / self.column * (self.column - 1) + 'px)';
           });
-          this.cloneAfterItem.forEach(function (el) {
+          self.cloneAfterItem.forEach(function (el) {
             el.style.width = 'calc(' + 100 / self.column + '% - ' + self.colMargin / self.column * (self.column - 1) + 'px)';
           });
-          styles = window.getComputedStyle(this.item[0]);
-          this.itemWidth = this.item[0].getBoundingClientRect().width;
-          this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
-          this.itemWidth = this.itemWidth + this.colMargin;
+          styles = window.getComputedStyle(self.item[0]);
+          self.itemWidth = self.item[0].getBoundingClientRect().width;
+          self.colMargin = parseInt(styles.marginRight, 10);
+          self.itemWidth = self.itemWidth + self.colMargin;
         }
       } // クローンしたパネルの配置
 
 
       for (; i < maxLength; i++) {
-        this.item[i].style.left = this.itemWidth * i + 'px';
+        self.item[i].style.left = self.itemWidth * i + 'px';
 
-        if (this.animationType === 'slide') {
-          this.cloneBeforeItem[i].style.left = this.itemWidth * i + 'px';
-          this.cloneAfterItem[i].style.left = this.itemWidth * i + 'px';
+        if (self.animationType === 'slide') {
+          self.cloneBeforeItem[i].style.left = self.itemWidth * i + 'px';
+          self.cloneAfterItem[i].style.left = self.itemWidth * i + 'px';
         }
       }
 
-      if (this.animationType === 'slide') {
+      if (self.animationType === 'slide') {
         // クローンしたパネルのラッパーを左右に配置
-        this.cloneBeforeWrap.style.left = '-' + this.itemWidth * this.itemLength + 'px';
-        this.cloneAfterWrap.style.left = this.itemWidth * this.itemLength + 'px';
+        self.cloneBeforeWrap.style.left = '-' + self.itemWidth * self.itemLength + 'px';
+        self.cloneAfterWrap.style.left = self.itemWidth * self.itemLength + 'px';
       } // スライド全体の再配置（動作未確認注意）
 
 
-      if (this.isCurrentNum !== 1) {
-        var _self2 = this;
+      if (self.isCurrentNum !== 1) {
+        var _self = this;
 
-        var promiseFunc = function promiseFunc() {
+        var setSildePosition = function setSildePosition() {
           return new Promise(function (resolve) {
-            _self2.slideInner.style.left = '-' + _self2.itemWidth * (_self2.isCurrentNum - 1) + 'px';
-            _self2.slideInner.style.transitionDuration = '0s';
-            styles = window.getComputedStyle(_self2.slideInner);
+            _self.slideInner.style.left = '-' + _self.itemWidth * (_self.isCurrentNum - 1) + 'px';
+            _self.slideInner.style.transitionDuration = '0s';
+            styles = window.getComputedStyle(_self.slideInner);
             resolve();
           });
         };
 
-        promiseFunc().then(function () {
-          _self2.slideInner.style.transitionDuration = _self2.duration / 1000 + 's';
-          _self2.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
+        setSildePosition().then(function () {
+          _self.slideInner.style.transitionDuration = _self.duration / 1000 + 's';
+          _self.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
         });
       }
     },
 
     /**
      * 一つ先にスライドする処理
-     * @return {void}
-     */
+      * @return {void}
+      */
     nextSlide: function nextSlide() {
       var styles = null;
       var elWidth = null;
@@ -12596,9 +12002,8 @@ function setCarousel() {
 
         if (this.column === 1) {
           this.itemWidth = elWidth;
-          console.log(this.column);
         } else {
-          this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+          this.colMargin = parseInt(styles.marginRight, 10);
           this.itemWidth = elWidth + this.colMargin;
         }
 
@@ -12631,20 +12036,20 @@ function setCarousel() {
     },
 
     /**
-     * 一つ先にスライドする処理（無限ループ切り替え時）
-     * @return {void}
-     */
+      * 一つ先にスライドする処理（無限ループ切り替え時）
+      * @return {void}
+      */
     nextInfiniteLoop: function nextInfiniteLoop() {
       var self = this;
 
-      if (this.animationType === 'slide') {
-        this.slideInner.style.transitionDuration = '0s';
+      if (self.animationType === 'slide') {
+        self.slideInner.style.transitionDuration = '0s';
         setTimeout(function () {
           self.slideInner.style.left = 0;
         }, 20); // 現在のカレントとleft位置を初期化
 
-        this.isCurrentNum = 1;
-        this.nowPosition = 0;
+        self.isCurrentNum = 1;
+        self.nowPosition = 0;
         setTimeout(function () {
           self.slideInner.style.transitionDuration = self.duration / 1000 + 's';
           self.isSliding = false;
@@ -12653,9 +12058,9 @@ function setCarousel() {
     },
 
     /**
-     * 一つ前にスライドする処理
-     * @return {void}
-     */
+      * 一つ前にスライドする処理
+      * @return {void}
+      */
     prevSlide: function prevSlide() {
       var styles = null;
       var elWidth = null;
@@ -12671,7 +12076,7 @@ function setCarousel() {
       if (this.animationType === 'slide') {
         styles = window.getComputedStyle(this.item[0]);
         elWidth = this.item[0].getBoundingClientRect().width;
-        this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+        this.colMargin = parseInt(styles.marginRight, 10);
         this.itemWidth = elWidth + this.colMargin;
 
         if (this.isCurrentNum === 0) {
@@ -12703,18 +12108,18 @@ function setCarousel() {
     },
 
     /**
-     * 一つ前にスライドする処理（無限ループ切り替え時）
-     * @return {void}
-     */
+      * 一つ前にスライドする処理（無限ループ切り替え時）
+      * @return {void}
+      */
     prevInfiniteLoop: function prevInfiniteLoop() {
       var self = this;
-      var targetPosition = null;
-      var styles = window.getComputedStyle(this.item[0]);
-      var elWidth = this.item[0].getBoundingClientRect().width;
+      var targetPosition = 0;
+      var styles = window.getComputedStyle(self.item[0]);
+      var elWidth = self.item[0].getBoundingClientRect().width;
 
-      var promiseFunc = function promiseFunc() {
+      var initSlide = function initSlide() {
         return new Promise(function (resolve) {
-          self.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+          self.colMargin = parseInt(styles.marginRight, 10);
           self.itemWidth = elWidth + self.colMargin;
           targetPosition = self.itemWidth * (self.itemLength - (self.column - (self.column - 1)));
           self.slideInner.style.transitionDuration = '0s';
@@ -12727,17 +12132,17 @@ function setCarousel() {
         });
       };
 
-      promiseFunc().then(function () {
+      initSlide().then(function () {
         self.slideInner.style.transitionDuration = self.duration / 1000 + 's';
         self.isSliding = false;
       });
     },
 
     /**
-     * 任意の箇所にスライドする処理
-     * @param {object} e - クリックされたインジケーター
-     * @return {void}
-     */
+      * 任意の箇所にスライドする処理
+      * @param {object} e - クリックされたインジケーター
+      * @return {void}
+      */
     targetSlide: function targetSlide(e) {
       var targetNum = e.target.querySelector('.indicator-index').getAttribute('data-current');
 
@@ -12763,114 +12168,114 @@ function setCarousel() {
     },
 
     /**
-     * スライド時のタブインデックス操作
-     * @return {void}
-     */
+      * スライド時のタブインデックス操作
+      * @return {void}
+      */
     changeTabIndex: function changeTabIndex() {
       var self = this;
 
       var setTabIndex = function setTabIndex(target, addNum) {
         var changeTarget = self.item[target].querySelectorAll(FOCUSABLE);
         changeTarget.forEach(function (el) {
-          el.setAttribute('tabindex', addNum);
+          el.tabIndex = addNum;
         });
       };
 
       var setCloneTabIndex = function setCloneTabIndex(target, addNum) {
         var changeTarget = self.cloneAfterItem[target].querySelectorAll(FOCUSABLE);
         changeTarget.forEach(function (el) {
-          el.setAttribute('tabindex', addNum);
+          el.tabIndex = addNum;
         });
       };
 
-      this.focusableItem.forEach(function (el) {
-        el.setAttribute('tabindex', -1);
+      self.focusableItem.forEach(function (el) {
+        el.tabIndex = -1;
       });
 
-      if (this.animationType === 'slide') {
-        var afterFocusable = this.cloneAfterWrap.querySelectorAll(FOCUSABLE);
+      if (self.animationType === 'slide') {
+        var afterFocusable = self.cloneAfterWrap.querySelectorAll(FOCUSABLE);
         afterFocusable.forEach(function (el) {
-          el.setAttribute('tabindex', -1);
+          el.tabIndex = -1;
         });
       }
 
-      switch (this.column) {
+      switch (self.column) {
         case 1:
-          if (this.isCurrentNum === this.itemLength + 1) {
+          if (self.isCurrentNum === self.itemLength + 1) {
             setTabIndex(0, 0);
             return;
           }
 
-          if (this.isCurrentNum === 0) {
-            setTabIndex(this.itemLength - 1, 0);
+          if (self.isCurrentNum === 0) {
+            setTabIndex(self.itemLength - 1, 0);
             return;
           }
 
-          setTabIndex(this.isCurrentNum - 1, 0);
+          setTabIndex(self.isCurrentNum - 1, 0);
           break;
 
         case 2:
           // 最初のアイテムにカレント時
-          if (this.isCurrentNum === 0) {
-            setTabIndex(this.itemLength - 1, 0);
+          if (self.isCurrentNum === 0) {
+            setTabIndex(self.itemLength - 1, 0);
             setCloneTabIndex(0, 0);
             return;
           } // 最後から二番目のアイテムにカレント時
 
 
-          if (this.isCurrentNum === this.itemLength) {
-            setTabIndex(this.isCurrentNum - 1, 0);
+          if (self.isCurrentNum === self.itemLength) {
+            setTabIndex(self.isCurrentNum - 1, 0);
             setCloneTabIndex(0, 0);
             return;
           } // 最後のアイテムにカレント時
 
 
-          if (this.isCurrentNum === this.itemLength + 1) {
+          if (self.isCurrentNum === self.itemLength + 1) {
             setTabIndex(0, 0);
             setTabIndex(1, 0);
             return;
           }
 
-          setTabIndex(this.isCurrentNum - 1, 0);
-          setTabIndex(this.isCurrentNum, 0);
+          setTabIndex(self.isCurrentNum - 1, 0);
+          setTabIndex(self.isCurrentNum, 0);
           break;
 
         case 3:
           // 最初のアイテムにカレント時
-          if (this.isCurrentNum === 0) {
-            setTabIndex(this.itemLength - 1, 0);
+          if (self.isCurrentNum === 0) {
+            setTabIndex(self.itemLength - 1, 0);
             setCloneTabIndex(0, 0);
             setCloneTabIndex(1, 0);
             return;
           } // 最後から三番目のアイテムにカレント時
 
 
-          if (this.isCurrentNum === this.itemLength - 1) {
-            setTabIndex(this.isCurrentNum, 0);
-            setTabIndex(this.isCurrentNum - 1, 0);
+          if (self.isCurrentNum === self.itemLength - 1) {
+            setTabIndex(self.isCurrentNum, 0);
+            setTabIndex(self.isCurrentNum - 1, 0);
             setCloneTabIndex(0, 0);
             return;
           } // 最後から二番目のアイテムにカレント時
 
 
-          if (this.isCurrentNum === this.itemLength) {
-            setTabIndex(this.isCurrentNum - 1, 0);
+          if (self.isCurrentNum === self.itemLength) {
+            setTabIndex(self.isCurrentNum - 1, 0);
             setCloneTabIndex(0, 0);
             setCloneTabIndex(1, 0);
             return;
           } // 最後のアイテムにカレント時
 
 
-          if (this.isCurrentNum === this.itemLength + 1) {
+          if (self.isCurrentNum === self.itemLength + 1) {
             setTabIndex(0, 0);
             setTabIndex(1, 0);
             setTabIndex(2, 0);
             return;
           }
 
-          setTabIndex(this.isCurrentNum - 1, 0);
-          setTabIndex(this.isCurrentNum, 0);
-          setTabIndex(this.isCurrentNum + 1, 0);
+          setTabIndex(self.isCurrentNum - 1, 0);
+          setTabIndex(self.isCurrentNum, 0);
+          setTabIndex(self.isCurrentNum + 1, 0);
           break;
 
         default:
@@ -12879,12 +12284,12 @@ function setCarousel() {
     },
 
     /**
-     * マウスクリック時の処理
-     * @return {void}
-     */
-    clickHandler: function clickHandler() {
+      * マウスクリック時の処理
+      * @return {void}
+      */
+    clickEvent: function clickEvent() {
       var self = this;
-      this.nextButton.addEventListener('click', function () {
+      self.nextButton.addEventListener('click', function () {
         self.nextSlide();
         self.changeTabIndex();
 
@@ -12892,10 +12297,10 @@ function setCarousel() {
           self.resetAutoPlayTime();
         }
       });
-      this.prevButton.addEventListener('click', function () {
+      self.prevButton.addEventListener('click', function () {
         self.prevSlide();
         self.focusableItem.forEach(function (el) {
-          el.setAttribute('tabindex', -1);
+          el.tabIndex = -1;
         });
         self.changeTabIndex();
 
@@ -12903,7 +12308,7 @@ function setCarousel() {
           self.resetAutoPlayTime();
         }
       });
-      this.indicator.forEach(function (el) {
+      self.indicator.forEach(function (el) {
         el.addEventListener('click', function (e) {
           if (e.target.classList.contains('is-active')) {
             return;
@@ -12917,15 +12322,15 @@ function setCarousel() {
           }
         });
       });
-      this.slideInner.addEventListener(TRANSITIONEND, function () {
-        self.transitionHandler();
+      self.slideInner.addEventListener(TRANSITIONEND, function () {
+        self.transitionAfter();
       });
-      this.item.forEach(function (el) {
+      self.item.forEach(function (el) {
         el.addEventListener(TRANSITIONEND, function () {
           self.isSliding = false;
         });
       });
-      this.pauseButton.addEventListener('click', function (e) {
+      self.pauseButton.addEventListener('click', function (e) {
         if (e.target.classList.contains(self.pauseClass)) {
           self.stopAutoPlay();
         } else {
@@ -12937,13 +12342,13 @@ function setCarousel() {
     },
 
     /**
-     * リサイズ時の処理
-     * @return {void}
-     */
-    resizeHandler: function resizeHandler() {
+      * リサイズ時の処理
+      * @return {void}
+      */
+    resizeEvent: function resizeEvent() {
       var self = this;
-      var timeoutId = null;
-      var windowWidth = null;
+      var timeoutId = 0;
+      var windowWidth = 0;
       window.addEventListener('resize', function () {
         if (self.animationType === 'slide') {
           self.resetAutoPlayTime();
@@ -12968,12 +12373,12 @@ function setCarousel() {
     },
 
     /**
-     * マウスホバー時の処理
-     * @return {void}
-     */
-    hoverHandler: function hoverHandler() {
+      * マウスホバー時の処理
+      * @return {void}
+      */
+    hoverEvent: function hoverEvent() {
       var self = this;
-      this.item.forEach(function (el) {
+      self.item.forEach(function (el) {
         el.addEventListener('mouseenter', function () {
           if (self.autoPlay && self.onStopPlay && self.isAutoPlay) {
             self.stopAutoPlay();
@@ -12990,10 +12395,10 @@ function setCarousel() {
     },
 
     /**
-     * キー操作時の処理
-     * @return {void}
-     */
-    keyHandler: function keyHandler() {
+      * キー操作時の処理
+      * @return {void}
+      */
+    keyEvent: function keyEvent() {
       var self = this;
 
       var tabEventCansel = function tabEventCansel(e) {
@@ -13002,17 +12407,17 @@ function setCarousel() {
         }
       };
 
-      this.nextButton.addEventListener('keydown', tabEventCansel);
-      this.prevButton.addEventListener('keydown', tabEventCansel);
+      self.nextButton.addEventListener('keydown', tabEventCansel);
+      self.prevButton.addEventListener('keydown', tabEventCansel);
 
       if (UA.indexOf('edge') !== -1) {
-        this.item.forEach(function (el) {
+        self.item.forEach(function (el) {
           el.addEventListener('keydown', tabEventCansel);
         });
       }
 
       if (UA.indexOf('trident/7') !== -1) {
-        this.item.forEach(function (el) {
+        self.item.forEach(function (el) {
           el.addEventListener('keydown', tabEventCansel);
         });
       }
@@ -13020,45 +12425,40 @@ function setCarousel() {
 
     /**
      * スワイプ時の処理
-     * @return {void}
+     * @returns {void}
      */
-    swipeHandler: function swipeHandler() {
+    swipeEvent: function swipeEvent() {
       var self = this;
-      var mouseOnX = null;
-      var mouseOutX = null;
-
-      var eventCansel = function eventCansel(e) {
-        e.preventDefault();
-      };
-
-      this.slideInner.addEventListener('mousedown', function (e) {
-        eventCansel(e);
-        mouseOnX = e.pageX;
+      var touchMargin = 30;
+      var touchOnX = null;
+      var touchOutX = null;
+      self.root.addEventListener('touchstart', function (e) {
+        touchOnX = e.changedTouches[0].pageX;
+      }, {
+        passive: true
       });
-      this.slideInner.addEventListener('mouseup', function (e) {
-        mouseOutX = e.pageX;
+      self.root.addEventListener('touchend', function (e) {
+        touchOutX = e.changedTouches[0].pageX;
 
-        if (mouseOnX < mouseOutX) {
-          self.slideInner.addEventListener('click', eventCansel);
+        if (touchOnX + touchMargin < touchOutX) {
           self.prevSlide();
           self.changeTabIndex();
           self.resetAutoPlayTime();
-        } else if (mouseOutX < mouseOnX) {
-          self.slideInner.addEventListener('click', eventCansel);
+        } else if (touchOutX + touchMargin < touchOnX) {
           self.nextSlide();
           self.changeTabIndex();
           self.resetAutoPlayTime();
-        } else {
-          self.slideInner.removeEventListener('click', eventCansel);
         }
+      }, {
+        passive: true
       });
     },
 
     /**
-     * トランジションアニメーション終了時の処理
-     * @return {void}
-     */
-    transitionHandler: function transitionHandler() {
+      * トランジションアニメーション終了時の処理
+      * @return {void}
+      */
+    transitionAfter: function transitionAfter() {
       var styles = window.getComputedStyle(this.slideInner);
 
       if (this.animationType === 'slide') {
@@ -13067,7 +12467,7 @@ function setCarousel() {
 
         if (this.resizeBeforeWidth !== this.resizeAfterWidth) {
           this.setColItems();
-          this.trigger(window, 'resize');
+          this.forcedResize();
         }
 
         if (this.isCurrentNum > this.itemLength) {
@@ -13085,26 +12485,19 @@ function setCarousel() {
     },
 
     /**
-     * トリガーイベントの強制発生
-     * @param {object} element 
-     * @param {eventListener} event 
+     * 初回読み込み時にトリガーイベントの強制発生
+     * @returns {void}
      */
-    trigger: function trigger(element, event) {
-      if (document.createEvent) {
-        var evt = document.createEvent('HTMLEvents');
-        evt.initEvent(event, true, true);
-        return element.dispatchEvent(evt);
-      } else {
-        var evt = document.createEventObject();
-        return element.fireEvent('on' + event, evt);
-      }
+    forcedResize: function forcedResize() {
+      var resize = new Event('resize');
+      window.dispatchEvent(resize);
     },
 
     /**
-     * ブレイクポイントのカラム切替処理
-     * @param {number} width - リサイズ時のウィンドウ幅
-     * @return {void}
-     */
+      * ブレイクポイントのカラム切替処理
+      * @param {number} width - リサイズ時のウィンドウ幅
+      * @return {void}
+      */
     changeBreakPoint: function changeBreakPoint(width) {
       if (width < this.breakPoint) {
         this.column = this.spColumn;
@@ -13119,10 +12512,10 @@ function setCarousel() {
     },
 
     /**
-     * インジケーターのカレント同期
-     * @param {number} currentTarget カレントをアクティブにしたい数値
-     * @return {void}
-     */
+      * インジケーターのカレント同期
+      * @param {number} currentTarget カレントをアクティブにしたい数値
+      * @return {void}
+      */
     indicatorUpdate: function indicatorUpdate(currentTarget) {
       this.indicator.forEach(function (el) {
         el.classList.remove('is-active');
@@ -13131,53 +12524,53 @@ function setCarousel() {
     },
 
     /**
-     * 自動再生開始機能
-     * @return {void}
-     */
+      * 自動再生開始機能
+      * @return {void}
+      */
     startAutoPlay: function startAutoPlay() {
       var self = this;
-      this.isAutoPlay = true;
-      this.autoPlayId = setInterval(function () {
+      self.isAutoPlay = true;
+      self.autoPlayId = setInterval(function () {
         self.nextSlide();
         self.changeTabIndex();
-      }, this.playInterval);
+      }, self.playInterval);
     },
 
     /**
-     * 自動再生停止機能
-     * @return {void}
-     */
+      * 自動再生停止機能
+      * @return {void}
+      */
     stopAutoPlay: function stopAutoPlay() {
       this.isAutoPlay = false;
       clearInterval(this.autoPlayId);
     },
 
     /**
-     * 自動再生タイミングリセット機能
-     * @return {void}
-     */
+      * 自動再生タイミングリセット機能
+      * @return {void}
+      */
     resetAutoPlayTime: function resetAutoPlayTime() {
       if (this.autoPlay && this.isAutoPlay) {
         var self = this;
 
-        var promiseFunc = function promiseFunc() {
+        var resetAutoPlay = function resetAutoPlay() {
           return new Promise(function (resolve) {
             self.stopAutoPlay();
             resolve();
           });
         };
 
-        promiseFunc().then(function () {
+        resetAutoPlay().then(function () {
           self.startAutoPlay();
         });
       }
     },
 
     /**
-     * 自動再生アイコンの変更処理
-     * @param {object} e - 自動再生切替ボタン
-     * @return {void}
-     */
+      * 自動再生アイコンの変更処理
+      * @param {object} e - 自動再生切替ボタン
+      * @return {void}
+      */
     changeAutoPlayIcon: function changeAutoPlayIcon(e) {
       var target = e.currentTarget;
 
@@ -13193,13 +12586,13 @@ function setCarousel() {
     },
 
     /**
-     * 高さ揃え機能
-     * @return {void}
-     */
+      * 高さ揃え機能
+      * @return {void}
+      */
     matchHeight: function matchHeight() {
-      var i = 0;
       var maxLength = this.itemLength;
       var heightAry = [];
+      var i = 0;
       this.wrap.style.height = '';
       this.item.forEach(function (el) {
         el.style.height = '';
@@ -13228,10 +12621,16 @@ function setCarousel() {
         });
       }
     }
-  };
+  }; // 機能実行
+
   document.querySelectorAll('.js-carousel').forEach(function (element) {
     var carousel = new Carousel(element, {
-      column: 2
+      column: 3,
+      spColumn: 2,
+      colMargin: 10,
+      autoPlay: true,
+      playInterval: 10000 // animationType: 'fade'
+
     });
     carousel.init();
   });

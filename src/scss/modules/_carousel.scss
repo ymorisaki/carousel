@@ -50,40 +50,49 @@
     &__prev {
         position: absolute;
         top: 50%;
-        width: 50px;
-        height: 50px;
+        z-index: 1;
+        overflow: hidden;
+        width: 42px;
+        height: 42px;
         border-radius: 50%;
         background-color: #000;
         cursor: pointer;
         transform: translateY(-50%);
-        z-index: 1;
+        color: #fff;
 
-        > span {
+        &::before {
             position: absolute;
             top: 50%;
-            width: 20px;
-            height: 20px;
-            border-top: 2px solid #fff;
-            border-right: 2px solid #fff;
-            font-size: 0;
+            left: 50%;
+            width: 15px;
+            height: 15px;
+            border-top: 3px solid #fff;
+            border-right: 3px solid #fff;
+            content: '';
+        }
+
+        > span {
+            margin-left: -200px;
         }
     }
 
     &__prev {
         left: 0;
 
-        > span {
-            left: 55%;
-            transform: translate(-50%, -50%) rotate(-135deg);
+        &::before {
+            top: 14px;
+            left: 15px;
+            transform: rotate(-135deg);
         }
     }
 
     &__next {
         right: 0;
 
-        > span {
-            left: 45%;
-            transform: translate(-50%, -50%) rotate(45deg);
+        &::before {
+            top: 14px;
+            left: 11px;
+            transform: rotate(45deg);
         }
     }
 
@@ -94,6 +103,7 @@
         bottom: -30px;
         display: flex;
         justify-content: center;
+        overflow: hidden;
     }
 
     &__indicator-wrap {
@@ -116,51 +126,56 @@
         height: 15px;
         background-color: #777;
         border-radius: 50%;
+        overflow: hidden;
 
-        &.-is-active {
+        &.is-active {
             background-color: #000; 
         }
     }
     .indicator-index {
-        font-size: 0;
-        color: transparent;
+        position: absolute;
+        top: 30px;
+        left: -30px;
     }
 
     &__play {
         position: relative;
         display: block;
+        overflow: hidden;
+        width: 11px;
+        height: 14px;
+        margin-left: 10px;
 
         &::before {
             position: absolute;
-            top: 50%;
-            left: 50%;
             width: 11px;
-            height: 11px;
-            margin-left: 20px;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid #333;
-            border-left: 8px solid transparent; 
+            height: 14px;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #333;
+            border-left: 10px solid transparent; 
             transform-origin: center;
             transform: translate(-50%, -50%) rotate(90deg);
             content: '';
         }
 
         > span {
-            font-size: 0;
-            color: transparent;
+            position: absolute;
+            top: 20px;
         }
     }
 
     &__pause {
-        position: relative;
+        // position: relative;
+        // display: block;
+        overflow: hidden;
+        width: 11px;
+        height: 14px;
+        margin-left: 10px;
 
         &::before {
             position: absolute;
-            top: 50%;
-            left: 50%;
             width: 11px;
             height: 14px;
-            margin-left: 18px;
             border-left: 3px solid #333;
             border-right: 3px solid #333;
             transform: translate(-50%, -50%);
@@ -168,8 +183,8 @@
         }
 
         > span {
-            font-size: 0;
-            color: transparent;
+            position: absolute;
+            top: 20px;
         }
     }
 }

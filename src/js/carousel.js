@@ -12,8 +12,8 @@ export function setCarousel() {
    * @param {object} options 
    */
   const Carousel = function (root, options) {
-    let self = this;
-    let o = {
+    const self = this;
+    const o = {
       wrap: 'carousel__wrap',
       slideWrap: 'carousel__slide-wrap',
       slideInner: 'carousel__slide-inner',
@@ -41,13 +41,7 @@ export function setCarousel() {
       duration: 500
     };
 
-    if (options) {
-      for (let key in options) {
-        o[key] = options[key];
-      }
-    }
-
-    console.log(this.column);
+    Object.assign(o, options);
 
     // DOMオブジェクト
     this.root = root;
@@ -102,7 +96,7 @@ export function setCarousel() {
     this.resizeThreshold = o.resizeThreshold;
     this.duration = o.duration;
 
-    // 動的に代入されるの設定
+    // 動的に代入される設定
     this.indicator = null;
     this.cloneBeforeWrap = null;
     this.cloneAfterWrap = null;
@@ -127,36 +121,36 @@ export function setCarousel() {
       * @returns {void}
       */
     init: function () {
-      this.addElementClasses();
+      if (this.animationType === 'fade') {
+          this.column = 1;
+      }
+
+      this.addElementAndClasses();
       this.setInitItems();
       this.cloneSlider();
       this.setController();
       this.changeTabIndex();
-      this.clickHandler();
-      this.resizeHandler();
-      this.hoverHandler();
-      this.keyHandler();
+      this.clickEvent();
+      this.resizeEvent();
+      this.hoverEvent();
+      this.keyEvent();
 
       if (this.swipe) {
-          this.swipeHandler();
+          this.swipeEvent();
       }
 
       if (this.autoPlay) {
           this.startAutoPlay();
       }
 
-      if (this.animationType === 'fade') {
-          this.column = 1;
-      }
-
-      this.trigger(window, 'resize');
+      this.forcedResize();
     },
 
     /**
      * DOM要素の追加生成と属性の付与
       * @returns {void}
       */
-    addElementClasses: function () {
+    addElementAndClasses: function () {
       const addSpan = function (el, cl, txt) {
         const span = document.createElement('span');
         let i = 0;
@@ -186,41 +180,41 @@ export function setCarousel() {
       * @returns {void}
       */
     setInitItems: function () {
-      let self = this;
+      const self = this;
 
-      this.wrap.style.position = 'absolute';
-      this.wrap.style.top = 0;
-      this.item.forEach(function (el) {
+      self.wrap.style.position = 'absolute';
+      self.wrap.style.top = 0;
+      self.item.forEach(function (el) {
         el.style.position = 'absolute';
       });
 
-      if (this.itemLength === 1) {
-        this.column = 1;
+      if (self.itemLength === 1) {
+        self.column = 1;
       }
 
-      if (this.animationType === 'slide') {
-        this.slideInner.style.transitionDuration = (this.duration / 1000) + 's';
-        this.slideInner.style.transitionTimingFunction = this.easing;
+      if (self.animationType === 'slide') {
+        self.slideInner.style.transitionDuration = (self.duration / 1000) + 's';
+        self.slideInner.style.transitionTimingFunction = self.easing;
       }
 
-      if (this.colMargin && this.column > 1) {
-        this.item.forEach(function (el) {
+      if (self.colMargin && self.column > 1) {
+        self.item.forEach(function (el) {
           el.style.marginRight = self.colMargin + 'px';
         });
       }
 
-      if (this.animationType === 'fade') {
-        let self = this;
-        let promiseFunc = function () {
+      if (self.animationType === 'fade') {
+        const _self = this;
+        const setStyles = function () {
           return new Promise(function (resolve) {
-            self.item.forEach(function (el, num) {
-              let styles = el.style;
+            _self.item.forEach(function (el, num) {
+              const styles = el.style;
 
               styles.top = 0;
               styles.left = 0;
               styles.opacity = 0;
               styles.transitionDuration = '0s';
-              styles.transitionTimingFunction = self.easing;
+              styles.transitionTimingFunction = _self.easing;
 
               if (num === 0) {
                 el.style.opacity = 1;
@@ -230,10 +224,12 @@ export function setCarousel() {
           });
         };
 
-        promiseFunc().then(function () {
-          self.item.forEach(function (el) {
-            el.style.transitionDuration = self.duration / 1000 + 's';
-          });
+        setStyles().then(function () {
+          setTimeout(() => {
+            _self.item.forEach(function (el) {
+              el.style.transitionDuration = _self.duration / 1000 + 's';
+            });
+          }, 10);
         });
       }
     },
@@ -250,8 +246,11 @@ export function setCarousel() {
       const cloneElement1 = this.wrap.cloneNode(true);
       const cloneElement2 = this.wrap.cloneNode(true);
 
-      cloneElement1.classList.add('is-clone', 'is-clone-after');
-      cloneElement2.classList.add('is-clone', 'is-clone-before');
+      cloneElement1.classList.add('is-clone');
+      cloneElement1.classList.add('is-clone-after');
+      cloneElement2.classList.add('is-clone');
+      cloneElement2.classList.add('is-clone-before');
+
       this.slideInner.appendChild(cloneElement1);
       this.slideInner.insertBefore(cloneElement2, this.slideInner.firstChild);
 
@@ -265,7 +264,7 @@ export function setCarousel() {
 
         el.setAttribute('aria-hidden', true);
         focusable.forEach(function (el) {
-          el.setAttribute('tabindex', -1);
+          el.tabIndex = -1;
         });
       });
 
@@ -274,7 +273,7 @@ export function setCarousel() {
 
         el.setAttribute('aria-hidden', true);
         focusable.forEach(function (el) {
-          el.setAttribute('tabindex', -1);
+          el.tabIndex = -1;
         });
       });
     },
@@ -284,7 +283,7 @@ export function setCarousel() {
       * @returns {void}
       */
     setController: function() {
-      let flagment = document.createDocumentFragment();
+      let fragment = document.createDocumentFragment();
       let i = 0;
 
       // インジケーターの生成
@@ -300,19 +299,19 @@ export function setCarousel() {
         span.textContent = (i + 1) + '番目のスライドを表示';
         button.appendChild(span);
         li.appendChild(button);
-        flagment.appendChild(li);
+        fragment.appendChild(li);
       }
 
       // 各種要素の配置
       this.root.appendChild(this.nextButton);
       this.root.insertBefore(this.prevButton, this.root.firstChild);
       this.root.appendChild(this.playerWrap);
-      this.indicatorWrap.appendChild(flagment);
+      this.indicatorWrap.appendChild(fragment);
       this.playerWrap.appendChild(this.indicatorWrap);
 
       // class名の付与
       this.indicator = this.indicatorWrap.querySelectorAll('.' + this.indicatorClass);
-      this.indicator[0].classList.add('-is-active');
+      this.indicator[0].classList.add('is-active');
 
       if (this.autoPlay) {
         this.playerWrap.appendChild(this.pauseButton);
@@ -326,84 +325,82 @@ export function setCarousel() {
       * @returns {void}
       */
     setColItems: function () {
-      let self = this;
+      const self = this;
       let i = 0;
-      let maxLength = this.itemLength;
+      let maxLength = self.itemLength;
       let styles = null;
 
-      if (this.isSliding) {
+      if (self.isSliding) {
         return;
       }
 
-      if (this.animationType === 'slide') {
+      if (self.animationType === 'slide') {
         // カラムオプション変更とリサイズによるアイテム幅の計算
-        if (this.column === 1) {
-          this.item.forEach(function (el) {
+        if (self.column === 1) {
+          self.item.forEach(function (el) {
             el.style.width = '100%';
           });
 
-          this.cloneBeforeItem.forEach(function (el) {
+          self.cloneBeforeItem.forEach(function (el) {
             el.style.width = '100%';
           });
 
-          this.cloneAfterItem.forEach(function (el) {
+          self.cloneAfterItem.forEach(function (el) {
             el.style.width = '100%';
           });
 
-          styles = window.getComputedStyle(this.item[0]);
-          this.itemWidth = this.item[0].getBoundingClientRect().width;
-          // this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
-          // this.colMargin = 0;
+          styles = window.getComputedStyle(self.item[0]);
+          self.itemWidth = self.item[0].getBoundingClientRect().width;
         } else {
-          this.item.forEach(function (el) {
+          self.item.forEach(function (el) {
             el.style.width = 'calc(' + (100 / self.column) + '% - ' + (self.colMargin / self.column * (self.column - 1)) + 'px)';
           });
 
-          this.cloneBeforeItem.forEach(function (el) {
+          self.cloneBeforeItem.forEach(function (el) {
             el.style.width = 'calc(' + (100 / self.column) + '% - ' + (self.colMargin / self.column * (self.column - 1)) + 'px)';
           });
 
-          this.cloneAfterItem.forEach(function (el) {
+          self.cloneAfterItem.forEach(function (el) {
             el.style.width = 'calc(' + (100 / self.column) + '% - ' + (self.colMargin / self.column * (self.column - 1)) + 'px)';
           });
 
-          styles = window.getComputedStyle(this.item[0]);
-          this.itemWidth = this.item[0].getBoundingClientRect().width;
-          this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
-          this.itemWidth = this.itemWidth + this.colMargin;
+          styles = window.getComputedStyle(self.item[0]);
+          self.itemWidth = self.item[0].getBoundingClientRect().width;
+          self.colMargin = parseInt(styles.marginRight, 10);
+          self.itemWidth = self.itemWidth + self.colMargin;
         }
       }
 
       // クローンしたパネルの配置
       for (; i < maxLength; i++) {
-        this.item[i].style.left = (this.itemWidth * i) + 'px';
+        self.item[i].style.left = (self.itemWidth * i) + 'px';
 
-        if (this.animationType === 'slide') {
-          this.cloneBeforeItem[i].style.left = (this.itemWidth * i) + 'px';
-          this.cloneAfterItem[i].style.left = (this.itemWidth * i) + 'px';
+        if (self.animationType === 'slide') {
+          self.cloneBeforeItem[i].style.left = (self.itemWidth * i) + 'px';
+          self.cloneAfterItem[i].style.left = (self.itemWidth * i) + 'px';
         }
       }
 
-      if (this.animationType === 'slide') {
+      if (self.animationType === 'slide') {
         // クローンしたパネルのラッパーを左右に配置
-        this.cloneBeforeWrap.style.left = '-' + (this.itemWidth * this.itemLength) + 'px';
-        this.cloneAfterWrap.style.left = (this.itemWidth * this.itemLength) + 'px';
+        self.cloneBeforeWrap.style.left = '-' + (self.itemWidth * self.itemLength) + 'px';
+        self.cloneAfterWrap.style.left = (self.itemWidth * self.itemLength) + 'px';
       }
 
       // スライド全体の再配置（動作未確認注意）
-      if (this.isCurrentNum !== 1) {
-        let self = this;
-        let promiseFunc = function () {
+      if (self.isCurrentNum !== 1) {
+        const _self = this;
+        const setSildePosition = function () {
           return new Promise(function (resolve) {
-            self.slideInner.style.left = '-' + (self.itemWidth * (self.isCurrentNum - 1)) + 'px';
-            self.slideInner.style.transitionDuration = '0s';
-            styles = window.getComputedStyle(self.slideInner);
+            _self.slideInner.style.left = '-' + (_self.itemWidth * (_self.isCurrentNum - 1)) + 'px';
+            _self.slideInner.style.transitionDuration = '0s';
+            styles = window.getComputedStyle(_self.slideInner);
             resolve();
           });
         };
-        promiseFunc().then(function () {
-          self.slideInner.style.transitionDuration = (self.duration / 1000) + 's';
-          self.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
+        setSildePosition().then(function () {
+          _self.slideInner.style.transitionDuration = (_self.duration / 1000) + 's';
+          _self.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
         });
       }
     },
@@ -429,9 +426,8 @@ export function setCarousel() {
         elWidth = this.item[0].getBoundingClientRect().width;
         if (this.column === 1) {
           this.itemWidth = elWidth;
-          console.log(this.column);
         } else {
-          this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+          this.colMargin = parseInt(styles.marginRight, 10);
           this.itemWidth = elWidth + this.colMargin;
         }
 
@@ -471,18 +467,18 @@ export function setCarousel() {
       * @return {void}
       */
     nextInfiniteLoop: function () {
-      let self = this;
+      const self = this;
 
-      if (this.animationType === 'slide') {
-        this.slideInner.style.transitionDuration = '0s';
+      if (self.animationType === 'slide') {
+        self.slideInner.style.transitionDuration = '0s';
 
         setTimeout(function () {
           self.slideInner.style.left = 0;
         }, 20);
 
         // 現在のカレントとleft位置を初期化
-        this.isCurrentNum = 1;
-        this.nowPosition = 0;
+        self.isCurrentNum = 1;
+        self.nowPosition = 0;
 
         setTimeout(function () {
           self.slideInner.style.transitionDuration = (self.duration / 1000) + 's';
@@ -510,7 +506,7 @@ export function setCarousel() {
       if (this.animationType === 'slide') {
         styles = window.getComputedStyle(this.item[0]);
         elWidth = this.item[0].getBoundingClientRect().width;
-        this.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+        this.colMargin = parseInt(styles.marginRight, 10);
         this.itemWidth = elWidth + this.colMargin;
 
         if (this.isCurrentNum === 0) {
@@ -546,14 +542,14 @@ export function setCarousel() {
       * @return {void}
       */
     prevInfiniteLoop: function () {
-      let self = this;
-      let targetPosition = null;
-      let styles = window.getComputedStyle(this.item[0]);
-      let elWidth = this.item[0].getBoundingClientRect().width;
-      let promiseFunc = function () {
+      const self = this;
+      let targetPosition = 0;
+      let styles = window.getComputedStyle(self.item[0]);
+      let elWidth = self.item[0].getBoundingClientRect().width;
+      const initSlide = function () {
         return new Promise(function (resolve) {
 
-        self.colMargin = parseInt(styles.marginRight.replace(/px/, ''));
+        self.colMargin = parseInt(styles.marginRight, 10);
         self.itemWidth = elWidth + self.colMargin;
 
         targetPosition = self.itemWidth * (self.itemLength - (self.column - (self.column - 1)));
@@ -569,7 +565,7 @@ export function setCarousel() {
         });
       };
 
-      promiseFunc().then(function () {
+      initSlide().then(function () {
         self.slideInner.style.transitionDuration = (self.duration / 1000) + 's';
         self.isSliding = false;
       });
@@ -581,7 +577,7 @@ export function setCarousel() {
       * @return {void}
       */
     targetSlide: function (e) {
-      let targetNum = e.target.querySelector('.indicator-index').getAttribute('data-current');
+      const targetNum = e.target.querySelector('.indicator-index').getAttribute('data-current');
 
       if (this.isSliding) {
         return;
@@ -609,81 +605,81 @@ export function setCarousel() {
       * @return {void}
       */
     changeTabIndex: function () {
-      let self = this;
+      const self = this;
       const setTabIndex = function (target, addNum) {
         const changeTarget = self.item[target].querySelectorAll(FOCUSABLE);
         changeTarget.forEach(function (el) {
-          el.setAttribute('tabindex', addNum);
+          el.tabIndex = addNum;
         });
       };
       const setCloneTabIndex = function (target, addNum) {
         const changeTarget = self.cloneAfterItem[target].querySelectorAll(FOCUSABLE);
         changeTarget.forEach(function (el) {
-          el.setAttribute('tabindex', addNum);
+          el.tabIndex = addNum;
         });
       };
 
-      this.focusableItem.forEach(function (el) {
-        el.setAttribute('tabindex', -1);
+      self.focusableItem.forEach(function (el) {
+        el.tabIndex = -1;
       });
 
-      if (this.animationType === 'slide') {
-        const afterFocusable = this.cloneAfterWrap.querySelectorAll(FOCUSABLE);
+      if (self.animationType === 'slide') {
+        const afterFocusable = self.cloneAfterWrap.querySelectorAll(FOCUSABLE);
         afterFocusable.forEach(function (el) {
-          el.setAttribute('tabindex', -1);
+          el.tabIndex = -1;
         });
       }
 
-      switch (this.column) {
+      switch (self.column) {
       case 1:
-          if (this.isCurrentNum === this.itemLength + 1) {
+          if (self.isCurrentNum === self.itemLength + 1) {
               setTabIndex(0, 0);
 
               return;
           }
 
-          if (this.isCurrentNum === 0) {
-              setTabIndex(this.itemLength - 1, 0);
+          if (self.isCurrentNum === 0) {
+              setTabIndex(self.itemLength - 1, 0);
 
               return;
           }
 
-          setTabIndex(this.isCurrentNum - 1, 0);
+          setTabIndex(self.isCurrentNum - 1, 0);
           break;
 
       case 2:
           // 最初のアイテムにカレント時
-          if (this.isCurrentNum === 0) {
-              setTabIndex(this.itemLength - 1, 0);
+          if (self.isCurrentNum === 0) {
+              setTabIndex(self.itemLength - 1, 0);
               setCloneTabIndex(0, 0);
 
               return;
           }
 
           // 最後から二番目のアイテムにカレント時
-          if (this.isCurrentNum === this.itemLength) {
-              setTabIndex(this.isCurrentNum - 1, 0);
+          if (self.isCurrentNum === self.itemLength) {
+              setTabIndex(self.isCurrentNum - 1, 0);
               setCloneTabIndex(0, 0);
 
               return;
           }
 
           // 最後のアイテムにカレント時
-          if (this.isCurrentNum === this.itemLength + 1) {
+          if (self.isCurrentNum === self.itemLength + 1) {
               setTabIndex(0, 0);
               setTabIndex(1, 0);
 
               return;
           }
 
-          setTabIndex(this.isCurrentNum - 1, 0);
-          setTabIndex(this.isCurrentNum, 0);
+          setTabIndex(self.isCurrentNum - 1, 0);
+          setTabIndex(self.isCurrentNum, 0);
           break;
 
       case 3:
           // 最初のアイテムにカレント時
-          if (this.isCurrentNum === 0) {
-              setTabIndex(this.itemLength - 1, 0);
+          if (self.isCurrentNum === 0) {
+              setTabIndex(self.itemLength - 1, 0);
               setCloneTabIndex(0, 0);
               setCloneTabIndex(1, 0);
 
@@ -691,17 +687,17 @@ export function setCarousel() {
           }
 
           // 最後から三番目のアイテムにカレント時
-          if (this.isCurrentNum === this.itemLength - 1) {
-              setTabIndex(this.isCurrentNum, 0);
-              setTabIndex(this.isCurrentNum - 1, 0);
+          if (self.isCurrentNum === self.itemLength - 1) {
+              setTabIndex(self.isCurrentNum, 0);
+              setTabIndex(self.isCurrentNum - 1, 0);
               setCloneTabIndex(0, 0);
 
               return;
           }
 
           // 最後から二番目のアイテムにカレント時
-          if (this.isCurrentNum === this.itemLength) {
-              setTabIndex(this.isCurrentNum - 1, 0);
+          if (self.isCurrentNum === self.itemLength) {
+              setTabIndex(self.isCurrentNum - 1, 0);
               setCloneTabIndex(0, 0);
               setCloneTabIndex(1, 0);
 
@@ -709,7 +705,7 @@ export function setCarousel() {
           }
 
           // 最後のアイテムにカレント時
-          if (this.isCurrentNum === this.itemLength + 1) {
+          if (self.isCurrentNum === self.itemLength + 1) {
               setTabIndex(0, 0);
               setTabIndex(1, 0);
               setTabIndex(2, 0);
@@ -717,9 +713,9 @@ export function setCarousel() {
               return;
           }
 
-          setTabIndex(this.isCurrentNum - 1, 0);
-          setTabIndex(this.isCurrentNum, 0);
-          setTabIndex(this.isCurrentNum + 1, 0);
+          setTabIndex(self.isCurrentNum - 1, 0);
+          setTabIndex(self.isCurrentNum, 0);
+          setTabIndex(self.isCurrentNum + 1, 0);
           break;
 
       default:
@@ -731,10 +727,10 @@ export function setCarousel() {
       * マウスクリック時の処理
       * @return {void}
       */
-    clickHandler: function () {
-      let self = this;
+    clickEvent: function () {
+      const self = this;
 
-      this.nextButton.addEventListener('click', function () {
+      self.nextButton.addEventListener('click', function () {
         self.nextSlide();
         self.changeTabIndex();
         if (self.autoPlay && self.isAutoPlay) {
@@ -742,10 +738,10 @@ export function setCarousel() {
         }
       });
 
-      this.prevButton.addEventListener('click', function () {
+      self.prevButton.addEventListener('click', function () {
         self.prevSlide();
         self.focusableItem.forEach(function (el) {
-          el.setAttribute('tabindex', -1);
+          el.tabIndex = -1;
         });
         self.changeTabIndex();
         if (self.autoPlay && self.isAutoPlay) {
@@ -753,9 +749,9 @@ export function setCarousel() {
         }
       });
 
-      this.indicator.forEach(function (el) {
+      self.indicator.forEach(function (el) {
         el.addEventListener('click', function (e) {
-          if (e.target.classList.contains('-is-active')) {
+          if (e.target.classList.contains('is-active')) {
             return;
           }
 
@@ -767,17 +763,17 @@ export function setCarousel() {
         });
       });
 
-      this.slideInner.addEventListener(TRANSITIONEND, function () {
-        self.transitionHandler();
+      self.slideInner.addEventListener(TRANSITIONEND, function () {
+        self.transitionAfter();
       });
 
-      this.item.forEach(function (el) {
+      self.item.forEach(function (el) {
         el.addEventListener(TRANSITIONEND, function () {
           self.isSliding = false;
         });
       });
 
-      this.pauseButton.addEventListener('click', function (e) {
+      self.pauseButton.addEventListener('click', function (e) {
         if (e.target.classList.contains(self.pauseClass)) {
           self.stopAutoPlay();
         } else {
@@ -791,10 +787,10 @@ export function setCarousel() {
       * リサイズ時の処理
       * @return {void}
       */
-    resizeHandler: function () {
-      let self = this;
-      let timeoutId = null;
-      let windowWidth = null;
+    resizeEvent: function () {
+      const self = this;
+      let timeoutId = 0;
+      let windowWidth = 0;
 
       window.addEventListener('resize', function () {
         if (self.animationType === 'slide') {
@@ -823,10 +819,10 @@ export function setCarousel() {
       * マウスホバー時の処理
       * @return {void}
       */
-    hoverHandler: function () {
-      let self = this;
+    hoverEvent: function () {
+      const self = this;
 
-      this.item.forEach(function (el) {
+      self.item.forEach(function (el) {
         el.addEventListener('mouseenter', function () {
           if (self.autoPlay && self.onStopPlay && self.isAutoPlay) {
             self.stopAutoPlay();
@@ -847,72 +843,66 @@ export function setCarousel() {
       * キー操作時の処理
       * @return {void}
       */
-    keyHandler: function () {
-      let self = this;
-      let tabEventCansel = function (e) {
+    keyEvent: function () {
+      const self = this;
+      const tabEventCansel = function (e) {
         if (self.isSliding && self.animationType === 'slide' && e.key === 'Tab') {
           e.preventDefault();
         }
       };
 
-      this.nextButton.addEventListener('keydown', tabEventCansel);
-      this.prevButton.addEventListener('keydown', tabEventCansel);
+      self.nextButton.addEventListener('keydown', tabEventCansel);
+      self.prevButton.addEventListener('keydown', tabEventCansel);
 
       if (UA.indexOf('edge') !== -1) {
-        this.item.forEach(function (el) {
+        self.item.forEach(function (el) {
           el.addEventListener('keydown', tabEventCansel);
         });
       }
 
       if (UA.indexOf('trident/7') !== -1) {
-        this.item.forEach(function (el) {
+        self.item.forEach(function (el) {
           el.addEventListener('keydown', tabEventCansel);
         });
       }
     },
 
     /**
-      * スワイプ時の処理
-      * @return {void}
-      */
-    swipeHandler: function () {
-      let self = this;
-      let mouseOnX = null;
-      let mouseOutX = null;
-      let eventCansel = function (e) {
-          e.preventDefault();
-      };
+     * スワイプ時の処理
+     * @returns {void}
+     */
+    swipeEvent: function () {
+        const self = this;
+        const touchMargin = 30;
+        let touchOnX = null;
+        let touchOutX = null;
 
-      this.slideInner.addEventListener('mousedown', function (e) {
-        eventCansel(e);
-        mouseOnX = e.pageX;
-      });
+        self.root.addEventListener('touchstart', function (e) {
+            touchOnX = e.changedTouches[0].pageX;
+        }, {passive: true});
 
-      this.slideInner.addEventListener('mouseup', function (e) {
-        mouseOutX = e.pageX;
+        self.root.addEventListener('touchend', function (e) {
+            touchOutX = e.changedTouches[0].pageX;
 
-        if (mouseOnX < mouseOutX) {
-          self.slideInner.addEventListener('click', eventCansel);
-          self.prevSlide();
-          self.changeTabIndex();
-          self.resetAutoPlayTime();
-        } else if (mouseOutX < mouseOnX) {
-          self.slideInner.addEventListener('click', eventCansel);
-          self.nextSlide();
-          self.changeTabIndex();
-          self.resetAutoPlayTime();
-        } else {
-          self.slideInner.removeEventListener('click', eventCansel);
-        }
-      });
+            if (touchOnX + touchMargin < touchOutX) {
+                self.prevSlide();
+                self.changeTabIndex();
+                self.resetAutoPlayTime();
+            } else if (touchOutX + touchMargin < touchOnX) {
+                self.nextSlide();
+                self.changeTabIndex();
+                self.resetAutoPlayTime();
+            }
+        }, {passive: true});
     },
+
 
     /**
       * トランジションアニメーション終了時の処理
       * @return {void}
       */
-    transitionHandler: function () {
-      let styles = window.getComputedStyle(this.slideInner);
+    transitionAfter: function () {
+      const styles = window.getComputedStyle(this.slideInner);
 
       if (this.animationType === 'slide') {
 
@@ -921,7 +911,7 @@ export function setCarousel() {
 
         if (this.resizeBeforeWidth !== this.resizeAfterWidth) {
           this.setColItems();
-          this.trigger(window, 'resize');
+          this.forcedResize();
         }
 
         if (this.isCurrentNum > this.itemLength) {
@@ -940,19 +930,13 @@ export function setCarousel() {
     },
 
     /**
-      * トリガーイベントの強制発生
-      * @param {object} element 
-      * @param {eventListener} event 
-      */
-    trigger: function (element, event) {
-      if (document.createEvent) {
-          var evt = document.createEvent('HTMLEvents');
-          evt.initEvent(event, true, true);
-          return element.dispatchEvent(evt);
-      } else {
-          var evt = document.createEventObject();
-          return element.fireEvent('on' + event, evt)
-      }
+     * 初回読み込み時にトリガーイベントの強制発生
+     * @returns {void}
+     */
+    forcedResize: function () {
+      const resize = new Event('resize');
+
+      window.dispatchEvent(resize);
     },
 
     /**
@@ -979,9 +963,9 @@ export function setCarousel() {
       */
     indicatorUpdate: function (currentTarget) {
       this.indicator.forEach(function (el) {
-        el.classList.remove('-is-active');
+        el.classList.remove('is-active');
       });
-      this.indicator[currentTarget].classList.add('-is-active');
+      this.indicator[currentTarget].classList.add('is-active');
     },
 
     /**
@@ -989,13 +973,13 @@ export function setCarousel() {
       * @return {void}
       */
     startAutoPlay: function () {
-      let self = this;
+      const self = this;
 
-      this.isAutoPlay = true;
-      this.autoPlayId = setInterval(function () {
+      self.isAutoPlay = true;
+      self.autoPlayId = setInterval(function () {
         self.nextSlide();
         self.changeTabIndex();
-      }, this.playInterval);
+      }, self.playInterval);
     },
 
     /**
@@ -1013,15 +997,15 @@ export function setCarousel() {
       */
     resetAutoPlayTime: function () {
       if (this.autoPlay && this.isAutoPlay) {
-        let self = this;
-        let promiseFunc = function () {
+        const self = this;
+        const resetAutoPlay = function () {
           return new Promise(function (resolve) {
             self.stopAutoPlay();
             resolve();
           });
         };
 
-        promiseFunc().then(function () {
+        resetAutoPlay().then(function () {
           self.startAutoPlay();
         });
       }
@@ -1033,7 +1017,7 @@ export function setCarousel() {
       * @return {void}
       */
     changeAutoPlayIcon: function (e) {
-      let target = e.currentTarget;
+      const target = e.currentTarget;
       
       if (target.classList.contains(this.pauseClass)) {
         target.classList.remove(this.pauseClass);
@@ -1051,9 +1035,9 @@ export function setCarousel() {
       * @return {void}
       */
     matchHeight: function () {
+      const maxLength = this.itemLength;
+      const heightAry = [];
       let i = 0;
-      let maxLength = this.itemLength;
-      let heightAry = [];
 
       this.wrap.style.height = '';
       this.item.forEach(function (el) {
@@ -1089,7 +1073,14 @@ export function setCarousel() {
 
   // 機能実行
   document.querySelectorAll('.js-carousel').forEach(function (element) {
-    const carousel = new Carousel(element);
+    const carousel = new Carousel(element, {
+      column: 3,
+      spColumn: 2,
+      colMargin: 10,
+      autoPlay: true,
+      playInterval: 10000,
+      // animationType: 'fade'
+    });
     carousel.init();
   });
 }

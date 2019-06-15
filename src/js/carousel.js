@@ -505,8 +505,12 @@
             if (this.animationType === 'slide') {
                 styles = window.getComputedStyle(this.item[0]);
                 elWidth = this.item[0].getBoundingClientRect().width;
-                this.colMargin = parseInt(styles.marginRight, 10);
-                this.itemWidth = elWidth + this.colMargin;
+                if (this.column === 1) {
+                    this.itemWidth = elWidth;
+                } else {
+                    this.colMargin = parseInt(styles.marginRight, 10);
+                    this.itemWidth = elWidth + this.colMargin;
+                }
 
                 if (this.isCurrentNum === 0) {
                     this.slideInner.style.left = (this.nowPosition + this.itemWidth) + 'px';
@@ -547,8 +551,12 @@
             let elWidth = self.item[0].getBoundingClientRect().width;
             const initSlide = function () {
                 return new Promise(function (resolve) {
-                    self.colMargin = parseInt(styles.marginRight, 10);
-                    self.itemWidth = elWidth + self.colMargin;
+                    if (self.column === 1) {
+                        self.itemWidth = elWidth;
+                    } else {
+                        self.colMargin = parseInt(styles.marginRight, 10);
+                        self.itemWidth = elWidth + self.colMargin;
+                    }
 
                     targetPosition = self.itemWidth * (self.itemLength - (self.column - (self.column - 1)));
 

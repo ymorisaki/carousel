@@ -11936,7 +11936,7 @@ module.exports = function (module) {
           styles = window.getComputedStyle(self.item[0]);
           self.itemWidth = self.item[0].getBoundingClientRect().width;
           self.colMargin = parseInt(styles.marginRight, 10);
-          self.itemWidth += self.colMargin;
+          self.itemWidth = self.itemWidth + self.colMargin;
         }
       } // クローンしたパネルの配置
 

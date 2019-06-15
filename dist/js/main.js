@@ -10199,7 +10199,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/cor
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(true);
 // Module
-exports.push([module.i, "@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    z-index: 1;\n    overflow: hidden;\n    width: 42px;\n    height: 42px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    color: #fff; }\n    .carousel__next::before, .carousel__prev::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 15px;\n      height: 15px;\n      border-top: 3px solid #fff;\n      border-right: 3px solid #fff;\n      content: ''; }\n    .carousel__next > span, .carousel__prev > span {\n      margin-left: -200px; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev::before {\n      top: 14px;\n      left: 15px;\n      transform: rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next::before {\n      top: 14px;\n      left: 11px;\n      transform: rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center;\n    overflow: hidden; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%;\n    overflow: hidden; }\n    .carousel__indicator.is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    position: absolute;\n    top: 30px;\n    left: -30px; }\n  .carousel__play {\n    position: relative;\n    display: block;\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__play::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-right: 10px solid transparent;\n      border-bottom: 10px solid #333;\n      border-left: 10px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      position: absolute;\n      top: 20px; }\n  .carousel__pause {\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__pause::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      position: absolute;\n      top: 20px; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse; }\n\nimg {\n  width: 100%; }\n", "",{"version":3,"sources":["/Users/yuji/Desktop/work/carousel/src/scss/main.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_ress.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_base.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/layout/_header.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_carousel.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_contents.scss"],"names":[],"mappings":"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","file":"main.scss","sourcesContent":["@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    z-index: 1;\n    overflow: hidden;\n    width: 42px;\n    height: 42px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    color: #fff; }\n    .carousel__next::before, .carousel__prev::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 15px;\n      height: 15px;\n      border-top: 3px solid #fff;\n      border-right: 3px solid #fff;\n      content: ''; }\n    .carousel__next > span, .carousel__prev > span {\n      margin-left: -200px; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev::before {\n      top: 14px;\n      left: 15px;\n      transform: rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next::before {\n      top: 14px;\n      left: 11px;\n      transform: rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center;\n    overflow: hidden; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%;\n    overflow: hidden; }\n    .carousel__indicator.is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    position: absolute;\n    top: 30px;\n    left: -30px; }\n  .carousel__play {\n    position: relative;\n    display: block;\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__play::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-right: 10px solid transparent;\n      border-bottom: 10px solid #333;\n      border-left: 10px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      position: absolute;\n      top: 20px; }\n  .carousel__pause {\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__pause::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      position: absolute;\n      top: 20px; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse; }\n\nimg {\n  width: 100%; }\n","/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\n\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */\n}\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit;\n}\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n}\n\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\nhr {\n  overflow: visible;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\n\nsummary {\n  display: list-item;\n}\n\nsmall {\n  font-size: 80%;\n}\n\n[hidden],\ntemplate {\n  display: none;\n}\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none;\n}\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\n\na:active,\na:hover {\n  outline-width: 0;\n}\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n}\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\ndfn {\n  font-style: italic;\n}\n\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n\ninput {\n  border-radius: 0;\n}\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n[disabled] {\n  cursor: default;\n}\n\n[type=\"number\"] {\n  width: auto;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n}\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n}\n\noptgroup {\n  font-weight: bold;\n}\n\nbutton {\n  overflow: visible;\n}\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0;\n}\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText;\n}\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\n\nbutton,\nselect {\n  text-transform: none;\n}\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit;\n}\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none;\n}\n\nselect::-ms-expand {\n  display: none;\n}\n\nselect::-ms-value {\n  color: currentColor;\n}\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal;\n}\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px;\n}\n\n\nimg {\n  border-style: none;\n}\n\nprogress {\n  vertical-align: baseline;\n}\n\nsvg:not(:root) {\n  overflow: hidden;\n}\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit;\n  }\n\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important;\n  }\n}\n\n[aria-busy=\"true\"] {\n  cursor: progress;\n}\n\n[aria-controls] {\n  cursor: pointer;\n}\n\n[aria-disabled] {\n  cursor: default;\n}\n\n\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}","@charset \"UTF-8\";\nbody {\n    font-size: 16px;\n    font-family: Verdana;\n}\n\ntable {\n    width: 540px;\n    margin: 20px auto;\n    border-collapse: collapse;\n\n    th, td {\n        width: 180px;\n        box-sizing: border-box;\n        border: 1px solid #555;\n        padding: 20px;\n    }\n\n    th {\n        cursor: pointer;\n    }\n\n    tbody tr:nth-child(odd) {\n        background: #f8f8f8;\n    }\n}\n\n.score {\n    text-align: right;\n}\n\nth:after {\n    content: '\\f0dc';\n    font-family: FontAwesome;\n    font-size: 12px;\n    color: #ccc;\n    float: right;\n    padding-top: 4px;\n    font-weight: nomal;\n}\nth.asc:after {\n    content: '\\f0de';\n    font-family: FontAwesome;\n    color: #000;\n}\nth.desc:after {\n    content: '\\f0dd';\n    font-family: FontAwesome;\n    color: #000;\n}\n","@charset \"UTF-8\";\n\n.header {\n  color: #fff;\n  background-color: rgb(143, 205, 203);\n\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px;\n  }\n}\n","@charset 'UTF-8';\n\n// JS無効時のスタイル\n[data-script-enabled=\"false\"] {\n    .carousel {\n        display: flex;\n        flex-wrap: wrap;\n\n        &__inner {\n            display: flex;\n            flex-wrap: wrap;\n        }\n\n        &__item {\n            width: 48%;\n\n            &:nth-child(odd) {\n                margin-right: 4%;\n            }\n        }\n    }\n}\n\n.carousel {\n    position: relative;\n    margin-bottom: 50px;\n\n    &__slide-wrap {\n        overflow: hidden;\n    }\n\n    &__slide-inner {\n        position: relative;\n        top: 0;\n        left: 0;\n        transition-property: left;\n    }\n\n    &__wrap {\n        width: 100%;\n        top: 0;\n        left: 0;\n    }\n\n    &__item {\n        transition-duration: 0s;\n    }\n\n    &__next,\n    &__prev {\n        position: absolute;\n        top: 50%;\n        z-index: 1;\n        overflow: hidden;\n        width: 42px;\n        height: 42px;\n        border-radius: 50%;\n        background-color: #000;\n        cursor: pointer;\n        transform: translateY(-50%);\n        color: #fff;\n\n        &::before {\n            position: absolute;\n            top: 50%;\n            left: 50%;\n            width: 15px;\n            height: 15px;\n            border-top: 3px solid #fff;\n            border-right: 3px solid #fff;\n            content: '';\n        }\n\n        > span {\n            margin-left: -200px;\n        }\n    }\n\n    &__prev {\n        left: 0;\n\n        &::before {\n            top: 14px;\n            left: 15px;\n            transform: rotate(-135deg);\n        }\n    }\n\n    &__next {\n        right: 0;\n\n        &::before {\n            top: 14px;\n            left: 11px;\n            transform: rotate(45deg);\n        }\n    }\n\n    &__player-wrap {\n        position: absolute;\n        left: 0;\n        right: 0;\n        bottom: -30px;\n        display: flex;\n        justify-content: center;\n        overflow: hidden;\n    }\n\n    &__indicator-wrap {\n        display: flex;\n\n        > li {\n            list-style: none;\n            display: flex;\n            align-items: center;\n\n            &:not( :last-child) {\n                margin-right: 10px;\n            }\n        }\n    }\n\n    &__indicator {\n        position: relative;\n        width: 15px;\n        height: 15px;\n        background-color: #777;\n        border-radius: 50%;\n        overflow: hidden;\n\n        &.is-active {\n            background-color: #000; \n        }\n    }\n    .indicator-index {\n        position: absolute;\n        top: 30px;\n        left: -30px;\n    }\n\n    &__play {\n        position: relative;\n        display: block;\n        overflow: hidden;\n        width: 11px;\n        height: 14px;\n        margin-left: 10px;\n\n        &::before {\n            position: absolute;\n            width: 11px;\n            height: 14px;\n            border-right: 10px solid transparent;\n            border-bottom: 10px solid #333;\n            border-left: 10px solid transparent; \n            transform-origin: center;\n            transform: translate(-50%, -50%) rotate(90deg);\n            content: '';\n        }\n\n        > span {\n            position: absolute;\n            top: 20px;\n        }\n    }\n\n    &__pause {\n        // position: relative;\n        // display: block;\n        overflow: hidden;\n        width: 11px;\n        height: 14px;\n        margin-left: 10px;\n\n        &::before {\n            position: absolute;\n            width: 11px;\n            height: 14px;\n            border-left: 3px solid #333;\n            border-right: 3px solid #333;\n            transform: translate(-50%, -50%);\n            content: '';\n        }\n\n        > span {\n            position: absolute;\n            top: 20px;\n        }\n    }\n}","@charset \"UTF-8\";\n\n.container {\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 10px;\n  }\n}\n\n.carousel {\n    &__item {\n        width: 100%;\n    }\n}\n\n.character {\n  display: flex;\n  flex-direction: column-reverse;\n}\n\nimg {\n  width: 100%;\n}"],"sourceRoot":""}]);
+exports.push([module.i, "@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    z-index: 1;\n    overflow: hidden;\n    width: 42px;\n    height: 42px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    color: #fff; }\n    .carousel__next::before, .carousel__prev::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 15px;\n      height: 15px;\n      border-top: 3px solid #fff;\n      border-right: 3px solid #fff;\n      content: ''; }\n    .carousel__next > span, .carousel__prev > span {\n      margin-left: -200px; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev::before {\n      top: 14px;\n      left: 15px;\n      transform: rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next::before {\n      top: 14px;\n      left: 11px;\n      transform: rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center;\n    overflow: hidden; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%;\n    overflow: hidden; }\n    .carousel__indicator.is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    position: absolute;\n    top: 30px;\n    left: -30px; }\n  .carousel__play {\n    position: relative;\n    display: block;\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__play::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-right: 10px solid transparent;\n      border-bottom: 10px solid #333;\n      border-left: 10px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      position: absolute;\n      top: 20px; }\n  .carousel__pause {\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__pause::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      position: absolute;\n      top: 20px; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse;\n  justify-content: flex-end; }\n\nimg {\n  width: 100%; }\n", "",{"version":3,"sources":["/Users/yuji/Desktop/work/carousel/src/scss/main.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_ress.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/core/_base.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/layout/_header.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_carousel.scss","/Users/yuji/Desktop/work/carousel/src/scss/src/scss/modules/_contents.scss"],"names":[],"mappings":"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","file":"main.scss","sourcesContent":["@charset \"UTF-8\";\n/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */ }\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit; }\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit; }\n\n* {\n  padding: 0;\n  margin: 0; }\n\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\nhr {\n  overflow: visible; }\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block; }\n\nsummary {\n  display: list-item; }\n\nsmall {\n  font-size: 80%; }\n\n[hidden],\ntemplate {\n  display: none; }\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none; }\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\na:active,\na:hover {\n  outline-width: 0; }\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace; }\n\nb,\nstrong {\n  font-weight: bolder; }\n\ndfn {\n  font-style: italic; }\n\nmark {\n  background-color: #ff0;\n  color: #000; }\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\ninput {\n  border-radius: 0; }\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer; }\n\n[disabled] {\n  cursor: default; }\n\n[type=\"number\"] {\n  width: auto; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield; }\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\ntextarea {\n  overflow: auto;\n  resize: vertical; }\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit; }\n\noptgroup {\n  font-weight: bold; }\n\nbutton {\n  overflow: visible; }\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0; }\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText; }\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\nbutton,\nselect {\n  text-transform: none; }\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit; }\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none; }\n\nselect::-ms-expand {\n  display: none; }\n\nselect::-ms-value {\n  color: currentColor; }\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal; }\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit; }\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px; }\n\nimg {\n  border-style: none; }\n\nprogress {\n  vertical-align: baseline; }\n\nsvg:not(:root) {\n  overflow: hidden; }\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit; }\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important; } }\n\n[aria-busy=\"true\"] {\n  cursor: progress; }\n\n[aria-controls] {\n  cursor: pointer; }\n\n[aria-disabled] {\n  cursor: default; }\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none; }\n\nbody {\n  font-size: 16px;\n  font-family: Verdana; }\n\ntable {\n  width: 540px;\n  margin: 20px auto;\n  border-collapse: collapse; }\n  table th, table td {\n    width: 180px;\n    box-sizing: border-box;\n    border: 1px solid #555;\n    padding: 20px; }\n  table th {\n    cursor: pointer; }\n  table tbody tr:nth-child(odd) {\n    background: #f8f8f8; }\n\n.score {\n  text-align: right; }\n\nth:after {\n  content: '\\f0dc';\n  font-family: FontAwesome;\n  font-size: 12px;\n  color: #ccc;\n  float: right;\n  padding-top: 4px;\n  font-weight: nomal; }\n\nth.asc:after {\n  content: '\\f0de';\n  font-family: FontAwesome;\n  color: #000; }\n\nth.desc:after {\n  content: '\\f0dd';\n  font-family: FontAwesome;\n  color: #000; }\n\n.header {\n  color: #fff;\n  background-color: #8fcdcb; }\n  .header__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px; }\n\n[data-script-enabled=\"false\"] .carousel {\n  display: flex;\n  flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__inner {\n    display: flex;\n    flex-wrap: wrap; }\n  [data-script-enabled=\"false\"] .carousel__item {\n    width: 48%; }\n    [data-script-enabled=\"false\"] .carousel__item:nth-child(odd) {\n      margin-right: 4%; }\n\n.carousel {\n  position: relative;\n  margin-bottom: 50px; }\n  .carousel__slide-wrap {\n    overflow: hidden; }\n  .carousel__slide-inner {\n    position: relative;\n    top: 0;\n    left: 0;\n    transition-property: left; }\n  .carousel__wrap {\n    width: 100%;\n    top: 0;\n    left: 0; }\n  .carousel__item {\n    transition-duration: 0s; }\n  .carousel__next, .carousel__prev {\n    position: absolute;\n    top: 50%;\n    z-index: 1;\n    overflow: hidden;\n    width: 42px;\n    height: 42px;\n    border-radius: 50%;\n    background-color: #000;\n    cursor: pointer;\n    transform: translateY(-50%);\n    color: #fff; }\n    .carousel__next::before, .carousel__prev::before {\n      position: absolute;\n      top: 50%;\n      left: 50%;\n      width: 15px;\n      height: 15px;\n      border-top: 3px solid #fff;\n      border-right: 3px solid #fff;\n      content: ''; }\n    .carousel__next > span, .carousel__prev > span {\n      margin-left: -200px; }\n  .carousel__prev {\n    left: 0; }\n    .carousel__prev::before {\n      top: 14px;\n      left: 15px;\n      transform: rotate(-135deg); }\n  .carousel__next {\n    right: 0; }\n    .carousel__next::before {\n      top: 14px;\n      left: 11px;\n      transform: rotate(45deg); }\n  .carousel__player-wrap {\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: -30px;\n    display: flex;\n    justify-content: center;\n    overflow: hidden; }\n  .carousel__indicator-wrap {\n    display: flex; }\n    .carousel__indicator-wrap > li {\n      list-style: none;\n      display: flex;\n      align-items: center; }\n      .carousel__indicator-wrap > li:not(:last-child) {\n        margin-right: 10px; }\n  .carousel__indicator {\n    position: relative;\n    width: 15px;\n    height: 15px;\n    background-color: #777;\n    border-radius: 50%;\n    overflow: hidden; }\n    .carousel__indicator.is-active {\n      background-color: #000; }\n  .carousel .indicator-index {\n    position: absolute;\n    top: 30px;\n    left: -30px; }\n  .carousel__play {\n    position: relative;\n    display: block;\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__play::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-right: 10px solid transparent;\n      border-bottom: 10px solid #333;\n      border-left: 10px solid transparent;\n      transform-origin: center;\n      transform: translate(-50%, -50%) rotate(90deg);\n      content: ''; }\n    .carousel__play > span {\n      position: absolute;\n      top: 20px; }\n  .carousel__pause {\n    overflow: hidden;\n    width: 11px;\n    height: 14px;\n    margin-left: 10px; }\n    .carousel__pause::before {\n      position: absolute;\n      width: 11px;\n      height: 14px;\n      border-left: 3px solid #333;\n      border-right: 3px solid #333;\n      transform: translate(-50%, -50%);\n      content: ''; }\n    .carousel__pause > span {\n      position: absolute;\n      top: 20px; }\n\n.container__inner {\n  max-width: 1000px;\n  margin: auto;\n  padding: 10px; }\n\n.carousel__item {\n  width: 100%; }\n\n.character {\n  display: flex;\n  flex-direction: column-reverse;\n  justify-content: flex-end; }\n\nimg {\n  width: 100%; }\n","/*!\n * ress.css • v1.2.2\n * MIT License\n * github.com/filipelinhares/ress\n */\n\nhtml {\n  box-sizing: border-box;\n  overflow-y: scroll;\n  /* All browsers without overlaying scrollbars */\n  -webkit-text-size-adjust: 100%;\n  /* iOS 8+ */\n}\n\n*,\n::before,\n::after {\n  background-repeat: no-repeat;\n  box-sizing: inherit;\n}\n\n::before,\n::after {\n  text-decoration: inherit;\n  vertical-align: inherit;\n}\n\n* {\n  padding: 0;\n  margin: 0;\n}\n\naudio:not([controls]) {\n  display: none;\n  height: 0;\n}\n\nhr {\n  overflow: visible;\n}\n\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  display: block;\n}\n\nsummary {\n  display: list-item;\n}\n\nsmall {\n  font-size: 80%;\n}\n\n[hidden],\ntemplate {\n  display: none;\n}\n\nabbr[title] {\n  border-bottom: 1px dotted;\n  text-decoration: none;\n}\n\na {\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects;\n}\n\na:active,\na:hover {\n  outline-width: 0;\n}\n\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n}\n\nb,\nstrong {\n  font-weight: bolder;\n}\n\ndfn {\n  font-style: italic;\n}\n\nmark {\n  background-color: #ff0;\n  color: #000;\n}\n\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline;\n}\n\nsub {\n  bottom: -0.25em;\n}\n\nsup {\n  top: -0.5em;\n}\n\n\ninput {\n  border-radius: 0;\n}\n\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"],\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n[disabled] {\n  cursor: default;\n}\n\n[type=\"number\"] {\n  width: auto;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n}\n\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none;\n}\n\ntextarea {\n  overflow: auto;\n  resize: vertical;\n}\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font: inherit;\n}\n\noptgroup {\n  font-weight: bold;\n}\n\nbutton {\n  overflow: visible;\n}\n\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: 0;\n  padding: 0;\n}\n\nbutton:-moz-focusring,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  outline: 1px dotted ButtonText;\n}\n\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n}\n\nbutton,\nselect {\n  text-transform: none;\n}\n\nbutton,\ninput,\nselect,\ntextarea {\n  background-color: transparent;\n  border-style: none;\n  color: inherit;\n}\n\nselect {\n  -moz-appearance: none;\n  -webkit-appearance: none;\n}\n\nselect::-ms-expand {\n  display: none;\n}\n\nselect::-ms-value {\n  color: currentColor;\n}\n\nlegend {\n  border: 0;\n  color: inherit;\n  display: table;\n  max-width: 100%;\n  white-space: normal;\n}\n\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  font: inherit;\n}\n\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  outline-offset: -2px;\n}\n\n\nimg {\n  border-style: none;\n}\n\nprogress {\n  vertical-align: baseline;\n}\n\nsvg:not(:root) {\n  overflow: hidden;\n}\n\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block;\n}\n\n\n@media screen {\n  [hidden~=\"screen\"] {\n    display: inherit;\n  }\n\n  [hidden~=\"screen\"]:not(:active):not(:focus):not(:target) {\n    position: absolute !important;\n    clip: rect(0 0 0 0) !important;\n  }\n}\n\n[aria-busy=\"true\"] {\n  cursor: progress;\n}\n\n[aria-controls] {\n  cursor: pointer;\n}\n\n[aria-disabled] {\n  cursor: default;\n}\n\n\n\n::-moz-selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}\n\n::selection {\n  background-color: #b3d4fc;\n  color: #000;\n  text-shadow: none;\n}","@charset \"UTF-8\";\nbody {\n    font-size: 16px;\n    font-family: Verdana;\n}\n\ntable {\n    width: 540px;\n    margin: 20px auto;\n    border-collapse: collapse;\n\n    th, td {\n        width: 180px;\n        box-sizing: border-box;\n        border: 1px solid #555;\n        padding: 20px;\n    }\n\n    th {\n        cursor: pointer;\n    }\n\n    tbody tr:nth-child(odd) {\n        background: #f8f8f8;\n    }\n}\n\n.score {\n    text-align: right;\n}\n\nth:after {\n    content: '\\f0dc';\n    font-family: FontAwesome;\n    font-size: 12px;\n    color: #ccc;\n    float: right;\n    padding-top: 4px;\n    font-weight: nomal;\n}\nth.asc:after {\n    content: '\\f0de';\n    font-family: FontAwesome;\n    color: #000;\n}\nth.desc:after {\n    content: '\\f0dd';\n    font-family: FontAwesome;\n    color: #000;\n}\n","@charset \"UTF-8\";\n\n.header {\n  color: #fff;\n  background-color: rgb(143, 205, 203);\n\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 30px;\n  }\n}\n","@charset 'UTF-8';\n\n// JS無効時のスタイル\n[data-script-enabled=\"false\"] {\n    .carousel {\n        display: flex;\n        flex-wrap: wrap;\n\n        &__inner {\n            display: flex;\n            flex-wrap: wrap;\n        }\n\n        &__item {\n            width: 48%;\n\n            &:nth-child(odd) {\n                margin-right: 4%;\n            }\n        }\n    }\n}\n\n.carousel {\n    position: relative;\n    margin-bottom: 50px;\n\n    &__slide-wrap {\n        overflow: hidden;\n    }\n\n    &__slide-inner {\n        position: relative;\n        top: 0;\n        left: 0;\n        transition-property: left;\n    }\n\n    &__wrap {\n        width: 100%;\n        top: 0;\n        left: 0;\n    }\n\n    &__item {\n        transition-duration: 0s;\n    }\n\n    &__next,\n    &__prev {\n        position: absolute;\n        top: 50%;\n        z-index: 1;\n        overflow: hidden;\n        width: 42px;\n        height: 42px;\n        border-radius: 50%;\n        background-color: #000;\n        cursor: pointer;\n        transform: translateY(-50%);\n        color: #fff;\n\n        &::before {\n            position: absolute;\n            top: 50%;\n            left: 50%;\n            width: 15px;\n            height: 15px;\n            border-top: 3px solid #fff;\n            border-right: 3px solid #fff;\n            content: '';\n        }\n\n        > span {\n            margin-left: -200px;\n        }\n    }\n\n    &__prev {\n        left: 0;\n\n        &::before {\n            top: 14px;\n            left: 15px;\n            transform: rotate(-135deg);\n        }\n    }\n\n    &__next {\n        right: 0;\n\n        &::before {\n            top: 14px;\n            left: 11px;\n            transform: rotate(45deg);\n        }\n    }\n\n    &__player-wrap {\n        position: absolute;\n        left: 0;\n        right: 0;\n        bottom: -30px;\n        display: flex;\n        justify-content: center;\n        overflow: hidden;\n    }\n\n    &__indicator-wrap {\n        display: flex;\n\n        > li {\n            list-style: none;\n            display: flex;\n            align-items: center;\n\n            &:not( :last-child) {\n                margin-right: 10px;\n            }\n        }\n    }\n\n    &__indicator {\n        position: relative;\n        width: 15px;\n        height: 15px;\n        background-color: #777;\n        border-radius: 50%;\n        overflow: hidden;\n\n        &.is-active {\n            background-color: #000; \n        }\n    }\n    .indicator-index {\n        position: absolute;\n        top: 30px;\n        left: -30px;\n    }\n\n    &__play {\n        position: relative;\n        display: block;\n        overflow: hidden;\n        width: 11px;\n        height: 14px;\n        margin-left: 10px;\n\n        &::before {\n            position: absolute;\n            width: 11px;\n            height: 14px;\n            border-right: 10px solid transparent;\n            border-bottom: 10px solid #333;\n            border-left: 10px solid transparent; \n            transform-origin: center;\n            transform: translate(-50%, -50%) rotate(90deg);\n            content: '';\n        }\n\n        > span {\n            position: absolute;\n            top: 20px;\n        }\n    }\n\n    &__pause {\n        // position: relative;\n        // display: block;\n        overflow: hidden;\n        width: 11px;\n        height: 14px;\n        margin-left: 10px;\n\n        &::before {\n            position: absolute;\n            width: 11px;\n            height: 14px;\n            border-left: 3px solid #333;\n            border-right: 3px solid #333;\n            transform: translate(-50%, -50%);\n            content: '';\n        }\n\n        > span {\n            position: absolute;\n            top: 20px;\n        }\n    }\n}","@charset \"UTF-8\";\n\n.container {\n  &__inner {\n    max-width: 1000px;\n    margin: auto;\n    padding: 10px;\n  }\n}\n\n.carousel {\n    &__item {\n        width: 100%;\n    }\n}\n\n.character {\n  display: flex;\n  flex-direction: column-reverse;\n  justify-content: flex-end;\n}\n\nimg {\n  width: 100%;\n}"],"sourceRoot":""}]);
 
 
 
@@ -11588,13 +11588,10 @@ module.exports = function (module) {
 /*!****************************!*\
   !*** ./src/js/carousel.js ***!
   \****************************/
-/*! exports provided: setCarousel */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setCarousel", function() { return setCarousel; });
-function setCarousel() {
+(function () {
   'use strict';
 
   var FOCUSABLE = 'a, area, input, button, select, option, textarea, output, summary, video, audio, object, embed, iframe';
@@ -11603,11 +11600,15 @@ function setCarousel() {
   /**
    * カルーセル機能
    * @constructor
-   * @param {object} root 
-   * @param {object} options 
+   * @param {object} root カルーセル本体
+   * @param {object} options インスタンス生成時に設定したオプション
    */
 
   var Carousel = function Carousel(root, options) {
+    if (!(this instanceof Carousel)) {
+      return new Carousel(root, options);
+    }
+
     var self = this;
     var o = {
       wrap: 'carousel__wrap',
@@ -11702,43 +11703,38 @@ function setCarousel() {
 
     this.nowPosition = 0;
     this.isCurrentNum = 1;
+
+    if (this.animationType === 'fade') {
+      this.column = 1;
+    } // 機能実行
+
+
+    this.addElementAndClasses();
+    this.setInitItems();
+    this.cloneSlider();
+    this.setController();
+    this.changeTabIndex();
+    this.clickEvent();
+    this.resizeEvent();
+    this.hoverEvent();
+    this.keyEvent();
+
+    if (this.swipe) {
+      this.swipeEvent();
+    }
+
+    if (this.autoPlay) {
+      this.startAutoPlay();
+    }
+
+    this.forcedResize();
   };
 
   Carousel.prototype = {
     /**
-     * 定義したカルーセル機能の呼び出し管理用関数
-      * @returns {void}
-      */
-    init: function init() {
-      if (this.animationType === 'fade') {
-        this.column = 1;
-      }
-
-      this.addElementAndClasses();
-      this.setInitItems();
-      this.cloneSlider();
-      this.setController();
-      this.changeTabIndex();
-      this.clickEvent();
-      this.resizeEvent();
-      this.hoverEvent();
-      this.keyEvent();
-
-      if (this.swipe) {
-        this.swipeEvent();
-      }
-
-      if (this.autoPlay) {
-        this.startAutoPlay();
-      }
-
-      this.forcedResize();
-    },
-
-    /**
      * DOM要素の追加生成と属性の付与
-      * @returns {void}
-      */
+     * @returns {void}
+     */
     addElementAndClasses: function addElementAndClasses() {
       var addSpan = function addSpan(el, cl, txt) {
         var span = document.createElement('span');
@@ -11766,8 +11762,8 @@ function setCarousel() {
 
     /**
      * カルーセルアイテムの初期配置
-      * @returns {void}
-      */
+     * @returns {void}
+     */
     setInitItems: function setInitItems() {
       var self = this;
       self.wrap.style.position = 'absolute';
@@ -11825,8 +11821,8 @@ function setCarousel() {
 
     /**
      * 無限ループ用のカルーセルの複製
-      * @returns {void}
-      */
+     * @returns {void}
+     */
     cloneSlider: function cloneSlider() {
       if (this.animationType === 'fade') {
         return;
@@ -11847,23 +11843,23 @@ function setCarousel() {
       this.cloneBeforeItem.forEach(function (el) {
         var focusable = el.querySelectorAll(FOCUSABLE);
         el.setAttribute('aria-hidden', true);
-        focusable.forEach(function (el) {
-          el.tabIndex = -1;
+        focusable.forEach(function (elem) {
+          elem.tabIndex = -1;
         });
       });
       this.cloneAfterItem.forEach(function (el) {
         var focusable = el.querySelectorAll(FOCUSABLE);
         el.setAttribute('aria-hidden', true);
-        focusable.forEach(function (el) {
-          el.tabIndex = -1;
+        focusable.forEach(function (elem) {
+          elem.tabIndex = -1;
         });
       });
     },
 
     /**
      * スライド操作に必要な要素の配置
-      * @returns {void}
-      */
+     * @returns {void}
+     */
     setController: function setController() {
       var fragment = document.createDocumentFragment();
       var i = 0; // インジケーターの生成
@@ -11900,9 +11896,9 @@ function setCarousel() {
 
     /**
      * カルーセルアイテムのカラム割と横軸配置
-      * 画面リサイズの度に処理を行う
-      * @returns {void}
-      */
+     * 画面リサイズの度に処理を行う
+     * @returns {void}
+     */
     setColItems: function setColItems() {
       var self = this;
       var i = 0;
@@ -11940,7 +11936,7 @@ function setCarousel() {
           styles = window.getComputedStyle(self.item[0]);
           self.itemWidth = self.item[0].getBoundingClientRect().width;
           self.colMargin = parseInt(styles.marginRight, 10);
-          self.itemWidth = self.itemWidth + self.colMargin;
+          self.itemWidth += self.colMargin;
         }
       } // クローンしたパネルの配置
 
@@ -11982,8 +11978,8 @@ function setCarousel() {
 
     /**
      * 一つ先にスライドする処理
-      * @return {void}
-      */
+     * @return {void}
+     */
     nextSlide: function nextSlide() {
       var styles = null;
       var elWidth = null;
@@ -12036,9 +12032,9 @@ function setCarousel() {
     },
 
     /**
-      * 一つ先にスライドする処理（無限ループ切り替え時）
-      * @return {void}
-      */
+     * 一つ先にスライドする処理（無限ループ切り替え時）
+     * @return {void}
+     */
     nextInfiniteLoop: function nextInfiniteLoop() {
       var self = this;
 
@@ -12058,9 +12054,9 @@ function setCarousel() {
     },
 
     /**
-      * 一つ前にスライドする処理
-      * @return {void}
-      */
+     * 一つ前にスライドする処理
+     * @return {void}
+     */
     prevSlide: function prevSlide() {
       var styles = null;
       var elWidth = null;
@@ -12108,9 +12104,9 @@ function setCarousel() {
     },
 
     /**
-      * 一つ前にスライドする処理（無限ループ切り替え時）
-      * @return {void}
-      */
+     * 一つ前にスライドする処理（無限ループ切り替え時）
+     * @return {void}
+     */
     prevInfiniteLoop: function prevInfiniteLoop() {
       var self = this;
       var targetPosition = 0;
@@ -12139,10 +12135,10 @@ function setCarousel() {
     },
 
     /**
-      * 任意の箇所にスライドする処理
-      * @param {object} e - クリックされたインジケーター
-      * @return {void}
-      */
+     * 任意の箇所にスライドする処理
+     * @param {object} e - クリックされたインジケーター
+     * @return {void}
+     */
     targetSlide: function targetSlide(e) {
       var targetNum = e.target.querySelector('.indicator-index').getAttribute('data-current');
 
@@ -12168,9 +12164,9 @@ function setCarousel() {
     },
 
     /**
-      * スライド時のタブインデックス操作
-      * @return {void}
-      */
+     * スライド時のタブインデックス操作
+     * @return {void}
+     */
     changeTabIndex: function changeTabIndex() {
       var self = this;
 
@@ -12284,9 +12280,9 @@ function setCarousel() {
     },
 
     /**
-      * マウスクリック時の処理
-      * @return {void}
-      */
+     * マウスクリック時の処理
+     * @return {void}
+     */
     clickEvent: function clickEvent() {
       var self = this;
       self.nextButton.addEventListener('click', function () {
@@ -12342,9 +12338,9 @@ function setCarousel() {
     },
 
     /**
-      * リサイズ時の処理
-      * @return {void}
-      */
+     * リサイズ時の処理
+     * @return {void}
+     */
     resizeEvent: function resizeEvent() {
       var self = this;
       var timeoutId = 0;
@@ -12373,9 +12369,9 @@ function setCarousel() {
     },
 
     /**
-      * マウスホバー時の処理
-      * @return {void}
-      */
+     * マウスホバー時の処理
+     * @return {void}
+     */
     hoverEvent: function hoverEvent() {
       var self = this;
       self.item.forEach(function (el) {
@@ -12395,9 +12391,9 @@ function setCarousel() {
     },
 
     /**
-      * キー操作時の処理
-      * @return {void}
-      */
+     * キー操作時の処理
+     * @return {void}
+     */
     keyEvent: function keyEvent() {
       var self = this;
 
@@ -12455,9 +12451,9 @@ function setCarousel() {
     },
 
     /**
-      * トランジションアニメーション終了時の処理
-      * @return {void}
-      */
+     * トランジションアニメーション終了時の処理
+     * @return {void}
+     */
     transitionAfter: function transitionAfter() {
       var styles = window.getComputedStyle(this.slideInner);
 
@@ -12494,10 +12490,10 @@ function setCarousel() {
     },
 
     /**
-      * ブレイクポイントのカラム切替処理
-      * @param {number} width - リサイズ時のウィンドウ幅
-      * @return {void}
-      */
+     * ブレイクポイントのカラム切替処理
+     * @param {number} width - リサイズ時のウィンドウ幅
+     * @return {void}
+     */
     changeBreakPoint: function changeBreakPoint(width) {
       if (width < this.breakPoint) {
         this.column = this.spColumn;
@@ -12512,10 +12508,10 @@ function setCarousel() {
     },
 
     /**
-      * インジケーターのカレント同期
-      * @param {number} currentTarget カレントをアクティブにしたい数値
-      * @return {void}
-      */
+     * インジケーターのカレント同期
+     * @param {number} currentTarget カレントをアクティブにしたい数値
+     * @return {void}
+     */
     indicatorUpdate: function indicatorUpdate(currentTarget) {
       this.indicator.forEach(function (el) {
         el.classList.remove('is-active');
@@ -12524,9 +12520,9 @@ function setCarousel() {
     },
 
     /**
-      * 自動再生開始機能
-      * @return {void}
-      */
+     * 自動再生開始機能
+     * @return {void}
+     */
     startAutoPlay: function startAutoPlay() {
       var self = this;
       self.isAutoPlay = true;
@@ -12537,18 +12533,18 @@ function setCarousel() {
     },
 
     /**
-      * 自動再生停止機能
-      * @return {void}
-      */
+     * 自動再生停止機能
+     * @return {void}
+     */
     stopAutoPlay: function stopAutoPlay() {
       this.isAutoPlay = false;
       clearInterval(this.autoPlayId);
     },
 
     /**
-      * 自動再生タイミングリセット機能
-      * @return {void}
-      */
+     * 自動再生タイミングリセット機能
+     * @return {void}
+     */
     resetAutoPlayTime: function resetAutoPlayTime() {
       if (this.autoPlay && this.isAutoPlay) {
         var self = this;
@@ -12567,10 +12563,10 @@ function setCarousel() {
     },
 
     /**
-      * 自動再生アイコンの変更処理
-      * @param {object} e - 自動再生切替ボタン
-      * @return {void}
-      */
+     * 自動再生アイコンの変更処理
+     * @param {object} e - 自動再生切替ボタン
+     * @return {void}
+     */
     changeAutoPlayIcon: function changeAutoPlayIcon(e) {
       var target = e.currentTarget;
 
@@ -12586,9 +12582,9 @@ function setCarousel() {
     },
 
     /**
-      * 高さ揃え機能
-      * @return {void}
-      */
+     * 高さ揃え機能
+     * @return {void}
+     */
     matchHeight: function matchHeight() {
       var maxLength = this.itemLength;
       var heightAry = [];
@@ -12621,20 +12617,41 @@ function setCarousel() {
         });
       }
     }
-  }; // 機能実行
+  }; // インスタンス生成
 
-  document.querySelectorAll('.js-carousel').forEach(function (element) {
-    var carousel = new Carousel(element, {
-      column: 3,
-      spColumn: 2,
-      colMargin: 10,
-      autoPlay: true,
-      playInterval: 10000 // animationType: 'fade'
-
+  document.querySelectorAll('.js-carousel-fade-01').forEach(function (el) {
+    Carousel(el, {
+      animationType: 'fade',
+      playInterval: 3000,
+      duration: 1500,
+      autoPlay: true
     });
-    carousel.init();
   });
-}
+  document.querySelectorAll('.js-carousel-slide-01').forEach(function (el) {
+    Carousel(el, {
+      playInterval: 4000,
+      autoPlay: true
+    });
+  });
+  document.querySelectorAll('.js-carousel-slide-02').forEach(function (el) {
+    Carousel(el, {
+      column: 2,
+      colMargin: 20,
+      spColumn: 1,
+      playInterval: 5000,
+      autoPlay: true
+    });
+  });
+  document.querySelectorAll('.js-carousel-slide-03').forEach(function (el) {
+    Carousel(el, {
+      column: 3,
+      colMargin: 10,
+      spColumn: 2,
+      playInterval: 4000,
+      autoPlay: true
+    });
+  });
+})();
 
 /***/ }),
 
@@ -12677,6 +12694,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _init__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./init */ "./src/js/init.js");
 /* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousel */ "./src/js/carousel.js");
+/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_carousel__WEBPACK_IMPORTED_MODULE_3__);
 
 
 

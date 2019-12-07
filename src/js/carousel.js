@@ -2,6 +2,10 @@ const FOCUSABLE = 'a, area, input, button, select, option, textarea, output, sum
 const TRANSITIONEND = 'transitionend';
 const UA = navigator.userAgent.toLowerCase();
 
+/**
+ * 汎用カルーセル
+ * @constructor
+ */
 class Carousel {
     constructor(root, options) {
         this.root = root;
@@ -47,7 +51,7 @@ class Carousel {
          * @type {object} wrap カルーセルアイテムのラッパー 無限ループ時に複製する対象
          * @type {object} item カルーセルアイテム
          * @type {number} itemLength カルーセルアイテムの数
-         * @type {array} focusableItem カルーセルアイテム内のフォーカサブルな要素
+         * @type {array} focusableItem カルーセルアイテム内のフォーカサブルな要素の配列
          */
         this.slideWrap = root.querySelector(`.${o.slideWrap}`);
         this.slideInner = root.querySelector(`.${o.slideInner}`);

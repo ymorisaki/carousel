@@ -33,7 +33,7 @@ class Carousel {
             colMargin: null,
             column: 1,
             breakPoint: 767,
-            playInterval: 5000,
+            playInterval: 4000,
             resizeThreshold: 200,
             duration: 500
         };
@@ -178,6 +178,7 @@ class Carousel {
         if (this.animationType === 'slide') {
             this.slideInner.style.transitionDuration = `${(this.duration / 1000)}s`;
             this.slideInner.style.transitionTimingFunction = this.easing;
+            this.slideInner.style.transitionProperty = 'transform, left';
         }
 
         if (this.colMargin && this.column > 1) {
@@ -187,24 +188,22 @@ class Carousel {
         }
 
         if (this.animationType === 'fade') {
-            const setStyles = () => {
-                return new Promise((resolve) => {
-                    this.item.forEach((element, num) => {
-                        const styles = element.style;
+            const setStyles = () => new Promise((resolve) => {
+                this.item.forEach((element, num) => {
+                    const styles = element.style;
 
-                        styles.top = 0;
-                        styles.left = 0;
-                        styles.opacity = 0;
-                        styles.transitionDuration = '0s';
-                        styles.transitionTimingFunction = this.easing;
+                    styles.top = 0;
+                    styles.left = 0;
+                    styles.opacity = 0;
+                    styles.transitionDuration = '0s';
+                    styles.transitionTimingFunction = this.easing;
 
-                        if (num === 0) {
-                            element.style.opacity = 1;
-                        }
-                    });
-                    resolve();
+                    if (num === 0) {
+                        element.style.opacity = 1;
+                    }
                 });
-            };
+                resolve();
+            });
 
             setStyles().then(() => {
                 setTimeout(() => {
@@ -349,24 +348,24 @@ class Carousel {
 
         // クローンしたパネルの配置
         for (let i = 0; i < maxLength; i++) {
-            this.item[i].style.left = `${(this.itemWidth * i)}px`;
+            this.item[i].style.transform = `translateX(${(this.itemWidth * i)}px)`;
 
             if (this.animationType === 'slide') {
-                this.cloneBeforeItem[i].style.left = `${(this.itemWidth * i)}px`;
-                this.cloneAfterItem[i].style.left = `${(this.itemWidth * i)}px`;
+                this.cloneBeforeItem[i].style.transform = `translateX(${(this.itemWidth * i)}px)`;
+                this.cloneAfterItem[i].style.transform = `translateX(${(this.itemWidth * i)}px)`;
             }
         }
 
         if (this.animationType === 'slide') {
             // クローンしたパネルのラッパーを左右に配置
-            this.cloneBeforeWrap.style.left = `-${(this.itemWidth * this.itemLength)}px`;
-            this.cloneAfterWrap.style.left = `${(this.itemWidth * this.itemLength)}px`;
+            this.cloneBeforeWrap.style.transform = `translateX(-${(this.itemWidth * this.itemLength)}px)`;
+            this.cloneAfterWrap.style.transform = `translateX(${(this.itemWidth * this.itemLength)}px)`;
         }
 
         // スライド全体の再配置
         if (this.isCurrentNum !== 1) {
             const setSildePosition = () => new Promise((resolve) => {
-                this.slideInner.style.left = `-${(this.itemWidth * (this.isCurrentNum - 1))}px`;
+                this.slideInner.style.transform = `translateX(-${(this.itemWidth * (this.isCurrentNum - 1))}px`;
                 this.slideInner.style.transitionDuration = '0s';
                 styles = window.getComputedStyle(this.slideInner);
                 resolve();
@@ -374,7 +373,7 @@ class Carousel {
 
             setSildePosition().then(() => {
                 this.slideInner.style.transitionDuration = `${(this.duration / 1000)}s`;
-                this.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
+                this.nowPosition = parseInt(styles.transform.replace('matrix(1, 0, 0, 1, ', '').replace(', 0)', '').replace('-', ''), 10);
             });
         }
     }
@@ -404,7 +403,9 @@ class Carousel {
                 this.itemWidth = elWidth + this.colMargin;
             }
 
-            this.slideInner.style.left = `-${(this.itemWidth + this.nowPosition)}px`;
+            console.log(this.itemWidth, this.nowPosition)
+
+            this.slideInner.style.transform = `translateX(-${(this.itemWidth + this.nowPosition)}px)`;
 
             // 無限ループ時にインジケーターを最初に戻す
             if (this.isCurrentNum === this.itemLength + 1) {
@@ -443,7 +444,7 @@ class Carousel {
             this.slideInner.style.transitionDuration = '0s';
 
             setTimeout(() => {
-                this.slideInner.style.left = 0;
+                this.slideInner.style.transform = 'translateX(0)';
             }, 20);
 
             // 現在のカレントとleft位置を初期化
@@ -483,11 +484,11 @@ class Carousel {
             }
 
             if (this.isCurrentNum === 0) {
-                this.slideInner.style.left = `${(this.nowPosition + this.itemWidth)}px`;
+                this.slideInner.style.transform = `translateX(${(this.nowPosition + this.itemWidth)}px)`;
             } else if (this.isCurrentNum === 1) {
-                this.slideInner.style.left = 0;
+                this.slideInner.style.transform = 'translateX(0)';
             } else {
-                this.slideInner.style.left = `-${(this.nowPosition - this.itemWidth)}px`;
+                this.slideInner.style.transform = `translateX(-${(this.nowPosition - this.itemWidth)}px)`;
             }
         }
 
@@ -528,12 +529,12 @@ class Carousel {
             targetPosition = this.itemWidth * (this.itemLength - (this.column - (this.column - 1)));
 
             this.slideInner.style.transitionDuration = '0s';
-            this.slideInner.style.left = `-${targetPosition}px`;
+            this.slideInner.style.transform = `translateX(-${targetPosition}px)`;
 
             // 現在のカレントとleft位置を初期化
             styles = window.getComputedStyle(this.slideInner);
             this.isCurrentNum = this.itemLength;
-            this.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
+            this.nowPosition = parseInt(styles.transform.replace('matrix(1, 0, 0, 1, ', '').replace(', 0)', '').replace('-', ''), 10);
             resolve();
         });
 
@@ -561,7 +562,7 @@ class Carousel {
         this.isCurrentNum = parseInt(targetNum, 10);
 
         if (this.animationType === 'slide') {
-            this.slideInner.style.left = `-${(this.itemWidth * (targetNum - 1))}px`;
+            this.slideInner.style.transform = `translateX(-${(this.itemWidth * (targetNum - 1))}px)`;
         }
 
         if (this.animationType === 'fade') {
@@ -866,7 +867,7 @@ class Carousel {
 
         if (this.animationType === 'slide') {
             this.resizeAfterWidth = window.innerWidth;
-            this.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
+            this.nowPosition = parseInt(styles.transform.replace('matrix(1, 0, 0, 1, ', '').replace(', 0)', '').replace('-', ''), 10);
 
             if (this.resizeBeforeWidth !== this.resizeAfterWidth) {
                 this.setColItems();

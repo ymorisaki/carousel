@@ -41,10 +41,10 @@ class Carousel {
         Object.assign(o, options);
 
         // DOMオブジェクト
-        this.slideWrap = root.querySelector('.' + o.slideWrap);
-        this.slideInner = root.querySelector('.' + o.slideInner);
-        this.wrap = root.querySelector('.' + o.wrap);
-        this.item = root.querySelectorAll('.' + o.item);
+        this.slideWrap = root.querySelector(`.${o.slideWrap}`);
+        this.slideInner = root.querySelector(`.${o.slideInner}`);
+        this.wrap = root.querySelector(`.${o.wrap}`);
+        this.item = root.querySelectorAll(`.${o.item}`);
         this.itemLength = this.item.length;
         this.focusableItem = [];
         this.item.forEach((element) => {
@@ -97,7 +97,7 @@ class Carousel {
         this.cloneAfterWrap = null;
         this.cloneBeforeItem = null;
         this.cloneAfterItem = null;
-        this.autoPlayId = null;
+        this.autoPlayId = 0;
         this.resizeBeforeWidth = null;
         this.resizeAfterWidth = null;
         this.isAutoPlay = false;
@@ -139,16 +139,15 @@ class Carousel {
         * @returns {void}
         */
     addElementAndClasses() {
-        const addSpan = function (el, cl, txt) {
+        const addSpan = (element, klass, txt) => {
             const span = document.createElement('span');
-            let i = 0;
 
-            for (; i < cl.length; i++) {
-                el.classList.add(cl[i]);
+            for (let i = 0; i < klass.length; i++) {
+                element.classList.add(klass[i]);
             }
 
-            el.setAttribute('type', 'button');
-            el.appendChild(span);
+            element.setAttribute('type', 'button');
+            element.appendChild(span);
             span.textContent = txt;
         };
 
@@ -168,54 +167,51 @@ class Carousel {
         * @returns {void}
         */
     setInitItems() {
-        const self = this;
-
-        self.wrap.style.position = 'absolute';
-        self.wrap.style.top = 0;
-        self.item.forEach(function (el) {
-            el.style.position = 'absolute';
+        this.wrap.style.position = 'absolute';
+        this.wrap.style.top = 0;
+        this.item.forEach((element) => {
+            element.style.position = 'absolute';
         });
 
-        if (self.itemLength === 1) {
-            self.column = 1;
+        if (this.itemLength === 1) {
+            this.column = 1;
         }
 
-        if (self.animationType === 'slide') {
-            self.slideInner.style.transitionDuration = (self.duration / 1000) + 's';
-            self.slideInner.style.transitionTimingFunction = self.easing;
+        if (this.animationType === 'slide') {
+            this.slideInner.style.transitionDuration = `${(this.duration / 1000)}s`;
+            this.slideInner.style.transitionTimingFunction = this.easing;
         }
 
-        if (self.colMargin && self.column > 1) {
-            self.item.forEach(function (el) {
-                el.style.marginRight = self.colMargin + 'px';
+        if (this.colMargin && this.column > 1) {
+            this.item.forEach((element) => {
+                element.style.marginRight = `${this.colMargin}px`;
             });
         }
 
-        if (self.animationType === 'fade') {
-            const _self = this;
-            const setStyles = function () {
-                return new Promise(function (resolve) {
-                    _self.item.forEach(function (el, num) {
-                        const styles = el.style;
+        if (this.animationType === 'fade') {
+            const setStyles = () => {
+                return new Promise((resolve) => {
+                    this.item.forEach((element, num) => {
+                        const styles = element.style;
 
                         styles.top = 0;
                         styles.left = 0;
                         styles.opacity = 0;
                         styles.transitionDuration = '0s';
-                        styles.transitionTimingFunction = _self.easing;
+                        styles.transitionTimingFunction = this.easing;
 
                         if (num === 0) {
-                            el.style.opacity = 1;
+                            element.style.opacity = 1;
                         }
                     });
                     resolve();
                 });
             };
 
-            setStyles().then(function () {
+            setStyles().then(() => {
                 setTimeout(() => {
-                    _self.item.forEach(function (el) {
-                        el.style.transitionDuration = (_self.duration / 1000) + 's';
+                    this.item.forEach((element) => {
+                        element.style.transitionDuration = `${(this.duration / 1000)}s`;
                     });
                 }, 10);
             });
@@ -244,24 +240,24 @@ class Carousel {
 
         this.cloneBeforeWrap = this.slideInner.querySelector('.is-clone-before');
         this.cloneAfterWrap = this.slideInner.querySelector('.is-clone-after');
-        this.cloneBeforeItem = this.cloneBeforeWrap.querySelectorAll('.' + this.itemClass);
-        this.cloneAfterItem = this.cloneAfterWrap.querySelectorAll('.' + this.itemClass);
+        this.cloneBeforeItem = this.cloneBeforeWrap.querySelectorAll(`.${this.itemClass}`);
+        this.cloneAfterItem = this.cloneAfterWrap.querySelectorAll(`.${this.itemClass}`);
 
-        this.cloneBeforeItem.forEach(function (el) {
-            const focusable = el.querySelectorAll(FOCUSABLE);
+        this.cloneBeforeItem.forEach((element) => {
+            const focusable = element.querySelectorAll(FOCUSABLE);
 
-            el.setAttribute('aria-hidden', true);
-            focusable.forEach(function (elem) {
-                elem.tabIndex = -1;
+            element.setAttribute('aria-hidden', true);
+            focusable.forEach((element) => {
+                element.tabIndex = -1;
             });
         });
 
-        this.cloneAfterItem.forEach(function (el) {
-            const focusable = el.querySelectorAll(FOCUSABLE);
+        this.cloneAfterItem.forEach((element) => {
+            const focusable = element.querySelectorAll(FOCUSABLE);
 
-            el.setAttribute('aria-hidden', true);
-            focusable.forEach(function (elem) {
-                elem.tabIndex = -1;
+            element.setAttribute('aria-hidden', true);
+            focusable.forEach((element) => {
+                element.tabIndex = -1;
             });
         });
     }
@@ -271,11 +267,10 @@ class Carousel {
         * @returns {void}
         */
     setController() {
-        let fragment = document.createDocumentFragment();
-        let i = 0;
+        const fragment = document.createDocumentFragment();
 
         // インジケーターの生成
-        for (; i < this.itemLength; i++) {
+        for (let i = 0; i < this.itemLength; i++) {
             const li = document.createElement('li');
             const button = document.createElement('button');
             const span = document.createElement('span');
@@ -284,7 +279,7 @@ class Carousel {
             button.setAttribute('type', 'button');
             span.classList.add('indicator-index');
             span.setAttribute('data-current', i + 1);
-            span.textContent = (i + 1) + '番目のスライドを表示';
+            span.textContent = `${(i + 1)}番目のスライドを表示`;
             button.appendChild(span);
             li.appendChild(button);
             fragment.appendChild(li);
@@ -298,7 +293,7 @@ class Carousel {
         this.playerWrap.appendChild(this.indicatorWrap);
 
         // class名の付与
-        this.indicator = this.indicatorWrap.querySelectorAll('.' + this.indicatorClass);
+        this.indicator = this.indicatorWrap.querySelectorAll(`.${this.indicatorClass}`);
         this.indicator[0].classList.add('is-active');
 
         if (this.autoPlay) {
@@ -313,83 +308,78 @@ class Carousel {
         * @returns {void}
         */
     setColItems() {
-        const self = this;
-        let i = 0;
-        let maxLength = self.itemLength;
+        const maxLength = this.itemLength;
         let styles = null;
 
-        if (self.isSliding) {
+        if (this.isSliding) {
             return;
         }
 
-        if (self.animationType === 'slide') {
+        if (this.animationType === 'slide') {
             // カラムオプション変更とリサイズによるアイテム幅の計算
-            if (self.column === 1) {
-                self.item.forEach(function (el) {
-                    el.style.width = '100%';
+            if (this.column === 1) {
+                this.item.forEach((element) => {
+                    element.style.width = '100%';
                 });
 
-                self.cloneBeforeItem.forEach(function (el) {
-                    el.style.width = '100%';
+                this.cloneBeforeItem.forEach((element) => {
+                    element.style.width = '100%';
                 });
 
-                self.cloneAfterItem.forEach(function (el) {
-                    el.style.width = '100%';
+                this.cloneAfterItem.forEach((element) => {
+                    element.style.width = '100%';
                 });
 
-                styles = window.getComputedStyle(self.item[0]);
-                self.itemWidth = self.item[0].getBoundingClientRect().width;
+                styles = window.getComputedStyle(this.item[0]);
+                this.itemWidth = this.item[0].getBoundingClientRect().width;
             } else {
-                self.item.forEach(function (el) {
-                    el.style.width = 'calc(' + (100 / self.column) + '% - ' + (self.colMargin / self.column * (self.column - 1)) + 'px)';
+                this.item.forEach((element) => {
+                    element.style.width = `calc(${(100 / this.column)}% - ${(this.colMargin / this.column * (this.column - 1))}px)`;
                 });
 
-                self.cloneBeforeItem.forEach(function (el) {
-                    el.style.width = 'calc(' + (100 / self.column) + '% - ' + (self.colMargin / self.column * (self.column - 1)) + 'px)';
+                this.cloneBeforeItem.forEach((element) => {
+                    element.style.width = `calc(${(100 / this.column)}% - ${(this.colMargin / this.column * (this.column - 1))}px)`;
                 });
 
-                self.cloneAfterItem.forEach(function (el) {
-                    el.style.width = 'calc(' + (100 / self.column) + '% - ' + (self.colMargin / self.column * (self.column - 1)) + 'px)';
+                this.cloneAfterItem.forEach((element) => {
+                    element.style.width = `calc(${(100 / this.column)}% - ${(this.colMargin / this.column * (this.column - 1))}px)`;
                 });
 
-                styles = window.getComputedStyle(self.item[0]);
-                self.itemWidth = self.item[0].getBoundingClientRect().width;
-                self.colMargin = parseInt(styles.marginRight, 10);
-                self.itemWidth += self.colMargin;
+                styles = window.getComputedStyle(this.item[0]);
+                this.itemWidth = this.item[0].getBoundingClientRect().width;
+                this.colMargin = parseInt(styles.marginRight, 10);
+                this.itemWidth += this.colMargin;
             }
         }
 
         // クローンしたパネルの配置
-        for (; i < maxLength; i++) {
-            self.item[i].style.left = (self.itemWidth * i) + 'px';
+        for (let i = 0; i < maxLength; i++) {
+            this.item[i].style.left = `${(this.itemWidth * i)}px`;
 
-            if (self.animationType === 'slide') {
-                self.cloneBeforeItem[i].style.left = (self.itemWidth * i) + 'px';
-                self.cloneAfterItem[i].style.left = (self.itemWidth * i) + 'px';
+            if (this.animationType === 'slide') {
+                this.cloneBeforeItem[i].style.left = `${(this.itemWidth * i)}px`;
+                this.cloneAfterItem[i].style.left = `${(this.itemWidth * i)}px`;
             }
         }
 
-        if (self.animationType === 'slide') {
+        if (this.animationType === 'slide') {
             // クローンしたパネルのラッパーを左右に配置
-            self.cloneBeforeWrap.style.left = '-' + (self.itemWidth * self.itemLength) + 'px';
-            self.cloneAfterWrap.style.left = (self.itemWidth * self.itemLength) + 'px';
+            this.cloneBeforeWrap.style.left = `-${(this.itemWidth * this.itemLength)}px`;
+            this.cloneAfterWrap.style.left = `${(this.itemWidth * this.itemLength)}px`;
         }
 
-        // スライド全体の再配置（動作未確認注意）
-        if (self.isCurrentNum !== 1) {
-            const _self = this;
-            const setSildePosition = function () {
-                return new Promise(function (resolve) {
-                    _self.slideInner.style.left = '-' + (_self.itemWidth * (_self.isCurrentNum - 1)) + 'px';
-                    _self.slideInner.style.transitionDuration = '0s';
-                    styles = window.getComputedStyle(_self.slideInner);
-                    resolve();
-                });
-            };
+        // スライド全体の再配置
+        if (this.isCurrentNum !== 1) {
+            const setSildePosition = () => new Promise((resolve) => {
+                this.slideInner.style.left = `-${(this.itemWidth * (this.isCurrentNum - 1))}px`;
+                this.slideInner.style.transitionDuration = '0s';
+                styles = window.getComputedStyle(this.slideInner);
+                resolve();
+            })
 
-            setSildePosition().then(function () {
-                _self.slideInner.style.transitionDuration = (_self.duration / 1000) + 's';
-                _self.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
+            setSildePosition().then(() => {
+                this.slideInner.style.transitionDuration = `${(this.duration / 1000)}s`;
+                this.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
             });
         }
     }
@@ -420,7 +410,7 @@ class Carousel {
                 this.itemWidth = elWidth + this.colMargin;
             }
 
-            this.slideInner.style.left = '-' + (this.itemWidth + this.nowPosition) + 'px';
+            this.slideInner.style.left = `-${(this.itemWidth + this.nowPosition)}px`;
 
             // 無限ループ時にインジケーターを最初に戻す
             if (this.isCurrentNum === this.itemLength + 1) {
@@ -456,22 +446,20 @@ class Carousel {
         * @return {void}
         */
     nextInfiniteLoop() {
-        const self = this;
+        if (this.animationType === 'slide') {
+            this.slideInner.style.transitionDuration = '0s';
 
-        if (self.animationType === 'slide') {
-            self.slideInner.style.transitionDuration = '0s';
-
-            setTimeout(function () {
-                self.slideInner.style.left = 0;
+            setTimeout(() => {
+                this.slideInner.style.left = 0;
             }, 20);
 
             // 現在のカレントとleft位置を初期化
-            self.isCurrentNum = 1;
-            self.nowPosition = 0;
+            this.isCurrentNum = 1;
+            this.nowPosition = 0;
 
-            setTimeout(function () {
-                self.slideInner.style.transitionDuration = (self.duration / 1000) + 's';
-                self.isSliding = false;
+            setTimeout(() => {
+                this.slideInner.style.transitionDuration = `${(this.duration / 1000)}s`;
+                this.isSliding = false;
             }, 40);
         }
     }
@@ -503,11 +491,11 @@ class Carousel {
             }
 
             if (this.isCurrentNum === 0) {
-                this.slideInner.style.left = (this.nowPosition + this.itemWidth) + 'px';
+                this.slideInner.style.left = `${(this.nowPosition + this.itemWidth)}px`;
             } else if (this.isCurrentNum === 1) {
                 this.slideInner.style.left = 0;
             } else {
-                this.slideInner.style.left = '-' + (this.nowPosition - this.itemWidth) + 'px';
+                this.slideInner.style.left = `-${(this.nowPosition - this.itemWidth)}px`;
             }
         }
 
@@ -535,35 +523,32 @@ class Carousel {
         * @return {void}
         */
     prevInfiniteLoop() {
-        const self = this;
         let targetPosition = 0;
-        let styles = window.getComputedStyle(self.item[0]);
-        let elWidth = self.item[0].getBoundingClientRect().width;
-        const initSlide = function () {
-            return new Promise(function (resolve) {
-                if (self.column === 1) {
-                    self.itemWidth = elWidth;
-                } else {
-                    self.colMargin = parseInt(styles.marginRight, 10);
-                    self.itemWidth = elWidth + self.colMargin;
-                }
+        let styles = window.getComputedStyle(this.item[0]);
+        let elWidth = this.item[0].getBoundingClientRect().width;
+        const initSlide = () => new Promise((resolve) => {
+            if (this.column === 1) {
+                this.itemWidth = elWidth;
+            } else {
+                this.colMargin = parseInt(styles.marginRight, 10);
+                this.itemWidth = elWidth + this.colMargin;
+            }
 
-                targetPosition = self.itemWidth * (self.itemLength - (self.column - (self.column - 1)));
+            targetPosition = this.itemWidth * (this.itemLength - (this.column - (this.column - 1)));
 
-                self.slideInner.style.transitionDuration = '0s';
-                self.slideInner.style.left = '-' + targetPosition + 'px';
+            this.slideInner.style.transitionDuration = '0s';
+            this.slideInner.style.left = `-${targetPosition}px`;
 
-                // 現在のカレントとleft位置を初期化
-                styles = window.getComputedStyle(self.slideInner);
-                self.isCurrentNum = self.itemLength;
-                self.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
-                resolve();
-            });
-        };
+            // 現在のカレントとleft位置を初期化
+            styles = window.getComputedStyle(this.slideInner);
+            this.isCurrentNum = this.itemLength;
+            this.nowPosition = parseInt(styles.left.match(/(\d+)/)[0], 10);
+            resolve();
+        });
 
-        initSlide().then(function () {
-            self.slideInner.style.transitionDuration = (self.duration / 1000) + 's';
-            self.isSliding = false;
+        initSlide().then(() => {
+            this.slideInner.style.transitionDuration = (this.duration / 1000) + 's';
+            this.isSliding = false;
         });
     }
 

@@ -40,7 +40,15 @@ class Carousel {
 
         Object.assign(o, options);
 
-        // DOMオブジェクト
+        /**
+         * DOMオブジェクト
+         * @type {object} slideWrap カルーセル全体のラッパー
+         * @type {object} slideInner カルーセルアイテムラッパーのラッパー スライドをする対象
+         * @type {object} wrap カルーセルアイテムのラッパー 無限ループ時に複製する対象
+         * @type {object} item カルーセルアイテム
+         * @type {number} itemLength カルーセルアイテムの数
+         * @type {array} focusableItem カルーセルアイテム内のフォーカサブルな要素
+         */
         this.slideWrap = root.querySelector(`.${o.slideWrap}`);
         this.slideInner = root.querySelector(`.${o.slideInner}`);
         this.wrap = root.querySelector(`.${o.wrap}`);
@@ -55,7 +63,15 @@ class Carousel {
             }
         });
 
-        // DOMの生成
+        /**
+         * DOMの生成
+         * @type {object} nextButton 次へ遷移するボタン
+         * @type {object} prevButton 前へ遷移するボタン
+         * @type {object} playerWrap インジケーターと再生ボタンのラップ
+         * @type {object} indicatorWrap インジケーターのラップ
+         * @type {object} playButton 再生ボタン
+         * @type {object} pauseButton 停止ボタン
+         */
         this.nextButton = document.createElement('button');
         this.prevButton = document.createElement('button');
         this.playerWrap = document.createElement('div');
@@ -74,7 +90,24 @@ class Carousel {
         this.itemClass = o.item;
         this.indicatorClass = o.indicatorClass;
 
-        // オプションの設定
+        /**
+         * オプションの設定
+         * @type {boolean} dots インジケーターの表示
+         * @type {number} column カラム表示数
+         * @type {number} colMargin カラム同士の余白
+         * @type {number} defautMargin カラム数変更の際にカラムの余白をキャッシュする
+         * @type {number} defaultColumn カラム数変更の際にカラム数をキャッシュする
+         * @type {number} spColumn SP時のカラム数
+         * @type {number} playInterval 自動再生の切替秒数
+         * @type {boolean} autoPlay 自動再生の設定
+         * @type {boolean} onStopPlay カルーセルにマウスオンした際に自動再生を停止する
+         * @type {string} easing イージングの種類
+         * @type {boolean} swipe スワイプの設定
+         * @type {number} breakPoint ブレイクポイント
+         * @type {string} animationType スライドアニメーションの種類[slide, fade]
+         * @type {number} resizeThreshold リサイズの間引き間隔
+         * @type {number} duration アニメーションのスピード
+         */
         this.dots = o.dots;
         this.column = o.column;
         this.colMargin = o.colMargin;
@@ -91,7 +124,7 @@ class Carousel {
         this.resizeThreshold = o.resizeThreshold;
         this.duration = o.duration;
 
-        // 動的に代入される設定
+        // 動的に代入される値
         this.indicator = null;
         this.cloneBeforeWrap = null;
         this.cloneAfterWrap = null;

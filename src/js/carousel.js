@@ -50,6 +50,11 @@ class Carousel {
          * @type {object} slideInner カルーセルアイテムラッパーのラッパー スライドをする対象
          * @type {object} wrap カルーセルアイテムのラッパー 無限ループ時に複製する対象
          * @type {object} item カルーセルアイテム
+         * @type {object} indicator インジケーター
+         * @type {object} cloneBeforeWrap オリジナルの手前に複製するカルーセル
+         * @type {object} cloneAfterWrap オリジナルの後ろに複製するカルーセル
+         * @type {object} cloneBeforeItem cloneBeforeWrap内のカルーセルアイテム
+         * @type {object} cloneAfterItem cloneAfterWrap内のカルーセルアイテム
          * @type {number} itemLength カルーセルアイテムの数
          * @type {array} focusableItem カルーセルアイテム内のフォーカサブルな要素の配列
          */
@@ -57,6 +62,11 @@ class Carousel {
         this.slideInner = root.querySelector(`.${o.slideInner}`);
         this.wrap = root.querySelector(`.${o.wrap}`);
         this.item = root.querySelectorAll(`.${o.item}`);
+        this.indicator = null;
+        this.cloneBeforeWrap = null;
+        this.cloneAfterWrap = null;
+        this.cloneBeforeItem = null;
+        this.cloneAfterItem = null;
         this.itemLength = this.item.length;
         this.focusableItem = [];
         this.item.forEach((element) => {
@@ -68,7 +78,7 @@ class Carousel {
         });
 
         /**
-         * DOMの生成
+         * DOMオブジェクトの生成
          * @type {object} nextButton 次へ遷移するボタン
          * @type {object} prevButton 前へ遷移するボタン
          * @type {object} playerWrap インジケーターと再生ボタンのラップ
@@ -82,17 +92,6 @@ class Carousel {
         this.indicatorWrap = document.createElement('ul');
         this.playButton = document.createElement('button');
         this.pauseButton = document.createElement('button');
-
-        // class名
-        this.nextClass = o.nextClass;
-        this.prevClass = o.prevClass;
-        this.playClass = o.playClass;
-        this.pauseClass = o.pauseClass;
-        this.autoPlayHookClass = o.autoPlayHookClass;
-        this.indicatorWrapClass = o.indicatorWrapClass;
-        this.playerWrapClass = o.playerWrapClass;
-        this.itemClass = o.item;
-        this.indicatorClass = o.indicatorClass;
 
         /**
          * オプションの設定
@@ -128,19 +127,25 @@ class Carousel {
         this.resizeThreshold = o.resizeThreshold;
         this.duration = o.duration;
 
+        // class名
+        this.nextClass = o.nextClass;
+        this.prevClass = o.prevClass;
+        this.playClass = o.playClass;
+        this.pauseClass = o.pauseClass;
+        this.autoPlayHookClass = o.autoPlayHookClass;
+        this.indicatorWrapClass = o.indicatorWrapClass;
+        this.playerWrapClass = o.playerWrapClass;
+        this.itemClass = o.item;
+        this.indicatorClass = o.indicatorClass;
+
         // 動的に代入される値
-        this.indicator = null;
-        this.cloneBeforeWrap = null;
-        this.cloneAfterWrap = null;
-        this.cloneBeforeItem = null;
-        this.cloneAfterItem = null;
         this.autoPlayId = 0;
-        this.resizeBeforeWidth = null;
-        this.resizeAfterWidth = null;
+        this.resizeBeforeWidth = 0;
+        this.resizeAfterWidth = 0;
+        this.itemWidth = 0;
         this.isAutoPlay = false;
         this.isSliding = false;
-        this.isOnStop = null;
-        this.itemWidth = null;
+        this.isOnStop = false;
 
         // カルーセルの初期配置設定
         this.nowPosition = 0;
@@ -150,9 +155,9 @@ class Carousel {
         }
 
         // 機能実行
-        this.addElementAndClasses();
+        this.setCreateElement();
         this.setInitItems();
-        this.cloneSlider();
+        this.setCloneSlider();
         this.setController();
         this.changeTabIndex();
         this.clickEvent();
@@ -174,7 +179,7 @@ class Carousel {
     /*
      * DOM要素の追加生成と属性の付与
      */
-    addElementAndClasses() {
+    setCreateElement() {
         const addSpan = (element, klass, txt) => {
             const span = document.createElement('span');
 
@@ -255,7 +260,7 @@ class Carousel {
     /*
      * 無限ループ用のカルーセルの複製
      */
-    cloneSlider() {
+    setCloneSlider() {
         if (this.animationType === 'fade') {
             return;
         }

@@ -51,11 +51,11 @@ class Carousel {
          * @type {object} wrap カルーセルアイテムのラッパー 無限ループ時に複製する対象
          * @type {object} item カルーセルアイテム
          * @type {object} indicator インジケーター
-         * @type {object} cloneBeforeWrap オリジナルの手前に複製するカルーセル
-         * @type {object} cloneAfterWrap オリジナルの後ろに複製するカルーセル
+         * @type {object} cloneBeforeWrap オリジナルの前方に複製するカルーセル
+         * @type {object} cloneAfterWrap オリジナルの後方に複製するカルーセル
          * @type {object} cloneBeforeItem cloneBeforeWrap内のカルーセルアイテム
          * @type {object} cloneAfterItem cloneAfterWrap内のカルーセルアイテム
-         * @type {number} itemLength カルーセルアイテムの数
+         * @type {number} itemLength クローンを含まないカルーセルアイテムの総数
          * @type {array} focusableItem カルーセルアイテム内のフォーカサブルな要素の配列
          */
         this.slideWrap = root.querySelector(`.${o.slideWrap}`);
@@ -740,7 +740,7 @@ class Carousel {
     }
 
     /*
-     * マウスクリック時の処理
+     * クリックイベント登録
      */
     clickEvent() {
         this.nextButton.addEventListener('click', () => {
@@ -777,7 +777,7 @@ class Carousel {
         });
 
         this.slideInner.addEventListener(TRANSITIONEND, () => {
-            this.transitionAfter();
+            this.transitionHandler();
         });
 
         this.item.forEach((element) => {
@@ -797,7 +797,7 @@ class Carousel {
     }
 
     /*
-     * リサイズ時の処理
+     * リサイズイベント登録
      */
     resizeEvent() {
         let timeoutId = 0;
@@ -827,7 +827,7 @@ class Carousel {
     }
 
     /*
-     * マウスホバー時の処理
+     * ホバーイベント登録
      */
     hoverEvent() {
         this.item.forEach((element) => {
@@ -848,7 +848,7 @@ class Carousel {
     }
 
     /*
-     * キー操作時の処理
+     * キーボードイベント登録
      */
     keyEvent() {
         const tabEventCansel = (e) => {
@@ -874,7 +874,7 @@ class Carousel {
     }
 
     /*
-     * スワイプ時の処理
+     * スワイプイベント登録
      */
     swipeEvent() {
         const touchMargin = 30;
@@ -904,7 +904,7 @@ class Carousel {
     /*
      * トランジションアニメーション終了時の処理
      */
-    transitionAfter() {
+    transitionHandler() {
         const styles = window.getComputedStyle(this.slideInner);
 
         if (this.animationType === 'slide') {
@@ -933,8 +933,7 @@ class Carousel {
 
     /**
      * 初回読み込み時にトリガーイベントの強制発生
-        * @returns {void}
-        */
+     */
     forcedResize() {
         const resize = new Event('resize');
 

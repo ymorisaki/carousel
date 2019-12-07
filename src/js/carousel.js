@@ -134,10 +134,9 @@ class Carousel {
         this.forcedResize();
     }
 
-    /**
+    /*
      * DOM要素の追加生成と属性の付与
-        * @returns {void}
-        */
+     */
     addElementAndClasses() {
         const addSpan = (element, klass, txt) => {
             const span = document.createElement('span');
@@ -162,10 +161,9 @@ class Carousel {
         }
     }
 
-    /**
+    /*
      * カルーセルアイテムの初期配置
-        * @returns {void}
-        */
+     */
     setInitItems() {
         this.wrap.style.position = 'absolute';
         this.wrap.style.top = 0;
@@ -218,10 +216,9 @@ class Carousel {
         }
     }
 
-    /**
+    /*
      * 無限ループ用のカルーセルの複製
-        * @returns {void}
-        */
+     */
     cloneSlider() {
         if (this.animationType === 'fade') {
             return;
@@ -262,10 +259,9 @@ class Carousel {
         });
     }
 
-    /**
+    /*
      * スライド操作に必要な要素の配置
-        * @returns {void}
-        */
+     */
     setController() {
         const fragment = document.createDocumentFragment();
 
@@ -302,11 +298,10 @@ class Carousel {
         }
     }
 
-    /**
+    /*
      * カルーセルアイテムのカラム割と横軸配置
-        * 画面リサイズの度に処理を行う
-        * @returns {void}
-        */
+     * 画面リサイズの度に処理を行う
+     */
     setColItems() {
         const maxLength = this.itemLength;
         let styles = null;
@@ -384,10 +379,9 @@ class Carousel {
         }
     }
 
-    /**
+    /*
      * 一つ先にスライドする処理
-        * @return {void}
-        */
+     */
     nextSlide() {
         let styles = null;
         let elWidth = null;
@@ -441,10 +435,9 @@ class Carousel {
         this.indicatorUpdate(this.isCurrentNum - 1);
     }
 
-    /**
+    /*
      * 一つ先にスライドする処理（無限ループ切り替え時）
-        * @return {void}
-        */
+     */
     nextInfiniteLoop() {
         if (this.animationType === 'slide') {
             this.slideInner.style.transitionDuration = '0s';
@@ -464,10 +457,9 @@ class Carousel {
         }
     }
 
-    /**
+    /*
      * 一つ前にスライドする処理
-        * @return {void}
-        */
+     */
     prevSlide() {
         let styles = null;
         let elWidth = null;
@@ -518,10 +510,9 @@ class Carousel {
         }
     }
 
-    /**
+    /*
      * 一つ前にスライドする処理（無限ループ切り替え時）
-        * @return {void}
-        */
+     */
     prevInfiniteLoop() {
         let targetPosition = 0;
         let styles = window.getComputedStyle(this.item[0]);
@@ -547,16 +538,16 @@ class Carousel {
         });
 
         initSlide().then(() => {
-            this.slideInner.style.transitionDuration = (this.duration / 1000) + 's';
+            this.slideInner.style.transitionDuration = `${(this.duration / 1000)}s`;
             this.isSliding = false;
         });
     }
 
     /**
      * 任意の箇所にスライドする処理
-        * @param {object} e - クリックされたインジケーター
-        * @return {void}
-        */
+     * @param {EventObject} e - クリックされたインジケーター
+     * @return {void}
+     */
     targetSlide(e) {
         const targetNum = e.target.querySelector('.indicator-index').getAttribute('data-current');
 
@@ -570,100 +561,98 @@ class Carousel {
         this.isCurrentNum = parseInt(targetNum, 10);
 
         if (this.animationType === 'slide') {
-            this.slideInner.style.left = '-' + (this.itemWidth * (targetNum - 1)) + 'px';
+            this.slideInner.style.left = `-${(this.itemWidth * (targetNum - 1))}px`;
         }
 
         if (this.animationType === 'fade') {
-            this.item.forEach(function (el) {
-                el.style.opacity = 0;
+            this.item.forEach((element) => {
+                element.style.opacity = 0;
             });
             this.item[this.isCurrentNum - 1].style.opacity = 1;
         }
     }
 
-    /**
+    /*
      * スライド時のタブインデックス操作
-        * @return {void}
-        */
+     */
     changeTabIndex() {
-        const self = this;
-        const setTabIndex = function (target, addNum) {
-            const changeTarget = self.item[target].querySelectorAll(FOCUSABLE);
+        const setTabIndex = (target, addNum) => {
+            const changeTarget = this.item[target].querySelectorAll(FOCUSABLE);
 
-            changeTarget.forEach(function (el) {
-                el.tabIndex = addNum;
+            changeTarget.forEach((element) => {
+                element.tabIndex = addNum;
             });
         };
-        const setCloneTabIndex = function (target, addNum) {
-            const changeTarget = self.cloneAfterItem[target].querySelectorAll(FOCUSABLE);
+        const setCloneTabIndex = (target, addNum) => {
+            const changeTarget = this.cloneAfterItem[target].querySelectorAll(FOCUSABLE);
 
-            changeTarget.forEach(function (el) {
-                el.tabIndex = addNum;
+            changeTarget.forEach((element) => {
+                element.tabIndex = addNum;
             });
         };
 
-        self.focusableItem.forEach(function (el) {
-            el.tabIndex = -1;
+        this.focusableItem.forEach((element) => {
+            element.tabIndex = -1;
         });
 
-        if (self.animationType === 'slide') {
-            const afterFocusable = self.cloneAfterWrap.querySelectorAll(FOCUSABLE);
+        if (this.animationType === 'slide') {
+            const afterFocusable = this.cloneAfterWrap.querySelectorAll(FOCUSABLE);
 
-            afterFocusable.forEach(function (el) {
-                el.tabIndex = -1;
+            afterFocusable.forEach((element) => {
+                element.tabIndex = -1;
             });
         }
 
-        switch (self.column) {
+        switch (this.column) {
         case 1:
-            if (self.isCurrentNum === self.itemLength + 1) {
+            if (this.isCurrentNum === this.itemLength + 1) {
                 setTabIndex(0, 0);
 
                 return;
             }
 
-            if (self.isCurrentNum === 0) {
-                setTabIndex(self.itemLength - 1, 0);
+            if (this.isCurrentNum === 0) {
+                setTabIndex(this.itemLength - 1, 0);
 
                 return;
             }
 
-            setTabIndex(self.isCurrentNum - 1, 0);
+            setTabIndex(this.isCurrentNum - 1, 0);
             break;
 
         case 2:
             // 最初のアイテムにカレント時
-            if (self.isCurrentNum === 0) {
-                setTabIndex(self.itemLength - 1, 0);
+            if (this.isCurrentNum === 0) {
+                setTabIndex(this.itemLength - 1, 0);
                 setCloneTabIndex(0, 0);
 
                 return;
             }
 
             // 最後から二番目のアイテムにカレント時
-            if (self.isCurrentNum === self.itemLength) {
-                setTabIndex(self.isCurrentNum - 1, 0);
+            if (this.isCurrentNum === this.itemLength) {
+                setTabIndex(this.isCurrentNum - 1, 0);
                 setCloneTabIndex(0, 0);
 
                 return;
             }
 
             // 最後のアイテムにカレント時
-            if (self.isCurrentNum === self.itemLength + 1) {
+            if (this.isCurrentNum === this.itemLength + 1) {
                 setTabIndex(0, 0);
                 setTabIndex(1, 0);
 
                 return;
             }
 
-            setTabIndex(self.isCurrentNum - 1, 0);
-            setTabIndex(self.isCurrentNum, 0);
+            setTabIndex(this.isCurrentNum - 1, 0);
+            setTabIndex(this.isCurrentNum, 0);
             break;
 
         case 3:
             // 最初のアイテムにカレント時
-            if (self.isCurrentNum === 0) {
-                setTabIndex(self.itemLength - 1, 0);
+            if (this.isCurrentNum === 0) {
+                setTabIndex(this.itemLength - 1, 0);
                 setCloneTabIndex(0, 0);
                 setCloneTabIndex(1, 0);
 
@@ -671,17 +660,17 @@ class Carousel {
             }
 
             // 最後から三番目のアイテムにカレント時
-            if (self.isCurrentNum === self.itemLength - 1) {
-                setTabIndex(self.isCurrentNum, 0);
-                setTabIndex(self.isCurrentNum - 1, 0);
+            if (this.isCurrentNum === this.itemLength - 1) {
+                setTabIndex(this.isCurrentNum, 0);
+                setTabIndex(this.isCurrentNum - 1, 0);
                 setCloneTabIndex(0, 0);
 
                 return;
             }
 
             // 最後から二番目のアイテムにカレント時
-            if (self.isCurrentNum === self.itemLength) {
-                setTabIndex(self.isCurrentNum - 1, 0);
+            if (this.isCurrentNum === this.itemLength) {
+                setTabIndex(this.isCurrentNum - 1, 0);
                 setCloneTabIndex(0, 0);
                 setCloneTabIndex(1, 0);
 
@@ -689,7 +678,7 @@ class Carousel {
             }
 
             // 最後のアイテムにカレント時
-            if (self.isCurrentNum === self.itemLength + 1) {
+            if (this.isCurrentNum === this.itemLength + 1) {
                 setTabIndex(0, 0);
                 setTabIndex(1, 0);
                 setTabIndex(2, 0);
@@ -697,9 +686,9 @@ class Carousel {
                 return;
             }
 
-            setTabIndex(self.isCurrentNum - 1, 0);
-            setTabIndex(self.isCurrentNum, 0);
-            setTabIndex(self.isCurrentNum + 1, 0);
+            setTabIndex(this.isCurrentNum - 1, 0);
+            setTabIndex(this.isCurrentNum, 0);
+            setTabIndex(this.isCurrentNum + 1, 0);
             break;
 
         default:
@@ -707,184 +696,171 @@ class Carousel {
         }
     }
 
-    /**
+    /*
      * マウスクリック時の処理
-        * @return {void}
-        */
+     */
     clickEvent() {
-        const self = this;
-
-        self.nextButton.addEventListener('click', function () {
-            self.nextSlide();
-            self.changeTabIndex();
-            if (self.autoPlay && self.isAutoPlay) {
-                self.resetAutoPlayTime();
+        this.nextButton.addEventListener('click', () => {
+            this.nextSlide();
+            this.changeTabIndex();
+            if (this.autoPlay && this.isAutoPlay) {
+                this.resetAutoPlayTime();
             }
         });
 
-        self.prevButton.addEventListener('click', function () {
-            self.prevSlide();
-            self.focusableItem.forEach(function (el) {
-                el.tabIndex = -1;
+        this.prevButton.addEventListener('click', () => {
+            this.prevSlide();
+            this.focusableItem.forEach((element) => {
+                element.tabIndex = -1;
             });
-            self.changeTabIndex();
-            if (self.autoPlay && self.isAutoPlay) {
-                self.resetAutoPlayTime();
+            this.changeTabIndex();
+            if (this.autoPlay && this.isAutoPlay) {
+                this.resetAutoPlayTime();
             }
         });
 
-        self.indicator.forEach(function (el) {
-            el.addEventListener('click', function (e) {
+        this.indicator.forEach((element) => {
+            element.addEventListener('click', (e) => {
                 if (e.target.classList.contains('is-active')) {
                     return;
                 }
 
-                self.targetSlide(e);
-                self.changeTabIndex();
-                if (self.autoPlay && self.isAutoPlay) {
-                    self.resetAutoPlayTime();
+                this.targetSlide(e);
+                this.changeTabIndex();
+                if (this.autoPlay && this.isAutoPlay) {
+                    this.resetAutoPlayTime();
                 }
             });
         });
 
-        self.slideInner.addEventListener(TRANSITIONEND, function () {
-            self.transitionAfter();
+        this.slideInner.addEventListener(TRANSITIONEND, () => {
+            this.transitionAfter();
         });
 
-        self.item.forEach(function (el) {
-            el.addEventListener(TRANSITIONEND, function () {
-                self.isSliding = false;
+        this.item.forEach((element) => {
+            element.addEventListener(TRANSITIONEND, () => {
+                this.isSliding = false;
             });
         });
 
-        self.pauseButton.addEventListener('click', function (e) {
-            if (e.target.classList.contains(self.pauseClass)) {
-                self.stopAutoPlay();
+        this.pauseButton.addEventListener('click', (e) => {
+            if (e.target.classList.contains(this.pauseClass)) {
+                this.stopAutoPlay();
             } else {
-                self.startAutoPlay();
+                this.startAutoPlay();
             }
-            self.changeAutoPlayIcon(e);
+            this.changeAutoPlayIcon(e);
         });
     }
 
-    /**
+    /*
      * リサイズ時の処理
-        * @return {void}
-        */
+     */
     resizeEvent() {
-        const self = this;
         let timeoutId = 0;
         let windowWidth = 0;
 
-        window.addEventListener('resize', function () {
-            if (self.animationType === 'slide') {
-                self.resetAutoPlayTime();
+        window.addEventListener('resize', () => {
+            if (this.animationType === 'slide') {
+                this.resetAutoPlayTime();
             }
 
             if (timeoutId) {
                 return;
             }
 
-            timeoutId = setTimeout(function () {
+            timeoutId = setTimeout(() => {
                 timeoutId = 0;
                 windowWidth = window.innerWidth;
 
-                if (self.spColumn) {
-                    self.changeBreakPoint(windowWidth);
+                if (this.spColumn) {
+                    this.changeBreakPoint(windowWidth);
                 }
 
-                self.setColItems();
-                self.matchHeight();
-            }, self.resizeThreshold);
+                this.setColItems();
+                this.matchHeight();
+            }, this.resizeThreshold);
         }, false);
     }
 
-    /**
+    /*
      * マウスホバー時の処理
-        * @return {void}
-        */
+     */
     hoverEvent() {
-        const self = this;
-
-        self.item.forEach(function (el) {
-            el.addEventListener('mouseenter', function () {
-                if (self.autoPlay && self.onStopPlay && self.isAutoPlay) {
-                    self.stopAutoPlay();
-                    self.isOnStop = true;
+        this.item.forEach((element) => {
+            element.addEventListener('mouseenter', () => {
+                if (this.autoPlay && this.onStopPlay && this.isAutoPlay) {
+                    this.stopAutoPlay();
+                    this.isOnStop = true;
                 }
             }, false);
 
-            el.addEventListener('mouseleave', function () {
-                if (self.autoPlay && self.onStopPlay && self.isOnStop) {
-                    self.startAutoPlay();
-                    self.isOnStop = false;
+            element.addEventListener('mouseleave', () => {
+                if (this.autoPlay && this.onStopPlay && this.isOnStop) {
+                    this.startAutoPlay();
+                    this.isOnStop = false;
                 }
             }, false);
         });
     }
 
-    /**
+    /*
      * キー操作時の処理
-        * @return {void}
-        */
+     */
     keyEvent() {
-        const self = this;
-        const tabEventCansel = function (e) {
-            if (self.isSliding && self.animationType === 'slide' && e.key === 'Tab') {
+        const tabEventCansel = (e) => {
+            if (this.isSliding && this.animationType === 'slide' && e.key === 'Tab') {
                 e.preventDefault();
             }
         };
 
-        self.nextButton.addEventListener('keydown', tabEventCansel);
-        self.prevButton.addEventListener('keydown', tabEventCansel);
+        this.nextButton.addEventListener('keydown', tabEventCansel);
+        this.prevButton.addEventListener('keydown', tabEventCansel);
 
         if (UA.indexOf('edge') !== -1) {
-            self.item.forEach(function (el) {
-                el.addEventListener('keydown', tabEventCansel);
+            this.item.forEach((element) => {
+                element.addEventListener('keydown', tabEventCansel);
             });
         }
 
         if (UA.indexOf('trident/7') !== -1) {
-            self.item.forEach(function (el) {
-                el.addEventListener('keydown', tabEventCansel);
+            this.item.forEach((element) => {
+                element.addEventListener('keydown', tabEventCansel);
             });
         }
     }
 
-    /**
+    /*
      * スワイプ時の処理
-        * @returns {void}
-        */
+     */
     swipeEvent() {
-        const self = this;
         const touchMargin = 30;
         let touchOnX = null;
         let touchOutX = null;
 
-        self.root.addEventListener('touchstart', function (e) {
+        this.root.addEventListener('touchstart', (e) => {
             touchOnX = e.changedTouches[0].pageX;
         }, {passive: true});
 
-        self.root.addEventListener('touchend', function (e) {
+        this.root.addEventListener('touchend', (e) => {
             touchOutX = e.changedTouches[0].pageX;
 
             if (touchOnX + touchMargin < touchOutX) {
-                self.prevSlide();
-                self.changeTabIndex();
-                self.resetAutoPlayTime();
+                this.prevSlide();
+                this.changeTabIndex();
+                this.resetAutoPlayTime();
             } else if (touchOutX + touchMargin < touchOnX) {
-                self.nextSlide();
-                self.changeTabIndex();
-                self.resetAutoPlayTime();
+                this.nextSlide();
+                this.changeTabIndex();
+                this.resetAutoPlayTime();
             }
         }, {passive: true});
     }
 
 
-    /**
+    /*
      * トランジションアニメーション終了時の処理
-        * @return {void}
-        */
+     */
     transitionAfter() {
         const styles = window.getComputedStyle(this.slideInner);
 
@@ -924,9 +900,9 @@ class Carousel {
 
     /**
      * ブレイクポイントのカラム切替処理
-        * @param {number} width - リサイズ時のウィンドウ幅
-        * @return {void}
-        */
+     * @param {number} width - リサイズ時のウィンドウ幅
+     * @return {void}
+     */
     changeBreakPoint(width) {
         if (width < this.breakPoint) {
             this.column = this.spColumn;
@@ -941,64 +917,56 @@ class Carousel {
 
     /**
      * インジケーターのカレント同期
-        * @param {number} currentTarget カレントをアクティブにしたい数値
-        * @return {void}
-        */
+     * @param {number} currentTarget カレントをアクティブにしたい数値
+     * @return {void}
+     */
     indicatorUpdate(currentTarget) {
-        this.indicator.forEach(function (el) {
-            el.classList.remove('is-active');
+        this.indicator.forEach((element) => {
+            element.classList.remove('is-active');
         });
         this.indicator[currentTarget].classList.add('is-active');
     }
 
-    /**
+    /*
      * 自動再生開始機能
-        * @return {void}
-        */
+     */
     startAutoPlay() {
-        const self = this;
-
-        self.isAutoPlay = true;
-        self.autoPlayId = setInterval(function () {
-            self.nextSlide();
-            self.changeTabIndex();
-        }, self.playInterval);
+        this.isAutoPlay = true;
+        this.autoPlayId = setInterval(() => {
+            this.nextSlide();
+            this.changeTabIndex();
+        }, this.playInterval);
     }
 
-    /**
+    /*
      * 自動再生停止機能
-        * @return {void}
-        */
+     */
     stopAutoPlay() {
         this.isAutoPlay = false;
         clearInterval(this.autoPlayId);
     }
 
-    /**
+    /*
      * 自動再生タイミングリセット機能
-        * @return {void}
-        */
+     */
     resetAutoPlayTime() {
         if (this.autoPlay && this.isAutoPlay) {
-            const self = this;
-            const resetAutoPlay = function () {
-                return new Promise(function (resolve) {
-                    self.stopAutoPlay();
-                    resolve();
-                });
-            };
+            const resetAutoPlay = () => new Promise((resolve) => {
+                this.stopAutoPlay();
+                resolve();
+            });
 
-            resetAutoPlay().then(function () {
-                self.startAutoPlay();
+            resetAutoPlay().then(() => {
+                this.startAutoPlay();
             });
         }
     }
 
     /**
      * 自動再生アイコンの変更処理
-        * @param {object} e - 自動再生切替ボタン
-        * @return {void}
-        */
+     * @param {EventObject} e - 自動再生切替ボタン
+     * @return {void}
+     */
     changeAutoPlayIcon(e) {
         const target = e.currentTarget;
 
@@ -1013,42 +981,38 @@ class Carousel {
         }
     }
 
-    /**
+    /*
      * 高さ揃え機能
-        * @return {void}
-        */
+     */
     matchHeight() {
         const maxLength = this.itemLength;
         const heightAry = [];
-        let i = 0;
 
         this.wrap.style.height = '';
-        this.item.forEach(function (el) {
-            el.style.height = '';
+        this.item.forEach((element) => {
+            element.style.height = '';
         });
 
-        for (; i < maxLength; i++) {
+        for (let i = 0; i < maxLength; i++) {
             heightAry.push(this.item[i].offsetHeight);
         }
 
-        heightAry.sort(function (a, b) {
-            return b - a;
-        });
+        heightAry.sort((a, b) => b - a);
 
-        this.slideInner.style.height = heightAry[0] + 'px';
-        this.item.forEach(function (el) {
-            el.style.height = heightAry[0] + 'px';
+        this.slideInner.style.height = `${heightAry[0]}px`;
+        this.item.forEach((element) => {
+            element.style.height = `${heightAry[0]}px`;
         });
 
         if (this.animationType === 'slide') {
-            this.cloneBeforeWrap.style.height = heightAry[0] + 'px';
-            this.cloneBeforeItem.forEach(function (el) {
-                el.style.height = heightAry[0] + 'px';
+            this.cloneBeforeWrap.style.height = `${heightAry[0]}px`;
+            this.cloneBeforeItem.forEach((element) => {
+                element.style.height = `${heightAry[0]}px`;
             });
 
-            this.cloneAfterWrap.style.height = heightAry[0] + 'px';
-            this.cloneAfterItem.forEach(function (el) {
-                el.style.height = heightAry[0] + 'px';
+            this.cloneAfterWrap.style.height = `${heightAry[0]}px`;
+            this.cloneAfterItem.forEach((element) => {
+                element.style.height = `${heightAry[0]}px`;
             });
         }
     }
@@ -1057,6 +1021,11 @@ class Carousel {
 export default function setCarousel() {
     document.querySelectorAll('.js-carousel-slide-02').forEach((element) => new Carousel(element, {
         column: 2,
+        colMargin: 10
+    }));
+
+    document.querySelectorAll('.js-carousel-slide-03').forEach((element) => new Carousel(element, {
+        column: 3,
         colMargin: 10
     }));
 }
